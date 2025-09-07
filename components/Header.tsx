@@ -2,7 +2,7 @@
 
 import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import Form from "next/form";
-import { TrolleyIcon } from "@sanity/icons";
+import { ShoppingBag } from "react-feather";
 
 function Header() {
   const { user } = useUser();
@@ -21,7 +21,7 @@ function Header() {
 
         {/* BASKET */}
         <a href="/basket">
-          <TrolleyIcon />
+          <ShoppingBag />
           {/* TODO: add item count */}
           <span>Basket</span>
         </a>
