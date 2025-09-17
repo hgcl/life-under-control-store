@@ -1,7 +1,7 @@
 "use client";
 
 import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
-import Form from "next/form";
+// import Form from "next/form";
 import { ShoppingBag } from "react-feather";
 
 function Header() {
@@ -12,12 +12,11 @@ function Header() {
         <a href="/">Life Under Control</a>
 
         {/* SEARCH */}
-        {/* TODO: review accessibility of this search form section */}
-        {/* TODO: make search work with working data */}
-        <Form action="/search">
+        {/* TODO: implement accessible search feature */}
+        {/* <Form action="/search">
           <input name="query" type="text" placeholder="Search for products" />
           <button type="submit">Submit</button>
-        </Form>
+        </Form> */}
 
         {/* BASKET */}
         <a href="/basket">
