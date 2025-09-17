@@ -24,7 +24,7 @@ const ProductThumb = ({ product }: { product: Product }) => {
             .join(" ")
             .slice(0, 100) || "No description available"}
         </p>
-        <small>€ {product.price}</small>
+        <small>€ {product.price?.toFixed(2)}</small>
       </div>
     </li>
   );
