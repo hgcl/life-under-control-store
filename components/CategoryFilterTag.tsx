@@ -1,27 +1,25 @@
-"use client";
-
 import { Category } from "@/sanity.types";
 
 type CategoryFilterTagProps = {
   category: Category;
-  selectedCategories: string[];
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  selectedCategories: Set<string>;
+  handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const CategoryFilterTag = ({
   category,
   selectedCategories,
-  onChange,
+  handleCheckboxChange,
 }: CategoryFilterTagProps) => {
   return (
     <div>
       <input
         type="checkbox"
-        id={category.slug?.current}
+        id={category._id}
         name="category"
         value={category.slug?.current}
-        checked={selectedCategories.includes(category.slug?.current)}
-        onChange={onChange}
+        checked={selectedCategories.has(category._id)}
+        onChange={handleCheckboxChange}
       />
       <label htmlFor={category.slug?.current}>{category.title}</label>
     </div>

@@ -3,14 +3,14 @@ import CategoryFilterTag from "./CategoryFilterTag";
 
 type CategorySelectorProps = {
   categories: Category[];
-  selectedCategories: string[];
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  selectedCategories: Set<string>;
+  handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const CategorySelector = ({
   categories,
   selectedCategories,
-  onChange,
+  handleCheckboxChange,
 }: CategorySelectorProps) => {
   return (
     <fieldset>
@@ -20,7 +20,7 @@ const CategorySelector = ({
           key={category._id}
           category={category}
           selectedCategories={selectedCategories}
-          onChange={onChange}
+          handleCheckboxChange={handleCheckboxChange}
         />
       ))}
     </fieldset>

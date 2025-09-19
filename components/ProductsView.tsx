@@ -11,50 +11,54 @@ type ProductsViewProps = {
 };
 
 const ProductsView = ({ products, categories }: ProductsViewProps) => {
-  const allCategories = categories.map((category) => category.slug?.current);
+  const allCategories: Set<string> = new Set();
+  for (let key in categories) {
+    allCategories.add(categories[key]._id);
+  }
 
-  // selectedCategories array contains all categories, when all checkboxes are enabled
-  const [selectedCategories, setSelectedCategories] =
-    useState<(string | undefined)[]>(allCategories);
+  // `selectedCategories` Set contains all categories, when all checkboxes are enabled
+  const [selectedCategories, setSelectedCategories] = useState(allCategories);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const categorySlug = event.target.value;
+    const categoryId = event.target.id;
     const isChecked = event.target.checked;
 
     if (isChecked) {
-      // If checkbox is checked, category should be in the selectedCategories array
-      !selectedCategories.includes(categorySlug) &&
-        setSelectedCategories((current) => [...current, categorySlug]);
+      // If checkbox is checked, add category to `selectedCategories` Set — we don't need to care about duplicates with a Set object
+      setSelectedCategories((prevSet) => {
+        // We need to create a new Set, as React may not detect the change because the reference to`selectedCategories` remains the same
+        const newSet = new Set(prevSet);
+        newSet.add(categoryId);
+        return newSet;
+      });
     } else {
-      // If checkbox is not checked, remove category from selectedCategories
-      setSelectedCategories((current) =>
-        current.filter((category) => category !== categorySlug)
-      );
+      // If checkbox is not checked, remove category from `selectedCategories` Set
+      setSelectedCategories((prevSet) => {
+        const newSet = new Set(prevSet);
+        newSet.delete(categoryId);
+        return newSet;
+      });
     }
   };
 
-  // Define array of selected categories IDs (as `products` only references categories IDs)
-  const selectedCategoriesIds = categories
-    .filter((category) => selectedCategories.includes(category.slug?.current))
-    .map((category) => category._id);
-
-  // Filter products based on selected categories IDs
+  // Filter `products` shown based on `selectedCategories`
   const filteredProducts = products.filter((product) => {
+    if (!product.categories) {
+      return false;
+    }
     for (const category of product.categories) {
-      if (selectedCategoriesIds.includes(category._ref)) {
+      if (selectedCategories.has(category._ref)) {
         return true;
       }
     }
   });
-
-  console.log(selectedCategories);
 
   return (
     <div>
       <CategorySelector
         categories={categories}
         selectedCategories={selectedCategories}
-        onChange={handleCheckboxChange}
+        handleCheckboxChange={handleCheckboxChange}
       />
       <ProductGrid products={filteredProducts} />
     </div>
