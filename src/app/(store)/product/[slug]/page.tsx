@@ -3,6 +3,7 @@ import { imageUrl } from "@/sanity/lib/imageUrl";
 import { Product } from "@/sanity.types";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
+import UpdateCartButtons from "@/src/components/UpdateCartButtons";
 
 const ProductPage = async ({
   params,
@@ -20,7 +21,7 @@ const ProductPage = async ({
     <>
       <h1>{product.name}</h1>
       <p>€ {product.price?.toFixed(2)}</p>
-      <button>Add to cart</button>
+      <UpdateCartButtons productId={product._id} />
       {Array.isArray(product.description) && (
         <PortableText value={product.description} />
       )}

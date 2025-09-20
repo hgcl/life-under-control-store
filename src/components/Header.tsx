@@ -3,9 +3,15 @@
 import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 // import Form from "next/form";
 import { ShoppingBag } from "react-feather";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContextProvider";
 
 function Header() {
   const { user } = useUser();
+
+  // Extract items count from CartContext
+  const { cartItems } = useContext(CartContext);
+
   return (
     <header>
       <div>
@@ -22,7 +28,7 @@ function Header() {
         <a href="/basket">
           <ShoppingBag />
           {/* TODO: add item count */}
-          <span>Basket</span>
+          <span>Basket</span> <span>({cartItems.size})</span>
         </a>
 
         {/* USER ACCOUNT */}

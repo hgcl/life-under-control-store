@@ -1,8 +1,9 @@
 import { type Metadata } from "next";
 import "../globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import Header from "@/src/components/Header";
 import { SanityLive } from "@/sanity/lib/live";
+import CartContextProvider from "../../context/CartContextProvider";
+import Header from "../../components/Header";
 
 export const metadata: Metadata = {
   title: "Life Under Control",
@@ -19,8 +20,10 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <main>
-            <Header />
-            {children}
+            <CartContextProvider>
+              <Header />
+              {children}
+            </CartContextProvider>
           </main>
 
           <SanityLive />
