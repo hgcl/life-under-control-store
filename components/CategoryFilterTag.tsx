@@ -10,20 +10,18 @@ const CategoryFilterTag = ({
   category,
   selectedCategories,
   handleCheckboxChange,
-}: CategoryFilterTagProps) => {
-  return (
-    <div>
-      <input
-        type="checkbox"
-        id={category._id}
-        name="category"
-        value={category.slug?.current}
-        checked={selectedCategories.has(category._id)}
-        onChange={handleCheckboxChange}
-      />
-      <label htmlFor={category.slug?.current}>{category.title}</label>
-    </div>
-  );
-};
+}: CategoryFilterTagProps) => (
+  <div>
+    <input
+      type="checkbox"
+      id={category._id}
+      name="category"
+      value={category.slug?.current}
+      checked={selectedCategories.has(category._id)}
+      onChange={handleCheckboxChange}
+    />
+    <label htmlFor={category.slug?.current}>{category.title}</label>
+  </div>
+);
 
 export default CategoryFilterTag;
