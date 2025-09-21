@@ -4,8 +4,17 @@ import { createContext, useReducer } from "react";
 import CartReducer, { ADD_TO_CART, REMOVE_FROM_CART } from "./CartReducer";
 import { CartState } from "../types";
 
+let storage: Set<string> = new Set();
+if (
+  typeof window !== "undefined" && // makes sure that this logic only runs after the browser loads the page
+  typeof localStorage.getItem("cartItems") === "string"
+) {
+  // Fine to typecast here, we check that the localStorage item is a string in conditions
+  storage = new Set(JSON.parse(localStorage.getItem("cartItems") as string));
+}
+
 const initialCartState: CartState = {
-  cartItems: new Set(),
+  cartItems: storage,
   checkout: false,
 };
 
