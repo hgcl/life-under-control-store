@@ -9,28 +9,26 @@ import { CartContext } from "../context/CartContextProvider";
 function Header() {
   const { user } = useUser();
 
-  // Extract items count from CartContext
   const { cartItems } = useContext(CartContext);
 
   return (
     <header>
       <div>
         <a href="/">Life Under Control</a>
-
         {/* SEARCH */}
         {/* TODO: implement accessible search feature */}
         {/* <Form action="/search">
           <input name="query" type="text" placeholder="Search for products" />
           <button type="submit">Submit</button>
         </Form> */}
-
-        {/* BASKET */}
-        <a href="/basket">
+        {/* CART */}
+        {/* TODO: check hydration error for cart item count
+        https://react.dev/reference/react-dom/client/hydrateRoot */}
+        <a href="/cart">
           <ShoppingBag />
-          {/* TODO: add item count */}
-          <span>Basket</span> <span>({cartItems.size})</span>
+          <span>Cart</span> 
+          {/* <span id="cart-items-size">({cartItems.size})</span> */}
         </a>
-
         {/* USER ACCOUNT */}
         {/* Only enable if Clerk is loaded */}
         <ClerkLoaded>
