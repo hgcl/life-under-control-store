@@ -4,6 +4,7 @@ import { createContext, useReducer } from "react";
 import CartReducer, { ADD_TO_CART, REMOVE_FROM_CART } from "./CartReducer";
 import { CartState } from "../types";
 
+// Get `cartItems` from local storage, if the cart has already been initialized
 let storage: Set<string> = new Set();
 if (
   typeof window !== "undefined" && // makes sure that this logic only runs after the browser loads the page
