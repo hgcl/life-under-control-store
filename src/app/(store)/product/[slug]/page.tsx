@@ -18,10 +18,13 @@ const ProductPage = async ({
     return notFound();
   }
 
+  // TODO: are these type fixes correct?
   const cartItem: CartItem = {
     _id: product._id,
     name: product.name ? product.name : "Unnamed product",
     price: product.price ? product.price : 0,
+    slug: product.slug?.current ? product.slug.current : "",
+    image: product.image ? imageUrl(product.image).url() : "",
   };
 
   return (

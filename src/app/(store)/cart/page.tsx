@@ -1,36 +1,21 @@
 "use client";
 
-import { Product } from "@/sanity.types";
-import { getProductsArrayById } from "@/sanity/lib/products/getProductsArrayById";
 import CartItemCard from "@/src/components/CartItemCard";
 import { CartContext } from "@/src/context/CartContextProvider";
-import { useContext, useEffect, useState } from "react";
-import { Loader } from "react-feather";
+import { CartItem } from "@/src/types";
+import { useContext } from "react";
 
 const Cart = () => {
   const { cartItems } = useContext(CartContext);
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
-  // `useEffect` as async functions not supported in Client Components: https://nextjs.org/docs/messages/no-async-client-component
-  useEffect(() => {
-    (async () => {
-      const products = await getProductsArrayById([...cartItems]);
-      setSelectedProducts(products);
-      setIsLoading(false);
-    })();
-  }, []);
-
-  // If client is not mounted yet, show loader screen
-  if (isLoading) {
-    return <Loader />;
-  }
+  // Calculate total price based on cart items
+  const totalPrice = cartItems.reduce((acc, curr) => acc + curr.price, 0);
 
   return (
     <>
       <ul>
-        {selectedProducts.map((product: Product) => (
-          <CartItemCard key={product._id} product={product} />
+        {cartItems.map((cartItem: CartItem) => (
+          <CartItemCard key={cartItem._id} cartItem={cartItem} />
         ))}
       </ul>
       <div>
