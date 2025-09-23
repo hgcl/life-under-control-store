@@ -1,6 +1,6 @@
-import { CartState } from "../types";
+import { CartItem, CartState } from "../types";
 
-type CartAction = { type: string; productId: string };
+type CartAction = { type: string; payload: CartItem };
 
 // Define the different types of cart actions
 export const ADD_TO_CART = "ADD_TO_CART";
@@ -9,33 +9,42 @@ export const CHECKOUT = "CHECKOUT";
 export const CLEAR = "CLEAR";
 
 // Save cartItems to local storage
-const updateLocalStorage = (cartItems: Set<string>) => {
+const updateLocalStorage = (cartItems: CartItem[]) => {
   localStorage.setItem(
     "cartItems",
-    JSON.stringify(cartItems.size > 0 ? [...cartItems] : [])
+    JSON.stringify(cartItems.length > 0 ? cartItems : [])
   );
 };
 
 const CartReducer = (state: CartState, action: CartAction) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const newCartAdd = new Set(state.cartItems);
-      newCartAdd.add(action.productId);
-      updateLocalStorage(newCartAdd);
+      // Does the item already exist in the cart?
+      const exists = state.cartItems.find(
+        (item) => item._id === action.payload._id
+      );
+      if (exists) {
+        return state; // Do nothing if already exists
+      }
+
+      const cartItemsWithMore = [...state.cartItems, action.payload];
+      updateLocalStorage(cartItemsWithMore);
 
       return {
         ...state,
-        cartItems: newCartAdd,
+        cartItems: cartItemsWithMore,
       };
 
     case REMOVE_FROM_CART:
-      const newCartRemove = new Set(state.cartItems);
-      newCartRemove.delete(action.productId);
-      updateLocalStorage(newCartRemove);
+      const cartItemsWithLess = [
+        ...state.cartItems.filter((item) => item._id !== action.payload._id),
+      ];
+
+      updateLocalStorage(cartItemsWithLess);
 
       return {
         ...state,
-        cartItems: newCartRemove,
+        cartItems: cartItemsWithLess,
       };
 
     // Return the state if the action type is not found

@@ -2,16 +2,15 @@
 
 import { CartContext } from "../context/CartContextProvider";
 import { useContext } from "react";
+import { CartItem } from "../types";
 
-const UpdateCartButtons = ({ productId }: { productId: string }) => {
+const UpdateCartButtons = ({ cartItem }: { cartItem: CartItem }) => {
   const { addToCart, removeFromCart } = useContext(CartContext);
 
   return (
     <>
-      <button onClick={() => addToCart(productId)}>Add to cart</button>
-      <button onClick={() => removeFromCart(productId)}>
-        Remove from cart
-      </button>
+      <button onClick={() => addToCart(cartItem)}>Add to cart</button>
+      <button onClick={() => removeFromCart(cartItem)}>Remove from cart</button>
     </>
   );
 };

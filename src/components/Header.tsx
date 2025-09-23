@@ -27,7 +27,7 @@ function Header() {
         <a href="/cart">
           <ShoppingBag />
           <span>Cart</span> 
-          {/* <span id="cart-items-size">({cartItems.size})</span> */}
+          <span id="cart-items-size">({cartItems.length})</span>
         </a>
         {/* USER ACCOUNT */}
         {/* Only enable if Clerk is loaded */}

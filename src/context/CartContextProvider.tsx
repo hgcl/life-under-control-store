@@ -2,16 +2,17 @@
 
 import { createContext, useReducer } from "react";
 import CartReducer, { ADD_TO_CART, REMOVE_FROM_CART } from "./CartReducer";
-import { CartState } from "../types";
+import { CartItem, CartState } from "../types";
 
 // Get `cartItems` from local storage, if the cart has already been initialized
-let storage: Set<string> = new Set();
+let storage: CartItem[] = [];
+
 if (
   typeof window !== "undefined" && // makes sure that this logic only runs after the browser loads the page
   typeof localStorage.getItem("cartItems") === "string"
 ) {
   // Fine to typecast here, we check that the localStorage item is a string in conditions
-  storage = new Set(JSON.parse(localStorage.getItem("cartItems") as string));
+  storage = JSON.parse(localStorage.getItem("cartItems") as string);
 }
 
 const initialCartState: CartState = {
@@ -21,8 +22,8 @@ const initialCartState: CartState = {
 
 // `initialCartContext` is used by TypeScript to infer the context types. We need to create dummy functions, so that the context gets initialized with the intended types. These will be overridden with the real ones.
 const initialCartContext = {
-  addToCart: (_productId: string) => {},
-  removeFromCart: (_productId: string) => {},
+  addToCart: (_product: CartItem) => {},
+  removeFromCart: (_product: CartItem) => {},
   ...initialCartState,
 };
 
@@ -34,12 +35,15 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Function to handle when an item is added from the store into the cart
   // `dispatch()` works with useReducer: https://react.dev/reference/react/useReducer#dispatch
-  const addToCart = (productId: string) => {
-    dispatch({ type: ADD_TO_CART, productId });
+  const addToCart = (payload: CartItem) => {
+    dispatch({
+      type: ADD_TO_CART,
+      payload,
+    });
   };
 
-  const removeFromCart = (productId: string) => {
-    dispatch({ type: REMOVE_FROM_CART, productId });
+  const removeFromCart = (payload: CartItem) => {
+    dispatch({ type: REMOVE_FROM_CART, payload });
   };
 
   return (
