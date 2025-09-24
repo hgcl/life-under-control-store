@@ -22,12 +22,13 @@ function Header() {
           <button type="submit">Submit</button>
         </Form> */}
         {/* CART */}
-        {/* TODO: check hydration error for cart item count
-        https://react.dev/reference/react-dom/client/hydrateRoot */}
         <a href="/cart">
           <ShoppingBag />
           <span>Cart</span> 
-          <span id="cart-items-size">({cartItems.length})</span>
+          {/* TODO!: why is the cart empty in the homepage, but has the correct item count in /cart? */}
+          <span id="cart-items-size" suppressHydrationWarning>
+            ({cartItems.length})
+          </span>
         </a>
         {/* USER ACCOUNT */}
         {/* Only enable if Clerk is loaded */}
