@@ -19,6 +19,7 @@
     "react-dom": "19.1.0",
     "react-feather": "^2.0.10",
     "sanity": "^3.99.0",
+    "stripe": "^18.5.0",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
