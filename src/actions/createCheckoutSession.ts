@@ -2,7 +2,8 @@
 
 import { getProductsArrayById } from "@/sanity/lib/products/getProductsArrayById";
 import { CartItem } from "../types";
-import stripe from "../lib/stripe";
+import stripe from "@/src/lib/stripe";
+import Stripe from "stripe";
 import { Product } from "@/sanity.types";
 import { imageUrl } from "@/sanity/lib/imageUrl";
 
@@ -10,7 +11,7 @@ export type Metadata = {
   orderNumber: string;
   customerName: string;
   customerEmail: string;
-  clerUserId: string;
+  clerkUserId: string;
 };
 
 const createCheckoutSession = async (
@@ -49,37 +50,34 @@ const createCheckoutSession = async (
     // Checkout session
     // Stripe docs: https://docs.stripe.com/api/checkout/sessions
     // Test checkout with dummy credit cards: https://docs.stripe.com/testing?testing-method=card-numbers#visa
-    const params = {
-      customer: customerId,
-      customer_creation: customerId ? undefined : "always",
-      // If customer doesn't exist in our Stripe dashboard, get their email from the metadata. Otherwise, Stripe will give us their email by default.
-      customer_email: !customerId ? metadata.customerEmail : undefined,
-      metadata,
-      mode: "payment",
-      // If checkout successful: store the `orderNumber` in the url
-      success_url: successUrlParam,
-      cancel_url: cancelUrlParam,
-      // Generate `line_items` following Stripe structure: https://docs.stripe.com/api/prices/create
-      line_items: itemsToCheckout.map((item) => ({
-        price_data: {
-          currency: "eur",
-          product_data: {
-            name: item.name || "Unnamed product",
-            description: `Product ID: ${item._id}`,
-            metadata: {
-              id: item._id,
+    const session: Stripe.Response<Stripe.Checkout.Session> =
+      await stripe.checkout.sessions.create({
+        customer: customerId,
+        customer_creation: customerId ? undefined : "always",
+        // If customer doesn't exist in our Stripe dashboard, get their email from the metadata. Otherwise, Stripe will give us their email by default.
+        customer_email: !customerId ? metadata.customerEmail : undefined,
+        metadata,
+        mode: "payment",
+        // If checkout successful: store the `orderNumber` in the url
+        success_url: successUrlParam,
+        cancel_url: cancelUrlParam,
+        // Generate `line_items` following Stripe structure: https://docs.stripe.com/api/prices/create
+        line_items: itemsToCheckout.map((item) => ({
+          price_data: {
+            currency: "eur",
+            product_data: {
+              name: item.name || "Unnamed product",
+              description: `Product ID: ${item._id}`,
+              metadata: {
+                id: item._id,
+              },
+              images: item.image ? [imageUrl(item.image).url()] : undefined,
             },
-            images: item.image ? [imageUrl(item.image).url()] : undefined,
+            unit_amount: Math.round(item.price! * 100),
           },
-          unit_amount: Math.round(item.price! * 100),
-        },
-        quantity: 1,
-      })),
-    };
-
-    // Create the Stripe checkout session
-    const session = await stripe.checkout.sessions.create(params);
-
+          quantity: 1,
+        })),
+      });
     return session.url;
   } catch (error) {
     console.error("Error creating checkout session", error);
