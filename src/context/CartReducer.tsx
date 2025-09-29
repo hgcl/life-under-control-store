@@ -1,12 +1,15 @@
 import { CartItem, CartState } from "../types";
 
-type CartAction = { type: string; payload: CartItem };
+type CartAction = {
+  type: string;
+  payload: CartItem | undefined;
+};
 
 // Define the different types of cart actions
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const CHECKOUT = "CHECKOUT";
-export const CLEAR = "CLEAR";
+export const CLEAR_CART = "CLEAR_CART";
 
 // Save cartItems to local storage
 const updateLocalStorage = (cartItems: CartItem[]) => {
@@ -45,6 +48,13 @@ const CartReducer = (state: CartState, action: CartAction) => {
       return {
         ...state,
         cartItems: cartItemsWithLess,
+      };
+
+    case CLEAR_CART:
+      updateLocalStorage([]);
+      return {
+        ...state,
+        cartItems: [],
       };
 
     // Return the state if the action type is not found

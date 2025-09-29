@@ -1,7 +1,11 @@
 "use client";
 
 import { createContext, useReducer } from "react";
-import CartReducer, { ADD_TO_CART, REMOVE_FROM_CART } from "./CartReducer";
+import CartReducer, {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  CLEAR_CART,
+} from "./CartReducer";
 import { CartItem, CartState } from "../types";
 
 // Get `cartItems` from local storage, if the cart has already been initialized
@@ -24,6 +28,7 @@ const initialCartState: CartState = {
 const initialCartContext = {
   addToCart: (_product: CartItem) => {},
   removeFromCart: (_product: CartItem) => {},
+  clearCart: () => {},
   ...initialCartState,
 };
 
@@ -46,12 +51,17 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: REMOVE_FROM_CART, payload });
   };
 
+  const clearCart = () => {
+    dispatch({ type: CLEAR_CART, payload: undefined });
+  };
+
   return (
     // Add the functions that have been defined above into the Context provider, and pass on to the children
     <CartContext
       value={{
         addToCart,
         removeFromCart,
+        clearCart,
         ...state,
       }}
     >
