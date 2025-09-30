@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
     try {
       const order = await createOrderInSanity(session);
       console.log("Order created in Sanity:", order);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error creating order in Sanity:", error.details);
       return NextResponse.json(
         { error: "Error creating order" },
@@ -87,14 +87,6 @@ const createOrderInSanity = async (session: Stripe.Checkout.Session) => {
     id,
     { expand: ["data.price.product"] }
   );
-
-  // const sanityProducts = lineItemsWithProduct.data.map((item) => ({
-  //   _key: crypto.randomUUID(),
-  //   product: {
-  //     _type: "reference",
-  //     _ref: (item.price?.product as Stripe.Product)?.metadata?.id,
-  //   },
-  // }));
 
   const sanityProducts = lineItemsWithProduct.data.map((item) => ({
     _key: crypto.randomUUID(),
