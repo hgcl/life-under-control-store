@@ -14,7 +14,7 @@ export async function getAllProducts() {
     // Return list of products or empty array if none are found
     return products.data || [];
   } catch (error) {
-    console.log("Error fetching all products", error);
+    console.error("Error fetching all products", error);
     return [];
   }
 }

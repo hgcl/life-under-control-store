@@ -17,7 +17,7 @@ export async function getProductsArrayById(idArray: string[]) {
     // Return the products data or null if not found
     return products.data || [];
   } catch (error) {
-    console.log("Error fetching array of products by ID", error);
+    console.error("Error fetching array of products by ID", error);
     return [];
   }
 }

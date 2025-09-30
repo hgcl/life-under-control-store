@@ -14,7 +14,7 @@ export async function getAllCategories() {
     // Return list of categories or empty array if none are found
     return categories.data || [];
   } catch (error) {
-    console.log("Error fetching all categories", error);
+    console.error("Error fetching all categories", error);
     return [];
   }
 }

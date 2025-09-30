@@ -15,7 +15,7 @@ export async function getProductBySlug(slug: string) {
     // Return the product data or null if not found
     return products.data || [];
   } catch (error) {
-    console.log("Error fetching product by ID", error);
+    console.error("Error fetching product by ID", error);
     return [];
   }
 }
