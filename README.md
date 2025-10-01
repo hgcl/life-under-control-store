@@ -16,8 +16,8 @@ The website is built with NextJS 15, Typescript, Sanity (CMS), Clerk (authentica
 - `fix` – a bug fix has occurred
 - `chore` – changes that do not relate to a fix or feature and don't modify src or test files (for example updating dependencies)
 - `refactor` – refactored code that neither fixes a bug nor adds a feature
-- `docs` – updates to documentation such as a the README or other markdown files
-- `style` – changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semi-colons, and so on.
+- `docs` – updates to documentation such as the README or other markdown files
+- `style` – changes that do not affect the meaning of the code, likely related to code formatting such as white-space, missing semicolons, and so on.
 - `test` – including new or correcting previous tests
 - `perf` – performance improvements
 - `ci` – continuous integration related
@@ -37,7 +37,3 @@ Before this fix foo wasn't enabled at all, behavior changes from <old> to <new>
 
 Closes D2IQ-12345
 ```
-
----
-
-Inspired by [Sonny Sangha's tutorial](https://www.youtube.com/live/o-fgWea75O4?si=a-XqEM12dyDq1G8G&t=6917)
