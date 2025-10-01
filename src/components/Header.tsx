@@ -5,6 +5,7 @@ import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { ShoppingBag } from "react-feather";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContextProvider";
+import Banner from "./Banner";
 
 function Header() {
   const { user } = useUser();
@@ -14,6 +15,7 @@ function Header() {
   return (
     <header>
       <div>
+        <Banner message={"This website is still under construction"} />
         <a href="/">Life Under Control</a>
         {/* SEARCH */}
         {/* TODO: implement accessible search feature */}
@@ -25,10 +27,7 @@ function Header() {
         <a href="/cart">
           <ShoppingBag />
           <span>Cart</span> 
-          {/* TODO!: why is the cart empty in the homepage, but has the correct item count in /cart? */}
-          <span id="cart-items-size" suppressHydrationWarning>
-            ({cartItems.length})
-          </span>
+          <span id="cart-items-size">({cartItems.length})</span>
         </a>
         {/* USER ACCOUNT */}
         {/* Only enable if Clerk is loaded */}
