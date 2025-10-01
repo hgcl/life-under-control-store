@@ -17,8 +17,7 @@ const ProductPage = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
-  // ṪODO: fix type error
-  const product: PRODUCT_BY_SLUG_QUERYResult = await getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   console.log(
     crypto.randomUUID().slice(0, 5) +
