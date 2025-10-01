@@ -1,15 +1,17 @@
 import UpdateCartButtons from "./UpdateCartButtons";
 import { CartItem } from "../types";
+import Image from "next/image";
+import Link from "next/link";
 
 // TODO: Ȧlign on `ProductThumb` component
 const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => (
   <li className="card">
     <div className="img">
-      <img src={cartItem.image} alt="" />
+      <Image src={cartItem.image} alt="" />
     </div>
     <div className="text">
       <h3>
-        <a href="">{cartItem.name}</a>
+        <Link href="">{cartItem.name}</Link>
       </h3>
       <p>€ {cartItem.price.toFixed(2)}</p>
     </div>

@@ -1,6 +1,8 @@
 import { MY_ORDERS_QUERYResult } from "@/sanity.types";
 import { imageUrl } from "@/sanity/lib/imageUrl";
 import { formatCurrency } from "../lib/formatCurrency";
+import Image from "next/image";
+import Link from "next/link";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
   <article>
@@ -19,11 +21,13 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
             <li key={product._id}>
               {product.image && (
                 <div className="img">
-                  <img src={`${imageUrl(product.image).url()}`} alt="" />
+                  <Image src={`${imageUrl(product.image).url()}`} alt="" />
                 </div>
               )}
               <p>
-                <a href={`/product/${product.slug?.current}`}>{product.name}</a>{" "}
+                <Link href={`/product/${product.slug?.current}`}>
+                  {product.name}
+                </Link>{" "}
                 {formatCurrency(product.price ?? 0, "eur")}
               </p>
             </li>

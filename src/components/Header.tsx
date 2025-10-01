@@ -6,6 +6,7 @@ import { ShoppingBag } from "react-feather";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContextProvider";
 import Banner from "./Banner";
+import Link from "next/link";
 
 function Header() {
   const { user } = useUser();
@@ -16,7 +17,7 @@ function Header() {
     <header>
       <div>
         <Banner message={"This website is still under construction"} />
-        <a href="/">Life Under Control</a>
+        <Link href="/">Life Under Control</Link>
         {/* SEARCH */}
         {/* TODO: implement accessible search feature */}
         {/* <Form action="/search">
@@ -24,19 +25,19 @@ function Header() {
           <button type="submit">Submit</button>
         </Form> */}
         {/* CART */}
-        <a href="/cart">
+        <Link href="/cart">
           <ShoppingBag />
           <span>Cart</span> 
           <span id="cart-items-size">({cartItems.length})</span>
-        </a>
+        </Link>
         {/* USER ACCOUNT */}
         {/* Only enable if Clerk is loaded */}
         <ClerkLoaded>
           {/* If user exists... */}
           {user && (
-            <a href="/orders">
+            <Link href="/orders">
               <span>Orders</span>
-            </a>
+            </Link>
           )}
 
           {user ? <UserButton /> : <SignInButton mode="modal" />}

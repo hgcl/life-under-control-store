@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
 import UpdateCartButtons from "@/src/components/UpdateCartButtons";
 import { CartItem } from "@/src/types";
+import Image from "next/image";
 
 // NextJS caching params (by default, NextJS never caches)
 export const dynamic = "force-static";
@@ -48,7 +49,7 @@ const ProductPage = async ({
       {/* TODO: make image carrousel */}
       {product.image && (
         <div>
-          <img src={`${imageUrl(product.image).url()}`} alt="" />
+          <Image src={`${imageUrl(product.image).url()}`} alt="" />
         </div>
       )}
     </>
