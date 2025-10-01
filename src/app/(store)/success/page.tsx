@@ -4,8 +4,6 @@ import { CartContext } from "@/src/context/CartContextProvider";
 import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 
-// TODO: https://www.youtube.com/live/o-fgWea75O4?si=26uRhbb0pm9HQgQH&t=13734
-
 const SuccessPage = () => {
   // In `createCheckoutSession.ts`, the order number was saved as a URL param on success
   const searchParams = useSearchParams();
