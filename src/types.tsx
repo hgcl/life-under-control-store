@@ -10,5 +10,4 @@ export type CartItem = {
 
 export type CartState = {
   cartItems: CartItem[];
-  checkout: boolean;
 };

@@ -1,15 +1,18 @@
 import { CartItem, CartState } from "../types";
 
-type CartAction = {
-  type: string;
-  payload: CartItem | undefined;
-};
-
 // Define the different types of cart actions
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
-export const CHECKOUT = "CHECKOUT";
 export const CLEAR_CART = "CLEAR_CART";
+
+type CartAction =
+  | {
+      type: typeof ADD_TO_CART | typeof REMOVE_FROM_CART;
+      payload: CartItem;
+    }
+  | {
+      type: typeof CLEAR_CART;
+    };
 
 // Save cartItems to local storage
 const updateLocalStorage = (cartItems: CartItem[]) => {

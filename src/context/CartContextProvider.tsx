@@ -19,9 +19,9 @@ if (
   storage = JSON.parse(localStorage.getItem("cartItems") as string);
 }
 
+// TODO: simplify CartState to directly be the cartItems array, instead of {[{xx},{xx},{xx}]}
 const initialCartState: CartState = {
   cartItems: storage,
-  checkout: false,
 };
 
 // `initialCartContext` is used by TypeScript to infer the context types. We need to create dummy functions, so that the context gets initialized with the intended types. These will be overridden with the real ones.
@@ -52,7 +52,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const clearCart = () => {
-    dispatch({ type: CLEAR_CART, payload: undefined });
+    dispatch({ type: CLEAR_CART });
   };
 
   return (
