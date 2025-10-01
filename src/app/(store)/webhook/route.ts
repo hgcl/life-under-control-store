@@ -60,8 +60,8 @@ export async function POST(req: NextRequest) {
     try {
       const order = await createOrderInSanity(session);
       console.log("Order created in Sanity:", order);
-    } catch (error: any) {
-      console.error("Error creating order in Sanity:", error.details);
+    } catch (error) {
+      console.error("Error creating order in Sanity:", error);
       return NextResponse.json(
         { error: "Error creating order" },
         { status: 500 }

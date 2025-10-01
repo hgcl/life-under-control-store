@@ -17,7 +17,7 @@ const SuccessPage = () => {
     if (orderNumber) {
       clearCart();
     }
-  }, [orderNumber]);
+  }, [orderNumber, clearCart]);
 
   return (
     <div>

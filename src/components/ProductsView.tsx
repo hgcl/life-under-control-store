@@ -12,7 +12,7 @@ type ProductsViewProps = {
 
 const ProductsView = ({ products, categories }: ProductsViewProps) => {
   const allCategories: Set<string> = new Set();
-  for (let key in categories) {
+  for (const key in categories) {
     allCategories.add(categories[key]._id);
   }
 
