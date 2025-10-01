@@ -1,10 +1,14 @@
 import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
 import { imageUrl } from "@/sanity/lib/imageUrl";
-import { Product } from "@/sanity.types";
+import { PRODUCT_BY_SLUG_QUERYResult } from "@/sanity.types";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
 import UpdateCartButtons from "@/src/components/UpdateCartButtons";
 import { CartItem } from "@/src/types";
+
+// NextJS caching params (by default, NextJS never caches)
+export const dynamic = "force-static";
+export const revalidate = 60;
 
 const ProductPage = async ({
   params,
@@ -12,7 +16,13 @@ const ProductPage = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
-  const product: Product = await getProductBySlug(slug);
+  // ṪODO: fix type error
+  const product: PRODUCT_BY_SLUG_QUERYResult = await getProductBySlug(slug);
+
+  console.log(
+    crypto.randomUUID().slice(0, 5) +
+      `>>> Rerendered the product page cache for ${slug}`
+  );
 
   if (!product) {
     return notFound();

@@ -424,9 +424,9 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
 }>;
 
 // Source: ./sanity/lib/products/getProductBySlug.ts
-// Variable: PRODUCT_BY_ID_QUERY
+// Variable: PRODUCT_BY_SLUG_QUERY
 // Query: *[_type == "product" && slug.current == $slug] | order(name asc) [0]
-export type PRODUCT_BY_ID_QUERYResult = {
+export type PRODUCT_BY_SLUG_QUERYResult = {
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -558,7 +558,7 @@ declare module "@sanity/client" {
     "*[_type == \"order\" && clerkUserId == $userId] | order(orderDate desc) {..., products[]->}": MY_ORDERS_QUERYResult;
     "*[_type == \"category\"] | order(name asc)": ALL_CATEGORIES_QUERYResult;
     "*[_type == \"product\"] | order(name asc)": ALL_PRODUCTS_QUERYResult;
-    "*[_type == \"product\" && slug.current == $slug] | order(name asc) [0]": PRODUCT_BY_ID_QUERYResult;
+    "*[_type == \"product\" && slug.current == $slug] | order(name asc) [0]": PRODUCT_BY_SLUG_QUERYResult;
     "*[_type == \"product\" && _id in $idArray] | order(name asc)": PRODUCTS_BY_ID_QUERYResult;
   }
 }
