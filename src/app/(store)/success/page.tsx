@@ -1,6 +1,7 @@
 "use client";
 
 import { CartContext } from "@/src/context/CartContextProvider";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 
@@ -24,8 +25,8 @@ const SuccessPage = () => {
       <p>
         A confirmation email has been sent to your registered email address.
       </p>
-      <button>View order details</button>
-      <button>Continue shopping</button>
+      <Link href="/orders">View order details</Link>
+      <Link href="/">Continue shopping</Link>
     </div>
   );
 };

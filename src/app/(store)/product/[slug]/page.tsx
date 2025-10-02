@@ -48,7 +48,12 @@ const ProductPage = async ({
       {/* TODO: make image carrousel */}
       {product.image && (
         <div>
-          <Image src={`${imageUrl(product.image).url()}`} alt="" />
+          <Image
+            src={`${imageUrl(product.image).url()}`}
+            width={400}
+            height={300}
+            alt=""
+          />
         </div>
       )}
     </>

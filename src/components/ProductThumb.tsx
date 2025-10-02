@@ -5,10 +5,16 @@ import Link from "next/link";
 
 const ProductThumb = ({ product }: { product: Product }) => (
   // Accessible card: https://inclusive-components.design/cards/#thepseudocontenttrick
+  // TODO!: how to best use Sanity with Next Image?
   <li className="card">
     {product.image && (
       <div className="img">
-        <Image src={`${imageUrl(product.image).url()}`} alt="" />
+        <Image
+          src={`${imageUrl(product.image).url()}`}
+          alt=""
+          width={400}
+          height={300}
+        />
       </div>
     )}
     <div className="text">
