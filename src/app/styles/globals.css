@@ -1,0 +1,162 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+  DESIGN TOKENS
+*/
+
+:root {
+  /* COLORS */
+  --bg-normal: white;
+  --fg-normal: black;
+  --bg-strong: black;
+  --fg-strong: white;
+  --bg-subtle: lightgrey;
+  --fg-subtle: grey;
+  --bg-promo: lightblue;
+  --fg-promo: darkblue;
+  --bg-success: lightgreen;
+  --fg-success: green;
+  --bg-danger: pink;
+  --fg-danger: darkred;
+  /* SPACINGS */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  /* PADDINGS */
+  --padding-s: 0.5rem;
+  --padding-m: 1rem;
+  --padding-l: 1.5rem;
+  --padding-xl: 2rem;
+  /* BORDERS */
+  --border-radius: 8px;
+  --border-width: 1px;
+  /* TYPOGRAPHY */
+  --fontsize-display: 4rem;
+  --fontsize-headline-l: 2rem;
+  --fontsize-headline-m: 1.5rem;
+  --fontsize-headline-s: 1.125rem;
+  --lineheight-headline: 1.2;
+  --fontsize-body-m: 1rem;
+  --fontsize-body-s: 0.875rem;
+  --lineheight-body: 1.4;
+  --fontsize-compact: 0.8rem;
+  --lineheight-compact: 1.2;
+  --fontweight-bold: 700;
+  --fontweight-regular: 400;
+  --fontweight-light: 300;
+  /* FONT STACK */
+  --fontstack-default:
+    Roboto, Inter, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+    sans-serif;
+  --fontstack-alt: "Roboto Condensed", serif;
+  --fontvariation-headline: "wght" 700;
+  --fontvariation-body: "wght" 400;
+  /* ICONS */
+  --iconsize-m: 32px;
+  --iconsize-s: 24px;
+}
+
+/* 
+  BASE STYLES
+*/
+
+html {
+  font-size: 16px;
+  font-family: var(--fontstack-default);
+  font-variation-settings: var(--fontvariation-body);
+  font-stretch: normal;
+}
+
+h1,
+h2 {
+  font-variation-settings: var(--fontvariation-headline);
+  font-stretch: condensed;
+  text-transform: uppercase;
+}
+
+/* 
+  UTILS
+*/
+
+/* ACCESSIBILITY */
+/* Not visible, but read by screen reader */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

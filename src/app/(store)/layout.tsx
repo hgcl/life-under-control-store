@@ -1,5 +1,6 @@
 import { type Metadata } from "next";
-import "../globals.css";
+import "../styles/globals.css";
+import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
 import CartContextProvider from "../../context/CartContextProvider";
@@ -10,6 +11,12 @@ export const metadata: Metadata = {
   description: "Digital & Printable Templates for Studies, Work, and Life",
 };
 
+const roboto = localFont({
+  src: "../styles/Roboto-VariableFont.woff2",
+  weight: "300 700",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,9 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider dynamic>
-      <html lang="en">
+      <html lang="en" className={roboto.className}>
         <body>
-          <main>
+          <main id="main">
             <CartContextProvider>
               <Header />
               {children}
