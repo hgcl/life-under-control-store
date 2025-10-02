@@ -21,14 +21,23 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
             <li key={product._id}>
               {product.image && (
                 <div className="img">
-                  <Image src={`${imageUrl(product.image).url()}`} alt="" />
+                  <Image
+                    src={`${imageUrl(product.image).url()}`}
+                    width={400}
+                    height={300}
+                    alt=""
+                  />
                 </div>
               )}
               <p>
-                <Link href={`/product/${product.slug?.current}`}>
-                  {product.name}
-                </Link>{" "}
-                {formatCurrency(product.price ?? 0, "eur")}
+                {product.archived ? (
+                  product.name + ` (archived listing)`
+                ) : (
+                  <Link href={`/product/${product.slug?.current}`}>
+                    {product.name}
+                  </Link>
+                )}
+                 {formatCurrency(product.price ?? 0, "eur")}
               </p>
             </li>
           ))}

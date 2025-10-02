@@ -3,9 +3,11 @@ import ProductThumb from "./ProductThumb";
 
 const ProductGrid = ({ products }: { products: Product[] }) => (
   <ul>
-    {products?.map((product) => (
-      <ProductThumb key={product._id} product={product} />
-    ))}
+    {products
+      ?.filter((product) => !product.archived)
+      .map((product) => (
+        <ProductThumb key={product._id} product={product} />
+      ))}
   </ul>
 );
 
