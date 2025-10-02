@@ -59,6 +59,19 @@ export type Product = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  imageGallery?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -98,6 +111,7 @@ export type Product = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
+  archived?: boolean;
 };
 
 export type Category = {
@@ -299,6 +313,19 @@ export type MY_ORDERS_QUERYResult = Array<{
       crop?: SanityImageCrop;
       _type: "image";
     };
+    imageGallery?: Array<{
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+      _key: string;
+    }>;
     description?: Array<{
       children?: Array<{
         marks?: Array<string>;
@@ -338,6 +365,7 @@ export type MY_ORDERS_QUERYResult = Array<{
       _key: string;
       [internalGroqTypeReferenceTo]?: "category";
     }>;
+    archived?: boolean;
   }> | null;
   totalPrice?: number;
   currency?: string;
@@ -382,6 +410,19 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
+  imageGallery?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -421,6 +462,7 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
+  archived?: boolean;
 }>;
 
 // Source: ./sanity/lib/products/getProductBySlug.ts
@@ -446,6 +488,19 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  imageGallery?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -485,6 +540,7 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
+  archived?: boolean;
 } | null;
 
 // Source: ./sanity/lib/products/getProductsArrayById.ts
@@ -510,6 +566,19 @@ export type PRODUCTS_BY_ID_QUERYResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   };
+  imageGallery?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -549,6 +618,7 @@ export type PRODUCTS_BY_ID_QUERYResult = Array<{
     _key: string;
     [internalGroqTypeReferenceTo]?: "category";
   }>;
+  archived?: boolean;
 }>;
 
 // Query TypeMap

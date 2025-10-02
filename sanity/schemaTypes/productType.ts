@@ -30,6 +30,12 @@ export const productType = defineType({
       options: { hotspot: true },
       validation: (Rule) => Rule.required(),
     }),
+    {
+      name: "imageGallery",
+      title: "Image gallery",
+      type: "array",
+      of: [{ type: "image" }],
+    },
     defineField({
       name: "description",
       title: "Description",
@@ -47,17 +53,24 @@ export const productType = defineType({
       type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
     }),
+    defineField({
+      name: "archived",
+      title: "Archived product?",
+      type: "boolean",
+      initialValue: false,
+    }),
   ],
   preview: {
     select: {
       name: "name",
       image: "image",
       price: "price",
+      archived: "archived",
     },
     prepare(select) {
       return {
-        title: select.name,
-        subtitle: `${select.price.toFixed(2)} €`,
+        title: `${select.archived ? `(ARCHIVED)` : ""} ${select.name}`,
+        subtitle: `${select.price} €`,
         media: select.image,
       };
     },
