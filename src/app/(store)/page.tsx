@@ -8,7 +8,7 @@ const Home = async () => {
 
   return (
     <>
-      <h1>Hello world!</h1>
+      <h1 className="visually-hidden">Homepage</h1>
       <div>
         <ProductsView products={products} categories={categories} />
       </div>
