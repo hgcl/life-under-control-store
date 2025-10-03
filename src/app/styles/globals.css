@@ -79,7 +79,9 @@ h6 {
   --fg-strong: white;
   --bg-subtle: lightgrey;
   --fg-subtle: grey;
-  --bg-promo: lightblue;
+  --bg-promo: hsl(195, 72%, 86%);
+  --bg-promo-hovered: hsl(195, 72%, 76%);
+  --bg-promo-pressed: hsl(195, 72%, 66%);
   --fg-promo: darkblue;
   --bg-success: lightgreen;
   --fg-success: green;
@@ -148,8 +150,8 @@ h2 {
 */
 
 /* ACCESSIBILITY */
-/* Not visible, but read by screen reader */
-.sr-only {
+/* Util to visually hide an element, but read by screen reader. Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
