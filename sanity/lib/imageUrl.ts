@@ -1,3 +1,6 @@
+// Sanity image builder
+// docs: https://github.com/sanity-io/image-url
+
 import { client } from "./client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
