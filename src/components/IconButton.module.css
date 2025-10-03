@@ -1,0 +1,52 @@
+.wrapper {
+  /* if <button>, reset styles */
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  /* if <a>, reset styles */
+  color: var(--fg-normal);
+  text-decoration: none;
+  /* custom styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}
+.wrapper > * {
+  text-align: center;
+  width: 100%;
+}
+.wrapper > .iconBox {
+  /* make a round circle */
+  height: calc(var(--iconsize-m)+var(--padding-s));
+  width: calc(var(--iconsize-m)+var(--padding-s));
+  padding: var(--padding-s);
+  border-radius: 100%;
+  /* center icon in circle */
+  display: flex;
+  align-items: center;
+}
+.wrapper > .iconBox > svg {
+  height: var(--iconsize-m);
+  width: var(--iconsize-m);
+}
+/* Label */
+.wrapper > .label {
+  height: 0; /* so that only the circles are taken into account for when aligning */
+  color: var(--fg-subtle);
+}
+
+/* INTERACTIONS */
+
+.wrapper:hover > .iconBox,
+.wrapper:focus > .iconBox {
+  background-color: var(--bg-promo-hovered);
+}
+.wrapper:hover > .label,
+.wrapper:focus > .label {
+  color: var(--fg-normal);
+}
+.wrapper:active > .iconBox {
+  background-color: var(--bg-promo-pressed);
+}

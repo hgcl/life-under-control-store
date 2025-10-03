@@ -1,0 +1,28 @@
+/* SKIP TO CONTENT BUTTON */
+#header {
+  position: relative;
+}
+#skip {
+  display: block;
+  position: absolute;
+  left: 50%;
+  /* x-axis to center, y-axis is (-100% - the padding to position off the viewport) */
+  transform: translate(-50%, calc(-100% - var(--padding-l)));
+  padding: var(--padding-s);
+}
+#skip:focus {
+  transform: translate(-50%, 0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* NAV */
+#navList {
+  /* Reset default <ul> styles */
+  list-style-type: none;
+  padding-left: 0;
+  /* Custom styles */
+  display: flex;
+  gap: var(--spacing-l);
+  padding: var(--padding-xl);
+  align-items: center;
+}
