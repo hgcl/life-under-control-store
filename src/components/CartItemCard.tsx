@@ -7,7 +7,7 @@ import Link from "next/link";
 const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => (
   <li className="card">
     <div className="img">
-      <Image src={cartItem.image} alt="" />
+      <Image src={cartItem.image} alt="" width={400} height={300} />
     </div>
     <div className="text">
       <h3>
