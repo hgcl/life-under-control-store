@@ -1,4 +1,4 @@
-.wrapper {
+.Button {
   /* if <button>, reset styles */
   border: 0;
   background-color: transparent;
@@ -13,11 +13,11 @@
   width: fit-content;
   height: fit-content;
 }
-.wrapper > * {
+.Button > * {
   text-align: center;
   width: 100%;
 }
-.wrapper > .iconBox {
+.Button_svgWrapper {
   /* make a round circle */
   height: calc(var(--iconsize-m)+var(--padding-s));
   width: calc(var(--iconsize-m)+var(--padding-s));
@@ -27,26 +27,26 @@
   display: flex;
   align-items: center;
 }
-.wrapper > .iconBox > svg {
+.Button_svgWrapper > svg {
   height: var(--iconsize-m);
   width: var(--iconsize-m);
 }
 /* Label */
-.wrapper > .label {
+.Button_label {
   height: 0; /* so that only the circles are taken into account for when aligning */
   color: var(--fg-subtle);
 }
 
 /* INTERACTIONS */
 
-.wrapper:hover > .iconBox,
-.wrapper:focus > .iconBox {
+.Button:hover > .Button_svgWrapper,
+.Button:focus > .Button_svgWrapper {
   background-color: var(--bg-promo-hovered);
 }
-.wrapper:hover > .label,
-.wrapper:focus > .label {
+.Button:hover > .Button_label,
+.Button:focus > .Button_label {
   color: var(--fg-normal);
 }
-.wrapper:active > .iconBox {
+.Button:active > .Button_svgWrapper {
   background-color: var(--bg-promo-pressed);
 }

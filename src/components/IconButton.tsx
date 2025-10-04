@@ -16,12 +16,12 @@ const IconButton = ({
 }: IconButtonProps) => {
   if (href)
     return (
-      <Link href={href} className={styles.wrapper}>
-        <div className={styles.iconBox} aria-hidden="true">
+      <Link href={href} className={styles.Button}>
+        <div className={styles.Button_svgWrapper} aria-hidden="true">
           {children}
         </div>
         <span
-          className={`${styles.label} ${hideLabel ? "visually-hidden" : ""}`}
+          className={`${styles.Button_label} ${hideLabel ? "visually-hidden" : ""}`}
         >
           {label}
         </span>
@@ -30,11 +30,13 @@ const IconButton = ({
 
   return (
     // Based on previous <Link> example
-    <button className={styles.wrapper}>
-      <div className={styles.iconBox} aria-hidden="true">
+    <button className={styles.Button}>
+      <div className={styles.Button_svgWrapper} aria-hidden="true">
         {children}
       </div>
-      <span className={`${styles.label} ${hideLabel ? "visually-hidden" : ""}`}>
+      <span
+        className={`${styles.Button_label} ${hideLabel ? "visually-hidden" : ""}`}
+      >
         {label}
       </span>
     </button>

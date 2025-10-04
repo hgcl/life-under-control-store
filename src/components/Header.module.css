@@ -1,8 +1,8 @@
 /* SKIP TO CONTENT BUTTON */
-#header {
+#Header {
   position: relative;
 }
-#skip {
+#Skip {
   display: block;
   position: absolute;
   left: 50%;
@@ -10,13 +10,13 @@
   transform: translate(-50%, calc(-100% - var(--padding-l)));
   padding: var(--padding-s);
 }
-#skip:focus {
+#Skip:focus {
   transform: translate(-50%, 0);
   transition: transform 0.2s ease-in-out;
 }
 
 /* NAV */
-#navList {
+#NavList {
   /* Reset default <ul> styles */
   list-style-type: none;
   padding-left: 0;

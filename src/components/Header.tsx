@@ -18,13 +18,13 @@ function Header() {
     cartItems.length > 0 ? `Cart (${cartItems.length})` : `Cart`;
 
   return (
-    <header id={styles.header}>
-      <a id={styles.skip} href="#main">
+    <header id={styles.Header}>
+      <a id={styles.Skip} href="#main">
         Skip to content
       </a>
       <Banner message={"This website is still under construction"} />
       <nav>
-        <ul id={styles.navList}>
+        <ul id={styles.NavList}>
           <li>
             <Link href="/">
               <Logo width="64" height="auto" fill="black" />
@@ -32,7 +32,7 @@ function Header() {
             </Link>
           </li>
           {/* CART */}
-          <li className={styles.cart}>
+          <li>
             <IconButton href="/cart" label={currentCart}>
               <ShoppingCart />
             </IconButton>
