@@ -101,6 +101,9 @@ h6 {
   /* BORDERS */
   --border-radius: 8px;
   --border-width: 1px;
+  /* OUTLINES */
+  --outline: 5px auto rgb(94, 158, 214);
+  --outline-offset: 2px;
   /* TYPOGRAPHY */
   --fontsize-display: 4rem;
   --fontsize-headline-l: 2rem;
@@ -125,6 +128,7 @@ h6 {
   /* ICONS */
   --iconsize-m: 32px;
   --iconsize-s: 24px;
+  --iconsize-xs: 16px;
 }
 
 /* 
@@ -161,4 +165,13 @@ h2 {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* 
+  INTERACTIONS
+*/
+
+*:focus {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
 }

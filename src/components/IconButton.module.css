@@ -12,6 +12,8 @@
   align-items: center;
   width: fit-content;
   height: fit-content;
+  /* hide default outline */
+  outline: 0;
 }
 .Button > * {
   text-align: center;
@@ -22,7 +24,7 @@
   height: calc(var(--iconsize-m)+var(--padding-s));
   width: calc(var(--iconsize-m)+var(--padding-s));
   padding: var(--padding-s);
-  border-radius: 100%;
+  border-radius: 1000px;
   /* center icon in circle */
   display: flex;
   align-items: center;
@@ -49,4 +51,10 @@
 }
 .Button:active > .Button_svgWrapper {
   background-color: var(--bg-promo-pressed);
+}
+
+/* Simulate default outline around SVG only */
+.Button:focus > .Button_svgWrapper {
+  outline: var(--outline);
+  outline-offset: var(--outline-offset);
 }
