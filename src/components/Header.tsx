@@ -5,7 +5,6 @@ import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { ShoppingCart, ShoppingBag } from "react-feather";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContextProvider";
-import Banner from "./Banner";
 import Link from "next/link";
 import Logo from "./Logo";
 import IconButton from "./IconButton";
@@ -19,14 +18,10 @@ function Header() {
 
   return (
     <header id={styles.Header}>
-      <a id={styles.Skip} href="#main">
-        Skip to content
-      </a>
-      <Banner message={"This website is still under construction"} />
       <nav>
         <ul id={styles.NavList}>
           <li>
-            <Link href="/">
+            <Link id={styles.NavList_logo} href="/">
               <Logo width="64" height="auto" fill="black" />
               <span className="visually-hidden">Life Under Control</span>
             </Link>
