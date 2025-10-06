@@ -54,14 +54,14 @@ const ProductsView = ({ products, categories }: ProductsViewProps) => {
   });
 
   return (
-    <div>
+    <>
       <CategorySelector
         categories={categories}
         selectedCategories={selectedCategories}
         handleCheckboxChange={handleCheckboxChange}
       />
       <ProductGrid products={filteredProducts} />
-    </div>
+    </>
   );
 };
 

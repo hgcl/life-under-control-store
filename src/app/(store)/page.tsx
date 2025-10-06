@@ -9,9 +9,7 @@ const Home = async () => {
   return (
     <>
       <h1 className="visually-hidden">Homepage</h1>
-      <div>
-        <ProductsView products={products} categories={categories} />
-      </div>
+      <ProductsView products={products} categories={categories} />
     </>
   );
 };
