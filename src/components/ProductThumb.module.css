@@ -1,0 +1,76 @@
+.Card {
+  /* Reset <li> styles */
+  list-style-type: none;
+  /* Custom styles */
+  position: relative;
+  border: var(--border-width) solid var(--bg-subtle);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--bg-normal);
+}
+
+.Card_image {
+  position: relative;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+}
+.Card_image img {
+  object-fit: cover;
+}
+
+.Card_textWrapper {
+  padding: var(--padding-m);
+  min-height: 184px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  justify-content: space-between;
+}
+
+.Card_textWrapper h2 {
+  font-variation-settings: var(--fontvariation-headline);
+  font-size: var(--fontsize-headline-s);
+  line-height: var(--lineheight-headline);
+  margin-bottom: var(--padding-s);
+}
+
+.Card_description {
+  color: var(--fg-subtle);
+  /* Truncate text */
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Card_price {
+  font-variation-settings: var(--fontvariation-body-strong);
+  justify-self: flex-end;
+}
+
+.Card_link {
+  /* Remove default outline, as a box-shadow is shown around `.Card` instead */
+  outline: 0;
+  /* Remove link default styles, as link is the entire card */
+  text-decoration: none;
+  color: var(--fg-normal);
+}
+
+/* INTERACTIONS */
+
+.Card_link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.Card:hover,
+.Card:focus-within,
+.Card:active {
+  box-shadow: var(--boxshadow);
+}
