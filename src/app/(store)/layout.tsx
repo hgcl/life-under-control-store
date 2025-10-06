@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description: "Digital & Printable Templates for Studies, Work, and Life",
 };
 
-const roboto = localFont({
-  src: "../styles/Roboto-VariableFont.woff2",
+const inter = localFont({
+  src: "../styles/Inter-VariableFont.woff2",
   weight: "300 700",
   display: "swap",
 });
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider dynamic>
-      <html lang="en" className={roboto.className}>
+      <html lang="en" className={inter.className}>
         <body>
           <main id="main">
             <CartContextProvider>
