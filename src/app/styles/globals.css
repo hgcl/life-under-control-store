@@ -87,19 +87,22 @@ h6 {
   --fg-success: green;
   --bg-danger: pink;
   --fg-danger: darkred;
+  /* BOX-SHADOWS */
+  --boxshadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
   /* SPACINGS */
   --spacing-xs: 4px;
   --spacing-s: 8px;
   --spacing-m: 16px;
   --spacing-l: 24px;
   --spacing-xl: 32px;
+  --section-gap: 48px;
   /* PADDINGS */
   --padding-s: 0.5rem;
   --padding-m: 1rem;
   --padding-l: 1.5rem;
   --padding-xl: 2rem;
   /* BORDERS */
-  --border-radius: 8px;
+  --border-radius: 16px;
   --border-width: 1px;
   /* OUTLINES */
   --outline: 5px auto rgb(94, 158, 214);
@@ -120,11 +123,12 @@ h6 {
   --fontweight-light: 300;
   /* FONT STACK */
   --fontstack-default:
-    Roboto, Inter, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+    Inter, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, Roboto,
     sans-serif;
-  --fontstack-alt: "Roboto Condensed", serif;
+  --fontstack-alt: Inter, serif;
   --fontvariation-headline: "wght" 700;
   --fontvariation-body: "wght" 400;
+  --fontvariation-body-strong: "wght" 700;
   /* ICONS */
   --iconsize-m: 32px;
   --iconsize-s: 24px;
@@ -142,8 +146,24 @@ html {
   font-stretch: normal;
 }
 
-h1,
-h2 {
+body {
+  position: relative; /* so that skip to content button is correctly displayed */
+  line-height: var(--lineheight-body);
+}
+
+main > * {
+  margin-block-end: var(
+    --section-gap
+  ); /* adds a margin-bottom to every child of <main> */
+}
+
+main {
+  padding: var(
+    --padding-m
+  ); /* adds a global padding "outlining" the entire page */
+}
+
+h1 {
   font-variation-settings: var(--fontvariation-headline);
   font-stretch: condensed;
   text-transform: uppercase;
@@ -152,6 +172,10 @@ h2 {
 /* 
   UTILS
 */
+
+a.link-no-underline {
+  text-decoration: none;
+}
 
 /* ACCESSIBILITY */
 /* Util to visually hide an element, but read by screen reader. Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
@@ -174,4 +198,14 @@ h2 {
 *:focus {
   outline: var(--outline);
   outline-offset: var(--outline-offset);
+}
+
+/* 
+  MEDIA QUERIES
+*/
+
+@media only screen and (width > 480px) {
+  main {
+    padding: var(--padding-xl);
+  }
 }
