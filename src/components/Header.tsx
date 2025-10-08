@@ -21,8 +21,8 @@ function Header() {
       <nav>
         <ul id={styles.NavList}>
           <li>
-            <Link id={styles.NavList_logo} href="/">
-              <Logo width="64" height="auto" fill="black" />
+            <Link id={styles.Logo} href="/">
+              <Logo fill="black" />
               <span className="visually-hidden">Life Under Control</span>
             </Link>
           </li>
