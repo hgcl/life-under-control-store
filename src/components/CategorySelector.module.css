@@ -1,0 +1,9 @@
+.Selector_fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  /* Visually hide fieldset */
+  border: none;
+  /* Reset default styles */
+  padding: 0;
+}
