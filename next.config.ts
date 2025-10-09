@@ -5,9 +5,8 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      new URL("https://cdn.sanity.io/images/7fmniv4c/production/**"),
-    ],
+    loader: "custom",
+    loaderFile: "./sanityImageLoader.ts",
   },
 };
 
