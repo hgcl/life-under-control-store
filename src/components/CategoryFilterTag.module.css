@@ -1,7 +1,7 @@
 .Pill {
   font-size: var(--fontsize-body-s);
   position: relative;
-  border: var(--border-width) solid;
+  border: var(--border-subtle);
   border-radius: 1000px;
   padding: var(--padding-s) var(--padding-m);
   /* Align and vertically center pill content */
@@ -42,6 +42,7 @@
 /* If pill is checked */
 .Pill.checked {
   background-color: var(--bg-strong);
+  border-color: var(--bg-strong);
 }
 .Pill.checked * {
   color: var(--fg-strong);

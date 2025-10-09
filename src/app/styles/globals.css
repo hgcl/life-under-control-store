@@ -77,8 +77,8 @@ h6 {
   --fg-normal: black;
   --bg-strong: black;
   --fg-strong: white;
-  --bg-subtle: lightgrey;
-  --fg-subtle: grey;
+  --bg-subtle: hsl(0deg, 0%, 86%);
+  --fg-subtle: hsl(0deg, 0%, 35%);
   --bg-promo: hsl(195, 72%, 86%);
   --bg-promo-hovered: hsl(195, 72%, 76%);
   --bg-promo-pressed: hsl(195, 72%, 66%);
@@ -103,8 +103,10 @@ h6 {
   --padding-xl: 2rem;
   /* BORDERS */
   --border-radius: 16px;
-  --border-width: 1px;
+  --border-normal: 2px solid var(--fg-normal);
+  --border-subtle: 2px solid var(--bg-subtle);
   /* OUTLINES */
+  --boxshadow-as-outline: 0px 0px 5px 5px rgb(94, 158, 214);
   --outline: 5px auto rgb(94, 158, 214);
   --outline-offset: 2px;
   /* TYPOGRAPHY */
@@ -165,8 +167,7 @@ main {
 
 h1 {
   font-variation-settings: var(--fontvariation-headline);
-  font-stretch: condensed;
-  text-transform: uppercase;
+  line-height: var(--lineheight-headline);
 }
 
 /* 

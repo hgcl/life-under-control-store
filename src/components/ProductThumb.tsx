@@ -12,7 +12,14 @@ const ProductThumb = ({ product }: { product: Product }) => (
   <li className={styles.Card}>
     {product.image && (
       <div className={styles.Card_image}>
-        <Image src={`${imageUrl(product.image).url()}`} alt="" fill />
+        <Image
+          src={`${imageUrl(product.image).url()}`}
+          alt=""
+          fill
+          // TODO: why doesn't this sizes prop work?
+          // sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw"
+          sizes="200px"
+        />
       </div>
     )}
     <div className={styles.Card_textWrapper}>
