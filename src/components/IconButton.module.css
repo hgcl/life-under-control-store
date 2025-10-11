@@ -37,6 +37,7 @@
 .Button_label {
   height: 0; /* so that only the circles are taken into account for when aligning */
   color: var(--fg-subtle);
+  font-size: var(--fontsize-body-s);
 }
 
 /* INTERACTIONS */
