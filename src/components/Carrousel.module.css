@@ -1,0 +1,59 @@
+.Carrousel {
+  display: flex;
+  gap: var(--spacing-m);
+}
+
+.Carrousel_tabList {
+  display: none;
+}
+
+.Carrousel_tabList button {
+  /* Reset <button> default styles */
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  /* Custom styles */
+  height: 72px;
+  width: 72px;
+  position: relative;
+  border: var(--border-normal);
+}
+
+.Carrousel_tabList button img {
+  object-fit: cover;
+}
+
+.Carrousel_panel {
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+}
+
+.Carrousel_panel img {
+  object-fit: contain;
+}
+
+/* INTERACTIONS */
+
+.Carrousel_tabList button[aria-selected="false"] {
+  opacity: 0.5;
+  border: none;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (width > 480px) {
+  .Carrousel_tabList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+    /* setup, so that .Carrousel_tablist can be scrolled */
+    flex: 1 0 auto; /* flex-shrink needs to be 0 to avoid unwanted horizontal scroll */
+    overflow-y: auto;
+    width: 100px;
+  }
+  .Carrousel_tabList > div {
+    /* setup, so that .Carrousel_tablist can be scrolled */
+    min-height: min-content;
+  }
+}

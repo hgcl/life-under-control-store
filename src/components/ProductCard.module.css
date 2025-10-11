@@ -1,0 +1,24 @@
+#ProductCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-l);
+}
+
+/* CARROUSEL */
+#ProductCard > *:first-child {
+  width: 100%;
+  flex: 1 1 65%;
+  height: 400px;
+}
+
+/* PRODUCT DETAILS */
+#ProductCard > *:last-child {
+  width: 100%;
+  flex: 1 1 25%;
+}
+
+@media only screen and (width > 480px) {
+  #ProductCard > *:first-child {
+    height: 600px;
+  }
+}

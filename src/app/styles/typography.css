@@ -1,0 +1,7 @@
+/* 
+  This typography stylesheet needs to be imported in specific components, where it is needed. When the class name "typography" is used on a parent tag, the text flow of all of its children will be automatically adapted.
+*/
+
+.typography h1 {
+  /* TODO */
+}
