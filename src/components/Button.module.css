@@ -1,0 +1,33 @@
+.Button {
+  /* Reset <button> default styles */
+  border: 0;
+  /* Reset <a> default styles */
+  /* text-decoration: none; */
+  /* Custom styles */
+  cursor: pointer;
+  padding: var(--padding-m);
+  font-variation-settings: var(--fontvariation-body-strong);
+}
+
+.Button.primary {
+  color: var(--fg-strong);
+  background-color: var(--bg-strong);
+}
+
+.Button.secondary {
+  color: var(--fg-normal);
+  border: var(--border) var(--fg-subtle);
+  background-color: var(--bg-subtle);
+}
+
+/* INTERACTIONS */
+
+.Button:hover,
+.Button:focus {
+  color: var(--fg-accent);
+  background-color: var(--bg-accent-hovered);
+}
+.Button.secondary:hover,
+.Button.secondary:focus {
+  border-color: var(--fg-accent);
+}

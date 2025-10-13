@@ -1,6 +1,0 @@
-.ToggleButton {
-  cursor: pointer;
-  background-color: var(--bg-normal);
-  border: var(--border-normal);
-  padding: var(--padding-s);
-}

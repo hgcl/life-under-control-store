@@ -3,7 +3,7 @@
 import { CartContext } from "../context/CartContextProvider";
 import { useContext, useState } from "react";
 import { CartItem } from "../types";
-import styles from "./UpdateCartButton.module.css";
+import Button from "./Button";
 
 const UpdateCartButton = ({ cartItem }: { cartItem: CartItem }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
@@ -30,13 +30,9 @@ const UpdateCartButton = ({ cartItem }: { cartItem: CartItem }) => {
   };
 
   return (
-    <button
-      className={`${styles.ToggleButton} ${isActive ? "active" : ""}`}
-      aria-pressed={isActive ? "true" : "false"}
-      onClick={toggle}
-    >
-      {isActive ? "Remove from cart" : "Add to cart"}
-    </button>
+    <Button aria-pressed={isActive ? "true" : "false"} onClick={toggle}>
+      {isActive ? "Remove from cart" : "+ Add to cart"}
+    </Button>
   );
 };
 
