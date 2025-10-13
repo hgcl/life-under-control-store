@@ -5,7 +5,7 @@ import styles from "./SkipToContent.module.css";
 
 const SkipToContent = () => (
   <Link id={styles.Skip} href="#main">
-    Skip to content
+    Skip to content<span aria-hidden="true"> ↓</span>
   </Link>
 );
 

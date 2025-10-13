@@ -1,12 +1,21 @@
 #Skip {
-  display: block;
+  /* Reset <a> default styles */
+  text-decoration: none;
+  /* Custom styles */
+  display: flex;
   position: absolute;
-  left: 50%;
-  /* x-axis to center, y-axis is (-100% - the padding to position off the viewport) */
-  transform: translate(-50%, calc(-100% - var(--padding-l)));
-  padding: var(--padding-s);
+  top: -50px;
+  left: 0%;
+  width: 100%;
+  justify-content: center;
+  padding: var(--padding-m);
 }
 #Skip:focus {
-  transform: translate(-50%, 0);
-  transition: transform 0.2s ease-in-out;
+  /* Transition */
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  /* styles */
+  color: var(--fg-accent);
+  background-color: var(--bg-accent-hovered);
+  font-variation-settings: var(--fontvariation-body-strong);
 }
