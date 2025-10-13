@@ -1,4 +1,4 @@
-import UpdateCartButtons from "./UpdateCartButtons";
+import UpdateCartButton from "./UpdateCartButton";
 import { CartItem } from "../types";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,12 +11,12 @@ const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => (
     </div>
     <div className="text">
       <h3>
-        <Link href="">{cartItem.name}</Link>
+        <Link href={`/product/${cartItem.slug}`}>{cartItem.name}</Link>
       </h3>
       <p>€ {cartItem.price.toFixed(2)}</p>
     </div>
     {/* TODO: hide item when removed from cart */}
-    <UpdateCartButtons cartItem={cartItem} />
+    <UpdateCartButton cartItem={cartItem} />
   </li>
 );
 

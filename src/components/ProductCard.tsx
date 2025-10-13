@@ -1,4 +1,4 @@
-import UpdateCartButtons from "@/src/components/UpdateCartButtons";
+import UpdateCartButton from "@/src/components/UpdateCartButton";
 import Carrousel from "@/src/components/Carrousel";
 import { CartItem } from "@/src/types";
 import { imageUrl } from "@/sanity/lib/imageUrl";
@@ -20,7 +20,7 @@ const ProductCard = ({ product }: { product: Product }) => {
       <div>
         <h1>{product.name}</h1>
         <p>€ {product.price?.toFixed(2)}</p>
-        <UpdateCartButtons cartItem={cartItem} />
+        <UpdateCartButton cartItem={cartItem} />
       </div>
     </section>
   );
