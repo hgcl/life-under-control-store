@@ -44,14 +44,11 @@
 
 .Button:hover > .Button_svgWrapper,
 .Button:focus > .Button_svgWrapper {
-  background-color: var(--bg-promo-hovered);
+  background-color: var(--bg-accent-hovered);
 }
 .Button:hover > .Button_label,
 .Button:focus > .Button_label {
   color: var(--fg-normal);
-}
-.Button:active > .Button_svgWrapper {
-  background-color: var(--bg-promo-pressed);
 }
 
 /* Simulate default outline around SVG only */

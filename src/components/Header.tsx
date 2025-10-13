@@ -22,7 +22,7 @@ function Header() {
         <ul id={styles.NavList}>
           <li>
             <Link id={styles.Logo} href="/">
-              <Logo fill="black" />
+              <Logo fill="var(--fg-normal)" />
               <span className="visually-hidden">Life Under Control</span>
             </Link>
           </li>

@@ -3,7 +3,7 @@
   list-style-type: none;
   /* Custom styles */
   position: relative;
-  border: var(--border-subtle);
+  border: var(--border) var(--bg-subtle);
   border-radius: var(--border-radius);
   overflow: hidden;
   background-color: var(--bg-normal);

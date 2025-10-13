@@ -13,10 +13,11 @@ const IconButton = ({
   hideLabel = false,
   href,
   children,
+  ...props
 }: IconButtonProps) => {
   if (href)
     return (
-      <Link href={href} className={styles.Button}>
+      <Link href={href} className={styles.Button} {...props}>
         <div className={styles.Button_svgWrapper} aria-hidden="true">
           {children}
         </div>
@@ -30,7 +31,7 @@ const IconButton = ({
 
   return (
     // Based on previous <Link> example
-    <button className={styles.Button}>
+    <button className={styles.Button} {...props}>
       <div className={styles.Button_svgWrapper} aria-hidden="true">
         {children}
       </div>

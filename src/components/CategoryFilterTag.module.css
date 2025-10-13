@@ -1,7 +1,7 @@
 .Pill {
   font-size: var(--fontsize-body-s);
   position: relative;
-  border: var(--border-subtle);
+  border: var(--border) var(--bg-subtle);
   border-radius: 1000px;
   padding: var(--padding-s) var(--padding-m);
   /* Align and vertically center pill content */

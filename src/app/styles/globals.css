@@ -73,16 +73,16 @@ h6 {
 
 :root {
   /* COLORS */
-  --bg-normal: white;
-  --fg-normal: black;
-  --bg-strong: black;
-  --fg-strong: white;
+  --bg-normal: white; /* ok */
+  --fg-normal: hsl(212, 22%, 12%); /* ok */
+  --bg-strong: hsl(212, 22%, 12%); /* ok */
+  --fg-strong: white; /* ok */
   --bg-subtle: hsl(0deg, 0%, 86%);
   --fg-subtle: hsl(0deg, 0%, 35%);
-  --bg-promo: hsl(195, 72%, 86%);
-  --bg-promo-hovered: hsl(195, 72%, 76%);
-  --bg-promo-pressed: hsl(195, 72%, 66%);
-  --fg-promo: darkblue;
+  --bg-accent: hsl(208, 100%, 83%);
+  --bg-accent-hovered: hsl(208, 100%, 70%); /* ok */
+  --bg-accent-pressed: hsl(205, 69%, 53%);
+  --fg-accent: hsl(212, 22%, 12%);
   --bg-success: lightgreen;
   --fg-success: green;
   --bg-danger: pink;
@@ -103,8 +103,7 @@ h6 {
   --padding-xl: 2rem;
   /* BORDERS */
   --border-radius: 16px;
-  --border-normal: 2px solid var(--fg-normal);
-  --border-subtle: 2px solid var(--bg-subtle);
+  --border: 2px solid;
   /* OUTLINES */
   --boxshadow-as-outline: 0px 0px 5px 5px rgb(94, 158, 214);
   --outline: 5px auto rgb(94, 158, 214);
@@ -146,6 +145,8 @@ html {
   font-family: var(--fontstack-default);
   font-variation-settings: var(--fontvariation-body);
   font-stretch: normal;
+  color: var(--fg-normal);
+  background-color: var(--bg-normal);
 }
 
 body {
@@ -204,6 +205,17 @@ a.link-no-underline {
 /* 
   MEDIA QUERIES
 */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-normal: hsl(212, 22%, 12%); /* dark mode ok */
+    --fg-normal: white; /* dark mode ok */
+    --bg-strong: white; /* dark mode ok */
+    --fg-strong: hsl(212, 22%, 12%); /* dark mode ok */
+    --bg-subtle: hsl(0deg, 0%, 35%); /* dark mode ok */
+    --fg-subtle: hsl(0deg, 0%, 86%); /* dark mode ok */
+  }
+}
 
 @media only screen and (width > 480px) {
   main {

@@ -16,7 +16,7 @@
   height: 72px;
   width: 72px;
   position: relative;
-  border: var(--border-normal);
+  border: var(--border) var(--fg-normal);
 }
 
 .Carrousel_tabList button img {
