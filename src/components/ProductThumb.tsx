@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProductThumb.module.css";
 
-// console.log(products[0].image.hotspot);
-
 const ProductThumb = ({ product }: { product: Product }) => (
   // Accessible card: https://inclusive-components.design/cards/#thepseudocontenttrick
   <li className={styles.Card}>
