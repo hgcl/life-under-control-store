@@ -1,8 +1,9 @@
-.Button {
+.Button.primary,
+.Button.secondary {
   /* Reset <button> default styles */
   border: 0;
   /* Reset <a> default styles */
-  /* text-decoration: none; */
+  text-decoration: none;
   /* Custom styles */
   cursor: pointer;
   padding: var(--padding-m);
@@ -11,23 +12,38 @@
 
 .Button.primary {
   color: var(--fg-strong);
+  border: var(--border) var(--bg-strong);
   background-color: var(--bg-strong);
 }
 
 .Button.secondary {
   color: var(--fg-normal);
-  border: var(--border) var(--fg-subtle);
-  background-color: var(--bg-subtle);
+  border: var(--border) var(--fg-normal);
+  background-color: var(--bg-normal);
+}
+
+.Button.ternary {
+  /* Reset <button> default styles */
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  /* Custom styles */
+  font-variation-settings: var(--fontvariation-body-strong);
+  color: var(--fg-normal);
+  text-decoration: underline;
 }
 
 /* INTERACTIONS */
 
-.Button:hover,
-.Button:focus {
-  color: var(--fg-accent);
-  background-color: var(--bg-accent-hovered);
-}
+.Button.primary:hover,
+.Button.primary:focus,
 .Button.secondary:hover,
 .Button.secondary:focus {
-  border-color: var(--fg-accent);
+  color: var(--fg-accent);
+  border: var(--border) var(--fg-accent);
+  background-color: var(--bg-accent-hovered);
+}
+
+.Button.ternary:hover {
+  cursor: pointer;
 }

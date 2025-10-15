@@ -5,7 +5,13 @@ import { useContext, useState } from "react";
 import { CartItem } from "../types";
 import Button from "./Button";
 
-const UpdateCartButton = ({ cartItem }: { cartItem: CartItem }) => {
+const UpdateCartButton = ({
+  cartItem,
+  type = "secondary",
+}: {
+  cartItem: CartItem;
+  type?: "primary" | "secondary" | "ternary";
+}) => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
 
   // 1. Is this product is in the cart or not? Display the toggle button accordingly.
@@ -30,7 +36,11 @@ const UpdateCartButton = ({ cartItem }: { cartItem: CartItem }) => {
   };
 
   return (
-    <Button aria-pressed={isActive ? "true" : "false"} onClick={toggle}>
+    <Button
+      aria-pressed={isActive ? "true" : "false"}
+      onClick={toggle}
+      type={type}
+    >
       {isActive ? "Remove from cart" : "+ Add to cart"}
     </Button>
   );

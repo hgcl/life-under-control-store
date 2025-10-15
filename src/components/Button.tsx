@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 type ButtonProps = {
   children: React.ReactNode;
   href?: string; // if no `href` specified, the component is a <button>
-  type?: "primary" | "secondary";
+  type?: "primary" | "secondary" | "ternary";
   onClick?: () => void;
   disabled?: boolean;
 };
@@ -12,7 +12,7 @@ type ButtonProps = {
 const Button = ({
   href,
   children,
-  type = "primary",
+  type = "secondary",
   onClick,
   disabled = false,
   ...props
@@ -21,7 +21,7 @@ const Button = ({
     return (
       <Link
         href={href}
-        className={`${styles.Button} ${type === "primary" ? styles.primary : styles.secondary}`}
+        className={`${styles.Button} ${type === "primary" ? styles.primary : type === "secondary" ? styles.secondary : styles.ternary}`}
         {...props}
       >
         {children}
@@ -31,7 +31,7 @@ const Button = ({
   return (
     // Based on previous <Link> example
     <button
-      className={`${styles.Button} ${type === "primary" ? styles.primary : styles.secondary}`}
+      className={`${styles.Button} ${type === "primary" ? styles.primary : type === "secondary" ? styles.secondary : styles.ternary}`}
       onClick={() => onClick && onClick()}
       disabled={disabled}
       {...props}
