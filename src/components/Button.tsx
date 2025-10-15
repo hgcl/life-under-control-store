@@ -5,6 +5,7 @@ type ButtonProps = {
   children: React.ReactNode;
   href?: string; // if no `href` specified, the component is a <button>
   type?: "primary" | "secondary";
+  handleClick?: () => void;
 };
 
 const Button = ({
@@ -28,6 +29,7 @@ const Button = ({
     // Based on previous <Link> example
     <button
       className={`${styles.Button} ${type === "primary" ? styles.primary : styles.secondary}`}
+      onClick={() => props.handleClick && props.handleClick()}
       {...props}
     >
       {children}
