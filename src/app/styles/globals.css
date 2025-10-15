@@ -168,9 +168,20 @@ main {
   ); /* adds a global padding "outlining" the entire page */
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-variation-settings: var(--fontvariation-headline);
   line-height: var(--lineheight-headline);
+}
+h1 {
+  font-size: var(--fontsize-headline-l);
+}
+h2 {
+  font-size: var(--fontsize-headline-m);
+}
+h3 {
+  font-size: var(--fontsize-headline-s);
 }
 
 /* 
