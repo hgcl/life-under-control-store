@@ -3,6 +3,7 @@
 import createCheckoutSession, {
   Metadata,
 } from "@/src/actions/createCheckoutSession";
+import Button from "@/src/components/Button";
 import CartList from "@/src/components/CartList";
 import { CartContext } from "@/src/context/CartContextProvider";
 import { SignInButton, useUser } from "@clerk/nextjs";
@@ -49,17 +50,17 @@ const CartPage = () => {
   return (
     <>
       {isSignedIn ? (
-        <button onClick={handleCheckout} disabled={isLoading}>
+        <Button onClick={handleCheckout} disabled={isLoading}>
           {isLoading ? "Processing..." : "Proceed to checkout"}
-        </button>
+        </Button>
       ) : (
         <SignInButton>
-          <button>Sign in to check out</button>
+          <Button>Sign in to check out</Button>
         </SignInButton>
       )}
       {cartItems.length > 0 ? (
         <>
-          <button onClick={() => clearCart()}>Clear cart</button>
+          <Button onClick={() => clearCart()}>Clear cart</Button>
           <CartList cartItems={cartItems} />
         </>
       ) : (

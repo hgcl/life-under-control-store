@@ -30,7 +30,7 @@ const UpdateCartButton = ({ cartItem }: { cartItem: CartItem }) => {
   };
 
   return (
-    <Button aria-pressed={isActive ? "true" : "false"} handleClick={toggle}>
+    <Button aria-pressed={isActive ? "true" : "false"} onClick={toggle}>
       {isActive ? "Remove from cart" : "+ Add to cart"}
     </Button>
   );

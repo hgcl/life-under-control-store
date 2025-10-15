@@ -5,13 +5,16 @@ type ButtonProps = {
   children: React.ReactNode;
   href?: string; // if no `href` specified, the component is a <button>
   type?: "primary" | "secondary";
-  handleClick?: () => void;
+  onClick?: () => void;
+  disabled?: boolean;
 };
 
 const Button = ({
   href,
   children,
   type = "primary",
+  onClick,
+  disabled = false,
   ...props
 }: ButtonProps) => {
   if (href)
@@ -29,7 +32,8 @@ const Button = ({
     // Based on previous <Link> example
     <button
       className={`${styles.Button} ${type === "primary" ? styles.primary : styles.secondary}`}
-      onClick={() => props.handleClick && props.handleClick()}
+      onClick={() => onClick && onClick()}
+      disabled={disabled}
       {...props}
     >
       {children}
