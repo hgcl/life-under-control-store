@@ -1,0 +1,43 @@
+.Card {
+  /* Reset <li> styles */
+  list-style-type: none;
+  /* Custom styles */
+  display: flex;
+  border: var(--border) var(--bg-subtle);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.Card_image {
+  position: relative;
+}
+.Card_image img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.Card_textWrapper {
+  display: flex;
+  gap: var(--spacing-l);
+  padding: var(--padding-m);
+}
+.Card_textWrapper > div > * {
+  margin-bottom: var(--spacing-s);
+}
+
+.Card_link {
+  font-size: var(--fontsize-headline-s);
+  line-height: var(--lineheight-headline);
+}
+
+.Card_description {
+  color: var(--fg-subtle);
+  font-size: var(--fontsize-body-s);
+}
+
+.Card_price {
+  font-variation-settings: var(--fontvariation-body-strong);
+}

@@ -2,21 +2,31 @@ import UpdateCartButton from "./UpdateCartButton";
 import { CartItem } from "../types";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./CartItemCard.module.css";
 
-// TODO: Ȧlign on `ProductThumb` component
 const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => (
-  <li className="card">
-    <div className="img">
-      <Image src={cartItem.image} alt="" width={400} height={300} />
+  <li className={styles.Card}>
+    <div className={styles.Card_textWrapper}>
+      <div className={styles.Card_image}>
+        <Image
+          className={styles.Card_image}
+          src={cartItem.image}
+          alt=""
+          width={150}
+          height={150}
+        />
+      </div>
+      <div>
+        <h2>
+          <Link className={styles.Card_link} href={`/product/${cartItem.slug}`}>
+            {cartItem.name}
+          </Link>
+        </h2>
+        <p className={styles.Card_description}>{cartItem.description}...</p>
+        <UpdateCartButton cartItem={cartItem} type="ternary" />
+      </div>
+      <p className={styles.Card_price}>€ {cartItem.price.toFixed(2)}</p>
     </div>
-    <div className="text">
-      <h3>
-        <Link href={`/product/${cartItem.slug}`}>{cartItem.name}</Link>
-      </h3>
-      <p>€ {cartItem.price.toFixed(2)}</p>
-    </div>
-    {/* TODO: hide item when removed from cart */}
-    <UpdateCartButton cartItem={cartItem} />
   </li>
 );
 

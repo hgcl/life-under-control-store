@@ -1,0 +1,32 @@
+/* IF CART EMTPY */
+
+.CartEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-l);
+}
+.CartEmpty p {
+  font-size: var(--fontsize-headline-m);
+}
+
+/* IF CART FULL */
+
+.CartOverview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+}
+
+.CartOverview_summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  flex: 1 1 300px;
+}
+
+.CartOverview_totalPrice {
+  display: flex;
+  justify-content: space-between;
+  font-variation-settings: var(--fontvariation-body-strong);
+}
