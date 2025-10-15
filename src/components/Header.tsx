@@ -8,6 +8,7 @@ import { CartContext } from "../context/CartContextProvider";
 import Link from "next/link";
 import Logo from "./Logo";
 import IconButton from "./IconButton";
+import Button from "./Button";
 
 function Header() {
   const { user } = useUser();
@@ -44,7 +45,13 @@ function Header() {
               </li>
             )}
 
-            {user ? <UserButton /> : <SignInButton mode="modal" />}
+            {user ? (
+              <UserButton />
+            ) : (
+              <SignInButton mode="modal">
+                <Button>Sign in</Button>
+              </SignInButton>
+            )}
           </ClerkLoaded>
         </ul>
       </nav>
