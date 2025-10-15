@@ -38,7 +38,7 @@ const ProductThumb = ({ product }: { product: Product }) => (
                 : ""
             )
             .join(" ")
-            .slice(0, 70) || "No description available"}
+            .slice(0, 100) || "No description available"}
         </p>
       </div>
       <p className={styles.Card_price}>€ {product.price?.toFixed(2)}</p>

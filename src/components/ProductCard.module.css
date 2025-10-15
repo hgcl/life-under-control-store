@@ -1,7 +1,7 @@
 #ProductCard {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-l);
+  gap: var(--spacing-xl);
 }
 
 /* CARROUSEL */
@@ -15,6 +15,9 @@
 #ProductCard > *:last-child {
   width: 100%;
   flex: 1 1 25%;
+}
+#ProductCard > *:last-child > * {
+  margin-bottom: 1rem;
 }
 
 @media only screen and (width > 480px) {
