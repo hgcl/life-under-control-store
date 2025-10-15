@@ -101,6 +101,8 @@ h6 {
   --padding-m: 1rem;
   --padding-l: 1.5rem;
   --padding-xl: 2rem;
+  /* WIDTHS */
+  --limited-width: 640px;
   /* BORDERS */
   --border-radius: 16px;
   --border: 2px solid;
@@ -175,8 +177,16 @@ h1 {
   UTILS
 */
 
+/* Remove default underline from <a> */
 a.link-no-underline {
   text-decoration: none;
+}
+
+/* Add on a block of content to limit its width and center it */
+.center-content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--limited-width);
 }
 
 /* ACCESSIBILITY */

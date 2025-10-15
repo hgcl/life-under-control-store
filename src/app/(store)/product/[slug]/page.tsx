@@ -28,7 +28,7 @@ const ProductPage = async ({
   return (
     <>
       <ProductCard product={product} />
-      <section className="typography">
+      <section className="typography center-content">
         {Array.isArray(product.description) && (
           <PortableText value={product.description} />
         )}
