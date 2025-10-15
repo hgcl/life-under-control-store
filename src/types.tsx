@@ -6,6 +6,7 @@ export type CartItem = {
   price: number;
   slug: string;
   image: string;
+  description: string;
 };
 
 export type CartState = {
