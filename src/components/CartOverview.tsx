@@ -73,16 +73,13 @@ const CartOverview = () => {
               {
                 // 1. Full cart and signed in
                 isSignedIn ? (
-                  <>
-                    <Button
-                      onClick={handleCheckout}
-                      disabled={isLoading}
-                      type="primary"
-                    >
-                      {isLoading ? "Processing..." : "Proceed to checkout"}
-                    </Button>
-                    <Button onClick={() => clearCart()}>Clear cart</Button>
-                  </>
+                  <Button
+                    onClick={handleCheckout}
+                    disabled={isLoading}
+                    type="primary"
+                  >
+                    {isLoading ? "Processing..." : "Proceed to checkout"}
+                  </Button>
                 ) : (
                   // 2 Full cart and signed out
                   <SignInButton>
@@ -90,6 +87,7 @@ const CartOverview = () => {
                   </SignInButton>
                 )
               }
+              <Button onClick={() => clearCart()}>Clear cart</Button>
             </section>
           </div>
         )
