@@ -7,7 +7,8 @@ const Orders = async () => {
   const { userId } = await auth();
 
   if (!userId) {
-    return redirect("/");
+    console.log(">>> No Clerk user ID");
+    return redirect("/orders");
   }
 
   const orders = await getMyOrders(userId);
