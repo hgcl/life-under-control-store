@@ -83,8 +83,8 @@ h6 {
   --bg-accent-hovered: hsl(208, 100%, 70%); /* ok */
   --bg-accent-pressed: hsl(205, 69%, 53%);
   --fg-accent: hsl(212, 22%, 12%);
-  --bg-success: lightgreen;
-  --fg-success: green;
+  --bg-success: hsl(141, 100%, 93%);
+  --fg-success: hsl(141, 100%, 13%);
   --bg-danger: pink;
   --fg-danger: darkred;
   /* BOX-SHADOWS */
@@ -105,6 +105,7 @@ h6 {
   --limited-width: 640px;
   /* BORDERS */
   --border-radius: 16px;
+  --border-radius-s: 4px;
   --border: 2px solid;
   /* OUTLINES */
   --boxshadow-as-outline: 0px 0px 5px 5px rgb(94, 158, 214);
@@ -128,7 +129,7 @@ h6 {
   --fontstack-default:
     Inter, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, Roboto,
     sans-serif;
-  --fontstack-alt: Inter, serif;
+  --fontstack-code: "Courier New", Courier, monospace;
   --fontvariation-headline: "wght" 700;
   --fontvariation-body: "wght" 400;
   --fontvariation-body-strong: "wght" 700;

@@ -1,0 +1,25 @@
+.Success {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: var(--limited-width);
+}
+
+.Success_code {
+  font-family: var(--fontstack-code);
+  background-color: var(--bg-success);
+  color: var(--fg-success);
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  border-radius: var(--border-radius-s);
+}
+
+.Success_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  justify-content: center;
+}
