@@ -14,9 +14,7 @@ const ProductThumb = ({ product }: { product: Product }) => (
           src={`${imageUrl(product.image).url()}`}
           alt=""
           fill
-          // TODO: why doesn't this sizes prop work?
-          // sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw"
-          sizes="200px"
+          sizes="400px" // aligned on .Card max-width
         />
       </div>
     )}

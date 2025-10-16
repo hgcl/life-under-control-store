@@ -10,6 +10,7 @@
 
 .Card_image {
   position: relative;
+  height: fit-content;
 }
 .Card_image img {
   object-fit: contain;

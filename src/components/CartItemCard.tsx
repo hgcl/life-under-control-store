@@ -7,14 +7,8 @@ import styles from "./CartItemCard.module.css";
 const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => (
   <li className={styles.Card}>
     <div className={styles.Card_textWrapper}>
-      <div className={styles.Card_image}>
-        <Image
-          className={styles.Card_image}
-          src={cartItem.image}
-          alt=""
-          width={150}
-          height={150}
-        />
+      <div className={styles.Card_image} aria-hidden="true">
+        <Image src={cartItem.image} alt="" width={150} height={150} />
       </div>
       <div>
         <h2>
