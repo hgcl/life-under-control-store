@@ -3,6 +3,7 @@ import { imageUrl } from "@/sanity/lib/imageUrl";
 import { formatCurrency } from "../lib/formatCurrency";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./OrderItem.module.css";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
   <article>
@@ -15,7 +16,7 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
     <p>Status {order.status}</p>
     <section className="order-items">
       <h3>Order items</h3>
-      <ul>
+      <ul className={styles.Order_list}>
         {order.products &&
           order.products.map((product) => (
             <li key={product._id}>
