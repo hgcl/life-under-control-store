@@ -8,8 +8,9 @@ export const client = createClient({
   useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
   // Stega: sync Sanity Studio with Vercel https://www.sanity.io/docs/visual-editing/stega
   stega: {
-    studioUrl: process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/studio`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/studio`,
+    studioUrl:
+      process.env.VERCEL_ENV === "production"
+        ? `${process.env.NEXT_PUBLIC_PRODUCTION_URL}/studio`
+        : `${process.env.NEXT_PUBLIC_BASE_URL}/studio`,
   },
 });

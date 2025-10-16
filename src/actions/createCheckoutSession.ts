@@ -39,13 +39,15 @@ const createCheckoutSession = async (
       customerId = customers.data[0].id;
     }
 
-    const successUrlParam = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/success?session_id={CHEKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHEKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`;
+    const successUrlParam =
+      process.env.VERCEL_ENV === "production"
+        ? `${process.env.NEXT_PUBLIC_PRODUCTION_URL}/success?session_id={CHEKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`
+        : `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHEKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`;
 
-    const cancelUrlParam = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/cart`
-      : `${process.env.NEXT_PUBLIC_BASE_URL}/cart`;
+    const cancelUrlParam =
+      process.env.VERCEL_ENV === "production"
+        ? `${process.env.NEXT_PUBLIC_PRODUCTION_URL}/cart`
+        : `${process.env.NEXT_PUBLIC_BASE_URL}/cart`;
 
     // Checkout session
     // Stripe docs: https://docs.stripe.com/api/checkout/sessions
