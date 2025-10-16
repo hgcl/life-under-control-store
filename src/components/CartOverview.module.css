@@ -15,7 +15,8 @@
 .CartOverview {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xl);
+  gap: var(--section-gap);
+  justify-content: center;
 }
 
 .CartOverview_summary {
@@ -23,6 +24,7 @@
   flex-direction: column;
   gap: var(--spacing-m);
   flex: 1 1 300px;
+  max-width: var(--limited-width);
 }
 
 .CartOverview_totalPrice {

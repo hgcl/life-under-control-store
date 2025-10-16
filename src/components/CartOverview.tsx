@@ -83,7 +83,7 @@ const CartOverview = () => {
                 ) : (
                   // 2 Full cart and signed out
                   <SignInButton>
-                    <Button>Sign in to check out</Button>
+                    <Button type="primary">Sign in to check out</Button>
                   </SignInButton>
                 )
               }

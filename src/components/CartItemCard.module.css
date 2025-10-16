@@ -3,6 +3,8 @@
   list-style-type: none;
   /* Custom styles */
   display: flex;
+  gap: var(--spacing-l);
+  padding: var(--padding-m);
   border: var(--border) var(--bg-subtle);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -10,6 +12,7 @@
 
 .Card_image {
   position: relative;
+  height: fit-content;
 }
 .Card_image img {
   object-fit: contain;
@@ -19,20 +22,14 @@
   height: auto;
 }
 
-.Card_textWrapper {
-  display: flex;
-  gap: var(--spacing-l);
-  padding: var(--padding-m);
-}
-.Card_textWrapper > div > * {
-  margin-bottom: var(--spacing-s);
+.Card_textWrapper > * {
+  margin-bottom: 1rem;
 }
 
 .Card_link {
   font-size: var(--fontsize-headline-s);
   line-height: var(--lineheight-headline);
 }
-
 .Card_description {
   color: var(--fg-subtle);
   font-size: var(--fontsize-body-s);
