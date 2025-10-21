@@ -22,10 +22,14 @@
   height: auto;
 }
 
-.Card_textWrapper > * {
+.Card_textWrapper {
+  display: flex;
+  gap: 0 var(--spacing-l);
+  flex-wrap: wrap;
+}
+.Card_nameAndDescription > * {
   margin-bottom: 1rem;
 }
-
 .Card_link {
   font-size: var(--fontsize-headline-s);
   line-height: var(--lineheight-headline);
@@ -34,7 +38,12 @@
   color: var(--fg-subtle);
   font-size: var(--fontsize-body-s);
 }
-
 .Card_price {
   font-variation-settings: var(--fontvariation-body-strong);
+}
+
+@media only screen and (width > 480px) {
+  .Card_textWrapper {
+    flex-wrap: nowrap;
+  }
 }

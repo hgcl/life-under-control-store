@@ -7,24 +7,20 @@ import styles from "./CartItem.module.css";
 const CartItem = ({ cartItem }: { cartItem: CartItem }) => (
   <li className={styles.Card}>
     <div className={styles.Card_image}>
-      <Image
-        className={styles.Card_image}
-        src={cartItem.image}
-        alt=""
-        width={150}
-        height={150}
-      />
+      <Image src={cartItem.image} alt="" width={150} height={150} />
     </div>
     <div className={styles.Card_textWrapper}>
-      <h2>
-        <Link className={styles.Card_link} href={`/product/${cartItem.slug}`}>
-          {cartItem.name}
-        </Link>
-      </h2>
-      <p className={styles.Card_description}>{cartItem.description}...</p>
-      <UpdateCartButton cartItem={cartItem} type="ternary" />
+      <div className={styles.Card_nameAndDescription}>
+        <h2>
+          <Link className={styles.Card_link} href={`/product/${cartItem.slug}`}>
+            {cartItem.name}
+          </Link>
+        </h2>
+        <p className={styles.Card_description}>{cartItem.description}...</p>
+        <UpdateCartButton cartItem={cartItem} type="ternary" />
+      </div>
+      <p className={styles.Card_price}>€ {cartItem.price.toFixed(2)}</p>
     </div>
-    <p className={styles.Card_price}>€ {cartItem.price.toFixed(2)}</p>
   </li>
 );
 
