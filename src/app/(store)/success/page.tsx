@@ -1,7 +1,6 @@
 "use client";
 
 import { CartContext } from "@/src/context/CartContextProvider";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import styles from "./page.module.css";
