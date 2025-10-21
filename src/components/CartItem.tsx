@@ -1,10 +1,10 @@
 import UpdateCartButton from "./UpdateCartButton";
-import { CartItem } from "../types";
+import type { CartItem } from "../types";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./CartItemCard.module.css";
+import styles from "./CartItem.module.css";
 
-const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => (
+const CartItem = ({ cartItem }: { cartItem: CartItem }) => (
   <li className={styles.Card}>
     <div className={styles.Card_image}>
       <Image
@@ -28,4 +28,4 @@ const CartItemCard = ({ cartItem }: { cartItem: CartItem }) => (
   </li>
 );
 
-export default CartItemCard;
+export default CartItem;
