@@ -28,7 +28,7 @@
   flex-wrap: wrap;
 }
 .Card_nameAndDescription > * {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-m);
 }
 .Card_link {
   font-size: var(--fontsize-headline-s);
