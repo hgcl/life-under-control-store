@@ -54,7 +54,7 @@ const Carrousel = ({ imageArray }: imageArrayProps) => {
             src={`${image.asset && imageUrl(image.asset._ref).url()}`}
             alt=""
             fill
-            sizes="200px"
+            sizes="(max-width: 480px) 100vw, (max-width: 800px) 75vw, 50vw"
           />
         </div>
       ))}
