@@ -1,10 +1,16 @@
 .Carrousel {
   display: flex;
+  flex-direction: column-reverse;
   gap: var(--spacing-m);
 }
 
 .Carrousel_tabList {
-  display: none;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-m);
+  /* setup, so that .Carrousel_tablist can be scrolled */
+  flex: 1 0 auto; /* flex-shrink needs to be 0 to avoid unwanted horizontal scroll */
+  overflow-y: auto;
 }
 
 .Carrousel_tabList button {
@@ -13,8 +19,8 @@
   background-color: transparent;
   cursor: pointer;
   /* Custom styles */
-  height: 72px;
-  width: 72px;
+  height: 56px;
+  width: 56px;
   position: relative;
   border: var(--border) var(--fg-normal);
 }
@@ -25,6 +31,7 @@
 
 .Carrousel_panel {
   position: relative;
+  height: 100%;
   width: 100%;
   min-width: 300px;
 }
@@ -43,14 +50,17 @@
 /* MEDIA QUERIES */
 
 @media only screen and (width > 480px) {
+  .Carrousel {
+    flex-direction: row;
+  }
   .Carrousel_tabList {
-    display: flex;
     flex-direction: column;
-    gap: var(--spacing-m);
-    /* setup, so that .Carrousel_tablist can be scrolled */
-    flex: 1 0 auto; /* flex-shrink needs to be 0 to avoid unwanted horizontal scroll */
-    overflow-y: auto;
+    overflow-x: auto;
     width: 100px;
+  }
+  .Carrousel_tabList button {
+    height: 72px;
+    width: 72px;
   }
   .Carrousel_tabList > div {
     /* setup, so that .Carrousel_tablist can be scrolled */
