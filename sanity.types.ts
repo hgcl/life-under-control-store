@@ -13,20 +13,6 @@
  */
 
 // Source: schema.json
-export type ImageWithAlt = {
-  _type: "imageWithAlt";
-  asset?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-  };
-  media?: unknown;
-  hotspot?: SanityImageHotspot;
-  crop?: SanityImageCrop;
-  alt?: string;
-};
-
 export type Order = {
   _id: string;
   _type: "order";
@@ -62,8 +48,18 @@ export type Product = {
   name?: string;
   slug?: Slug;
   imageGallery?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
     _key: string;
-  } & ImageWithAlt>;
+  }>;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;
@@ -267,7 +263,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = ImageWithAlt | Order | Product | Category | BlockContent | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = Order | Product | Category | BlockContent | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/orders/getMyOrders.ts
 // Variable: MY_ORDERS_QUERY
@@ -294,8 +290,18 @@ export type MY_ORDERS_QUERYResult = Array<{
     name?: string;
     slug?: Slug;
     imageGallery?: Array<{
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
       _key: string;
-    } & ImageWithAlt>;
+    }>;
     description?: Array<{
       children?: Array<{
         marks?: Array<string>;
@@ -489,8 +495,18 @@ export type PRODUCTS_BY_ID_QUERYResult = Array<{
   name?: string;
   slug?: Slug;
   imageGallery?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
     _key: string;
-  } & ImageWithAlt>;
+  }>;
   description?: Array<{
     children?: Array<{
       marks?: Array<string>;

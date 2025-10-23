@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { imageUrl } from "@/sanity/lib/imageUrl";
 import { useState } from "react";
+import { ImageType } from "../types";
 import styles from "./Carrousel.module.css";
-import { Product } from "@/sanity.types";
 
 // Accessible carrousel
 // inspiration: https://www.a11y-collective.com/blog/accessible-carousel/
 // MDN: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role
-const Carrousel = ({ imageArray }: { imageArray: Product["imageGallery"] }) => {
+const Carrousel = ({ imageArray }: { imageArray: ImageType[] }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
@@ -34,7 +34,7 @@ const Carrousel = ({ imageArray }: { imageArray: Product["imageGallery"] }) => {
                   sizes="72px"
                   // Image loading optimizations
                   placeholder="blur"
-                  blurDataURL={`${image.asset && image.asset.metadata.lqip}`}
+                  blurDataURL={`${image.asset?.metadata && image.asset.metadata.lqip}`}
                 />
               </button>
             </div>
@@ -60,7 +60,7 @@ const Carrousel = ({ imageArray }: { imageArray: Product["imageGallery"] }) => {
               // Image loading optimizations
               priority
               placeholder="blur"
-              blurDataURL={`${image.asset && image.asset.metadata.lqip}`}
+              blurDataURL={`${image.asset?.metadata && image.asset.metadata.lqip}`}
             />
           </div>
         ))}

@@ -27,7 +27,7 @@ export const productType = defineType({
       name: "imageGallery",
       title: "Image gallery",
       type: "array",
-      of: [{ type: "imageWithAlt", options: { metadata: ["lqip"] } }],
+      of: [{ type: "image", options: { metadata: ["lqip"] } }],
       validation: (Rule) => Rule.required(),
     },
     defineField({
