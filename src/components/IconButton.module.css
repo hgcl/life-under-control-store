@@ -46,6 +46,10 @@
 .Button:focus > .Button_svgWrapper {
   background-color: var(--bg-accent-hovered);
 }
+.Button:hover > .Button_svgWrapper > svg,
+.Button:focus > .Button_svgWrapper > svg {
+  color: var(--fg-accent);
+}
 .Button:hover > .Button_label,
 .Button:focus > .Button_label {
   color: var(--fg-normal);
