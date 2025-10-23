@@ -45,13 +45,15 @@ function Header() {
               </li>
             )}
 
-            {user ? (
-              <UserButton />
-            ) : (
-              <SignInButton mode="modal">
-                <Button>Sign in</Button>
-              </SignInButton>
-            )}
+            <li>
+              {user ? (
+                <UserButton />
+              ) : (
+                <SignInButton mode="modal">
+                  <Button>Sign in</Button>
+                </SignInButton>
+              )}
+            </li>
           </ClerkLoaded>
         </ul>
       </nav>
