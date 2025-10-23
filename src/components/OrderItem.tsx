@@ -2,7 +2,7 @@ import { MY_ORDERS_QUERYResult } from "@/sanity.types";
 import { imageUrl } from "@/sanity/lib/imageUrl";
 import { formatCurrency } from "../lib/formatCurrency";
 import Image from "next/image";
-import Link from "next/link";
+import Hypertext from "./Hypertext";
 import styles from "./OrderItem.module.css";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
@@ -41,12 +41,12 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
                   {product.archived ? (
                     product.name + ` (archived listing)`
                   ) : (
-                    <Link
-                      className={styles.Order_itemLink}
+                    <Hypertext
+                      // className={styles.Order_itemLink}
                       href={`/product/${product.slug?.current}`}
                     >
                       {product.name}
-                    </Link>
+                    </Hypertext>
                   )}
                 </p>
                 <p>Price {formatCurrency(product.price ?? 0, "eur")}</p>

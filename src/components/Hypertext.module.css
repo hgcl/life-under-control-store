@@ -1,0 +1,4 @@
+.Hypertext {
+  color: var(--fg-normal);
+  font-variation-settings: var(--fontvariation-body-strong);
+}
