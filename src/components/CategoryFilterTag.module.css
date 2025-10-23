@@ -32,13 +32,6 @@
   INTERACTIONS
 */
 
-.Pill:hover,
-.Pill:focus {
-  color: var(--fg-strong);
-  background-color: var(--bg-strong);
-  border-color: var(--bg-strong);
-}
-
 /* If pill is checked */
 .Pill.checked {
   background-color: var(--bg-strong);
@@ -56,4 +49,16 @@
 .Pill:focus-within {
   outline: var(--outline);
   outline-offset: var(--outline-offset);
+}
+
+.Pill:focus-within,
+.Pill:hover,
+.Pill:focus {
+  border: var(--border) var(--fg-accent);
+  background-color: var(--bg-accent-hovered);
+}
+.Pill:hover *,
+.Pill:focus *,
+.Pill:focus-within * {
+  color: var(--fg-accent);
 }

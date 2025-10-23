@@ -70,8 +70,8 @@
   right: 0;
 }
 
-.Card:hover,
 .Card:focus-within,
-.Card:active {
-  box-shadow: var(--boxshadow);
+.Card:hover,
+.Card:focus {
+  border: var(--border) var(--fg-normal);
 }

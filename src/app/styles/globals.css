@@ -87,8 +87,6 @@ h6 {
   --fg-success: hsl(141, 100%, 13%);
   --bg-danger: pink;
   --fg-danger: darkred;
-  /* BOX-SHADOWS */
-  --boxshadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
   /* SPACINGS */
   --spacing-xs: 4px;
   --spacing-s: 8px;
