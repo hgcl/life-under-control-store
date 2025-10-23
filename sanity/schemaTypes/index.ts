@@ -4,7 +4,14 @@ import { blockContentType } from "./blockContentType";
 import { categoryType } from "./categoryType";
 import { productType } from "./productType";
 import { orderType } from "./orderType";
+import { imageWithAltType } from "./imageWithAltType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, productType, orderType],
+  types: [
+    blockContentType,
+    categoryType,
+    productType,
+    orderType,
+    imageWithAltType,
+  ],
 };

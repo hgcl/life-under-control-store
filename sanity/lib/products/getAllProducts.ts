@@ -3,7 +3,16 @@ import { sanityFetch } from "../live"; // for Live Content API
 
 export async function getAllProducts() {
   const ALL_PRODUCTS_QUERY = defineQuery(
-    `*[_type == "product"] | order(name asc)`
+    `*[_type == "product"]
+  {...,imageGallery[]
+    {
+      asset->{
+        _id,
+        url,
+        metadata
+      }
+    }
+  } | order(name asc)`
   );
   try {
     // Use sanityFetch to send the query

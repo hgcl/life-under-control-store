@@ -8,7 +8,16 @@ export async function getProductBySlug(slug: string) {
     }
 
     const PRODUCT_BY_SLUG_QUERY = defineQuery(
-      `*[_type == "product" && slug.current == $slug] | order(name asc) [0]`
+      `*[_type == "product" && slug.current == $slug] | order(name asc) [0]
+  {...,imageGallery[]
+    {
+      asset->{
+        _id,
+        url,
+        metadata
+      }
+    }
+  }`
     );
 
     // Use sanityFetch to send the query

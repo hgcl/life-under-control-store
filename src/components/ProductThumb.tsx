@@ -4,7 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./ProductThumb.module.css";
 
-const ProductThumb = ({ product }: { product: Product }) => (
+const ProductThumb = ({
+  product,
+  isPreloaded = false,
+}: {
+  product: Product;
+  isPreloaded?: boolean;
+}) => (
   // Accessible card: https://inclusive-components.design/cards/#thepseudocontenttrick
   <li className={styles.Card}>
     {product.imageGallery && (
@@ -14,6 +20,10 @@ const ProductThumb = ({ product }: { product: Product }) => (
           alt=""
           fill
           sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw"
+          // Image loading optimizations
+          priority={isPreloaded}
+          placeholder="blur"
+          blurDataURL={`${product.imageGallery[0].asset && product.imageGallery[0].asset.metadata.lqip}`}
         />
       </div>
     )}
