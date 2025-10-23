@@ -23,18 +23,12 @@ export const productType = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "image",
-      title: "Image",
-      type: "image",
-      options: { hotspot: true },
-      validation: (Rule) => Rule.required(),
-    }),
     {
       name: "imageGallery",
       title: "Image gallery",
       type: "array",
       of: [{ type: "image" }],
+      validation: (Rule) => Rule.required(),
     },
     defineField({
       name: "description",
@@ -63,7 +57,7 @@ export const productType = defineType({
   preview: {
     select: {
       name: "name",
-      image: "image",
+      image: "imageGallery.0.asset",
       price: "price",
       archived: "archived",
     },

@@ -12,7 +12,7 @@ const ProductCard = ({ product }: { product: Product }) => {
     name: product.name ? product.name : "Unnamed product",
     price: product.price ? product.price : 0,
     slug: product.slug?.current ? product.slug.current : "",
-    image: product.image ? imageUrl(product.image).url() : "",
+    image: product.imageGallery ? imageUrl(product.imageGallery[0]).url() : "",
     description:
       product.description
         ?.map((block) =>

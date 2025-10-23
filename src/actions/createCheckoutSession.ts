@@ -73,7 +73,9 @@ const createCheckoutSession = async (
               metadata: {
                 id: item._id,
               },
-              images: item.image ? [imageUrl(item.image).url()] : undefined,
+              images: item.imageGallery
+                ? [imageUrl(item.imageGallery[0]).url()]
+                : undefined,
             },
             unit_amount: Math.round(item.price! * 100),
           },

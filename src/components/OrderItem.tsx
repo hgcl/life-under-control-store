@@ -26,10 +26,10 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
         {order.products &&
           order.products.map((product) => (
             <li key={product._id} className={styles.Order_item}>
-              {product.image && (
+              {product.imageGallery && (
                 <div className={styles.Order_itemImage}>
                   <Image
-                    src={`${imageUrl(product.image).url()}`}
+                    src={`${imageUrl(product.imageGallery[0]).url()}`}
                     width={100}
                     height={100}
                     alt=""

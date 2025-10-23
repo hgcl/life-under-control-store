@@ -1,5 +1,4 @@
 import { Product } from "@/sanity.types";
-// import { imageUrl } from "@/sanity/lib/imageUrl";
 import { imageUrl } from "@/sanity/lib/imageUrl";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,10 +7,10 @@ import styles from "./ProductThumb.module.css";
 const ProductThumb = ({ product }: { product: Product }) => (
   // Accessible card: https://inclusive-components.design/cards/#thepseudocontenttrick
   <li className={styles.Card}>
-    {product.image && (
+    {product.imageGallery && (
       <div className={styles.Card_image}>
         <Image
-          src={`${imageUrl(product.image).url()}`}
+          src={`${imageUrl(product.imageGallery[0]).url()}`}
           alt=""
           fill
           sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw"
