@@ -29,7 +29,10 @@ export default function RootLayout({
       <html lang="en" className={inter.className}>
         <body>
           <SkipToContent />
-          <Banner message={"This website is still under construction"} />
+          <Banner
+            message={"This website is still under construction"}
+            disabled
+          />
           <main id="main">
             <CartContextProvider>
               <Header />
