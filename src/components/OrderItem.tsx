@@ -10,15 +10,15 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
     <section>
       <h2>Order {order.orderNumber}</h2>
       <p>
-        Purchased on{" "}
+        Date:{" "}
         {order.orderDate
           ? new Date(order.orderDate).toLocaleDateString()
           : "N/A"}
       </p>
       <p>
-        Total amount {formatCurrency(order.totalPrice ?? 0, order.currency)}
+        Total amount: {formatCurrency(order.totalPrice ?? 0, order.currency)}
       </p>
-      <p>Status {order.status}</p>
+      <p>Status: {order.status}</p>
     </section>
     <section className={styles.Order_list}>
       <h3>Item(s) purchased</h3>

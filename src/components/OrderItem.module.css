@@ -1,9 +1,14 @@
 .Order_card {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-l);
   border: var(--border) var(--bg-subtle);
   border-radius: var(--border-radius);
   max-width: 100%;
+}
+.Order_card h2 {
+  /* Order number (used as <h2>) can be very long and without space */
+  word-break: break-all;
 }
 .Order_card > * {
   padding: var(--padding-m);
@@ -51,10 +56,4 @@
 .Order_itemLink {
   font-size: var(--fontsize-headline-s);
   line-height: var(--lineheight-headline);
-}
-
-@media only screen and (width > 480px) {
-  .Order_card {
-    flex-wrap: wrap;
-  }
 }
