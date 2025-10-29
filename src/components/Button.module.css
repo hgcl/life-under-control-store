@@ -5,6 +5,8 @@
   /* Reset <a> default styles */
   text-decoration: none;
   /* Custom styles */
+  display: inline-block;
+  text-align: center;
   cursor: pointer;
   padding: var(--padding-m);
   font-variation-settings: var(--fontvariation-body-strong);
