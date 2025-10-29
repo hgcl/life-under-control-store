@@ -5,7 +5,7 @@ import { CartItem } from "../types";
 import stripe from "@/src/lib/stripe";
 import Stripe from "stripe";
 import { Product } from "@/sanity.types";
-import { imageUrl } from "@/sanity/lib/imageUrl";
+import { urlFor } from "@/sanity/lib/imageUrl";
 
 export type Metadata = {
   orderNumber: string;
@@ -74,7 +74,7 @@ const createCheckoutSession = async (
                 id: item._id,
               },
               images: item.imageGallery
-                ? [imageUrl(item.imageGallery[0]).url()]
+                ? [urlFor(item.imageGallery[0]).url()]
                 : undefined,
             },
             unit_amount: Math.round(item.price! * 100),

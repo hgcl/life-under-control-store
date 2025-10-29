@@ -1,5 +1,5 @@
 import { MY_ORDERS_QUERYResult } from "@/sanity.types";
-import { imageUrl } from "@/sanity/lib/imageUrl";
+import { urlFor } from "@/sanity/lib/imageUrl";
 import { formatCurrency } from "../lib/formatCurrency";
 import Image from "next/image";
 import Hypertext from "./Hypertext";
@@ -29,7 +29,7 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
               {product.imageGallery && (
                 <div className={styles.Order_itemImage}>
                   <Image
-                    src={`${imageUrl(product.imageGallery[0]).url()}`}
+                    src={`${urlFor(product.imageGallery[0]).url()}`}
                     width={100}
                     height={100}
                     alt=""

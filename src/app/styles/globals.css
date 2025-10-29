@@ -132,9 +132,8 @@ h6 {
   --fontvariation-body: "wght" 400;
   --fontvariation-body-strong: "wght" 700;
   /* ICONS */
-  --iconsize-m: 32px;
-  --iconsize-s: 24px;
-  --iconsize-xs: 16px;
+  --iconsize-m: 24px;
+  --iconsize-s: 16px;
 }
 
 /* 

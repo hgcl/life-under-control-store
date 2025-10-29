@@ -1,7 +1,7 @@
 import UpdateCartButton from "@/src/components/UpdateCartButton";
 import Carrousel from "@/src/components/Carrousel";
 import { CartItem } from "@/src/types";
-import { imageUrl } from "@/sanity/lib/imageUrl";
+import { urlFor } from "@/sanity/lib/imageUrl";
 import styles from "./ProductCard.module.css";
 import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
 
@@ -12,7 +12,7 @@ const ProductCard = ({ product }: { product: ALL_PRODUCTS_QUERYResult[0] }) => {
     name: product.name ? product.name : "Unnamed product",
     price: product.price ? product.price : 0,
     slug: product.slug?.current ? product.slug.current : "",
-    image: product.imageGallery ? imageUrl(product.imageGallery[0]).url() : "",
+    image: product.imageGallery ? urlFor(product.imageGallery[0]).url() : "",
     description:
       product.description
         ?.map((block) =>
