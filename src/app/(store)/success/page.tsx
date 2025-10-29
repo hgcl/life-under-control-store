@@ -41,7 +41,6 @@ const SuccessPage = () => {
       </div>
     </section>
   );
-  section;
 };
 
 export default SuccessPage;
