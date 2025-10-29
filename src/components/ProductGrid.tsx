@@ -1,8 +1,8 @@
-import { Product } from "@/sanity.types";
+import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
 import ProductThumb from "./ProductThumb";
 import styles from "./ProductGrid.module.css";
 
-const ProductGrid = ({ products }: { products: Product[] }) => {
+const ProductGrid = ({ products }: { products: ALL_PRODUCTS_QUERYResult }) => {
   const activeProducts = products?.filter((product) => !product.archived);
   return (
     <ul className={styles.Grid}>

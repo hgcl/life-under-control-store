@@ -3,9 +3,9 @@ import Carrousel from "@/src/components/Carrousel";
 import { CartItem } from "@/src/types";
 import { imageUrl } from "@/sanity/lib/imageUrl";
 import styles from "./ProductCard.module.css";
-import { Product } from "@/sanity.types";
+import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
 
-const ProductCard = ({ product }: { product: Product }) => {
+const ProductCard = ({ product }: { product: ALL_PRODUCTS_QUERYResult[0] }) => {
   // Save cartItem data
   const cartItem: CartItem = {
     _id: product._id,

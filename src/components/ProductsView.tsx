@@ -1,12 +1,12 @@
 "use client";
 
-import { Category, Product } from "@/sanity.types";
+import { ALL_PRODUCTS_QUERYResult, Category } from "@/sanity.types";
 import ProductGrid from "./ProductGrid";
 import CategorySelector from "./CategorySelector";
 import { useState } from "react";
 
 type ProductsViewProps = {
-  products: Product[];
+  products: ALL_PRODUCTS_QUERYResult;
   categories: Category[];
 };
 
