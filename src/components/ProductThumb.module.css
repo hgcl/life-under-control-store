@@ -10,13 +10,11 @@
   max-width: 400px;
 }
 
-.Card_image {
+.Card img {
   position: relative;
   aspect-ratio: 1/1;
   width: 100%;
   height: auto;
-}
-.Card_image img {
   object-fit: cover;
 }
 

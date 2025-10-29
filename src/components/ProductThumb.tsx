@@ -17,19 +17,18 @@ const ProductThumb = ({
     // Accessible card: https://inclusive-components.design/cards/#thepseudocontenttrick
     <li className={styles.Card}>
       {product.imageGallery && product.imageGallery[0] && (
-        <div className={styles.Card_image}>
-          <Image
-            src={`${urlFor(product.imageGallery[0]).url()}`}
-            alt=""
-            fill
-            sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw"
-            // Image loading optimizations
-            fetchPriority={imagePriority}
-            priority={isPreloaded}
-            placeholder="blur"
-            blurDataURL={`${product.imageGallery[0].asset?.metadata?.lqip}`}
-          />
-        </div>
+        <Image
+          src={`${urlFor(product.imageGallery[0]).url()}`}
+          alt=""
+          width={400}
+          height={533}
+          sizes="(max-width: 480px) 85vw, (max-width: 800px) 50vw, 33vw"
+          // Image loading optimizations
+          fetchPriority={imagePriority}
+          priority={isPreloaded}
+          placeholder="blur"
+          blurDataURL={`${product.imageGallery[0].asset?.metadata?.lqip}`}
+        />
       )}
       <div className={styles.Card_textWrapper}>
         <div>
