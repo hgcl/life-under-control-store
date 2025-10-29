@@ -574,6 +574,13 @@
         },
         "optional": true
       },
+      "download": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "categories": {
         "type": "objectAttribute",
         "value": {

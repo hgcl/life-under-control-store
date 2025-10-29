@@ -42,6 +42,12 @@ export const productType = defineType({
       validation: (Rule) => Rule.required().min(0),
     }),
     defineField({
+      name: "download",
+      title: "Download",
+      type: "url",
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: "categories",
       title: "Categories",
       type: "array",
