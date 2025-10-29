@@ -7,14 +7,16 @@ import styles from "./ProductThumb.module.css";
 const ProductThumb = ({
   product,
   isPreloaded = false,
+  imagePriority = "auto",
 }: {
   product: ALL_PRODUCTS_QUERYResult[0];
   isPreloaded?: boolean;
+  imagePriority?: "high" | "low" | "auto";
 }) => {
   return (
     // Accessible card: https://inclusive-components.design/cards/#thepseudocontenttrick
     <li className={styles.Card}>
-      {product.imageGallery && (
+      {product.imageGallery && product.imageGallery[0] && (
         <div className={styles.Card_image}>
           <Image
             src={`${urlFor(product.imageGallery[0]).url()}`}
@@ -22,9 +24,10 @@ const ProductThumb = ({
             fill
             sizes="(max-width: 480px) 100vw, (max-width: 800px) 50vw, 33vw"
             // Image loading optimizations
+            fetchPriority={imagePriority}
             priority={isPreloaded}
             placeholder="blur"
-            blurDataURL={`${product.imageGallery[0] && product.imageGallery[0].asset?.metadata?.lqip}`}
+            blurDataURL={`${product.imageGallery[0].asset?.metadata?.lqip}`}
           />
         </div>
       )}
