@@ -15,12 +15,8 @@ const ProductGrid = ({ products }: { products: ALL_PRODUCTS_QUERYResult }) => {
           imagePriority="high"
         />
       ))}
-      {/* From 2nd to 5th image in gallery */}
-      {activeProducts.slice(1, 5).map((product) => (
-        <ProductThumb key={product._id} product={product} />
-      ))}
-      {/* From 6th to last image in gallery */}
-      {activeProducts.slice(5).map((product) => (
+      {/* From 2nd to last image in gallery */}
+      {activeProducts.slice(1).map((product) => (
         <ProductThumb key={product._id} product={product} imagePriority="low" />
       ))}
     </ul>
