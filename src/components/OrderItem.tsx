@@ -52,7 +52,8 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
                 </p>
                 <p>Price {formatCurrency(product.price ?? 0, "eur")}</p>
                 <Button href={product.download} type="primary">
-                  Download the product
+                  Download
+                  <span className="visually-hidden"> {product.name}</span>
                 </Button>
               </div>
             </li>
