@@ -8,6 +8,10 @@
   max-width: var(--limited-width);
 }
 
+.Success_content > * {
+  margin-bottom: var(--spacing-m);
+}
+
 .Success_code {
   font-family: var(--fontstack-code);
   background-color: var(--bg-success);

@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import styles from "./page.module.css";
 import Button from "@/src/components/Button";
+import Hypertext from "@/src/components/Hypertext";
 
 const SuccessPage = () => {
   // In `createCheckoutSession.ts`, the order number was saved as a URL param on success
@@ -24,6 +25,10 @@ const SuccessPage = () => {
       <h2>Thank you for your order!</h2>
       <div className={styles.Success_content}>
         <p>
+          You will find download links for all purchased items directly in your{" "}
+          <Hypertext href="/orders">Orders</Hypertext> section.
+        </p>
+        <p>
           Order number:{" "}
           <span className={styles.Success_code}>{orderNumber}</span>
         </p>
@@ -36,6 +41,7 @@ const SuccessPage = () => {
       </div>
     </section>
   );
+  section;
 };
 
 export default SuccessPage;

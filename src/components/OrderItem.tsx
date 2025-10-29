@@ -4,6 +4,7 @@ import { formatCurrency } from "../lib/formatCurrency";
 import Image from "next/image";
 import Hypertext from "./Hypertext";
 import styles from "./OrderItem.module.css";
+import Button from "./Button";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
   <article className={styles.Order_card}>
@@ -50,6 +51,9 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
                   )}
                 </p>
                 <p>Price {formatCurrency(product.price ?? 0, "eur")}</p>
+                <Button href={product.download} type="primary">
+                  Download the product
+                </Button>
               </div>
             </li>
           ))}
