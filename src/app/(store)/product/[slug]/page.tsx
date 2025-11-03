@@ -2,7 +2,7 @@ import "@/src/app/styles/typography.css";
 import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
-import ProductCard from "@/src/components/ProductCard";
+import ProductDetails from "@/src/components/ProductDetails";
 import { Page } from "@hgcl/ui-library";
 
 // NextJS caching params (by default, NextJS never caches)
@@ -29,7 +29,7 @@ const ProductPage = async ({
   return (
     product.name && (
       <Page title={product.name} hideTitle>
-        <ProductCard product={product} />
+        <ProductDetails product={product} />
         <section className="typography center-content">
           {Array.isArray(product.description) && (
             <PortableText value={product.description} />
