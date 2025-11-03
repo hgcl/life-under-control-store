@@ -2,9 +2,8 @@ import { MY_ORDERS_QUERYResult } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/imageUrl";
 import { formatCurrency } from "../lib/formatCurrency";
 import Image from "next/image";
-import Hypertext from "./Hypertext";
+import { Hypertext, Button } from "@hgcl/ui-library";
 import styles from "./OrderItem.module.css";
-import Button from "./Button";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
   <article className={styles.Order_card}>
@@ -42,16 +41,13 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
                   {product.archived ? (
                     product.name + ` (archived listing)`
                   ) : (
-                    <Hypertext
-                      // className={styles.Order_itemLink}
-                      href={`/product/${product.slug?.current}`}
-                    >
+                    <Hypertext href={`/product/${product.slug?.current}`}>
                       {product.name}
                     </Hypertext>
                   )}
                 </p>
                 <p>Price {formatCurrency(product.price ?? 0, "eur")}</p>
-                <Button href={product.download} type="primary">
+                <Button href={product.download} variant="primary">
                   Download
                   <span className="visually-hidden"> {product.name}</span>
                 </Button>

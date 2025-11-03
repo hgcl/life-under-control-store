@@ -1,5 +1,5 @@
 import { Category } from "@/sanity.types";
-import CategoryFilterTag from "./CategoryFilterTag";
+import { FilterTag } from "@hgcl/ui-library";
 import styles from "./CategorySelector.module.css";
 
 type CategorySelectorProps = {
@@ -17,14 +17,18 @@ const CategorySelector = ({
     <legend className="visually-hidden">
       Choose your categories to filter the displayed listings
     </legend>
-    {categories?.map((category) => (
-      <CategoryFilterTag
-        key={category._id}
-        category={category}
-        selectedCategories={selectedCategories}
-        handleCheckboxChange={handleCheckboxChange}
-      />
-    ))}
+    {categories?.map(
+      (category) =>
+        category.title && (
+          <FilterTag
+            key={category._id}
+            label={category.title}
+            id={category._id}
+            isChecked={selectedCategories.has(category._id)}
+            handleFilterChange={handleCheckboxChange}
+          />
+        )
+    )}
   </fieldset>
 );
 

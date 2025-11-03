@@ -3,7 +3,7 @@
 import { CartContext } from "../context/CartContextProvider";
 import { useContext, useState } from "react";
 import { CartItem } from "../types";
-import Button from "./Button";
+import { Button } from "@hgcl/ui-library";
 
 const UpdateCartButton = ({
   cartItem,
@@ -39,7 +39,7 @@ const UpdateCartButton = ({
     <Button
       aria-pressed={isActive ? "true" : "false"}
       onClick={toggle}
-      type={type}
+      variant={type}
     >
       {isActive ? "Remove from cart" : "+ Add to cart"}
     </Button>
