@@ -71,6 +71,10 @@ h6 {
   BASE STYLES
 */
 
+:root {
+  --limited-width: 640px;
+}
+
 main > * {
   margin-block-end: var(
     --section-gap
