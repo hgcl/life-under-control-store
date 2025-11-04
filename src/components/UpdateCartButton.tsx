@@ -7,10 +7,10 @@ import { Button } from "@hgcle/ui-library";
 
 const UpdateCartButton = ({
   cartItem,
-  type = "secondary",
+  variant = "secondary",
 }: {
   cartItem: CartItem;
-  type?: "primary" | "secondary" | "ternary";
+  variant?: "primary" | "secondary" | "ternary";
 }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
 
@@ -39,7 +39,7 @@ const UpdateCartButton = ({
     <Button
       aria-pressed={isActive ? "true" : "false"}
       onClick={toggle}
-      variant={type}
+      variant={variant}
     >
       {isActive ? "Remove from cart" : "+ Add to cart"}
     </Button>

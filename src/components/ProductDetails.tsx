@@ -34,7 +34,7 @@ const ProductDetails = ({
       <div>
         <h1>{product.name}</h1>
         <p>€ {product.price?.toFixed(2)}</p>
-        <UpdateCartButton cartItem={cartItem} type="primary" />
+        <UpdateCartButton cartItem={cartItem} variant="primary" />
       </div>
     </section>
   );

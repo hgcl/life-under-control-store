@@ -13,10 +13,9 @@ const CartList = ({ cartItems }: { cartItems: CartItemType[] }) => (
         url={`/product/${cartItem.slug}`}
         description={cartItem.description}
         price={cartItem.price}
-        updateCartButton={
-          <UpdateCartButton cartItem={cartItem} type="ternary" />
-        }
-      ></CartItem>
+      >
+        <UpdateCartButton cartItem={cartItem} variant="ternary" />
+      </CartItem>
     ))}
   </ul>
 );
