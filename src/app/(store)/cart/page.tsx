@@ -5,7 +5,7 @@ import createCheckoutSession, {
   Metadata,
 } from "@/src/actions/createCheckoutSession";
 import { SignInButton, useUser } from "@clerk/nextjs";
-import Button from "@/src/components/Button";
+import { Page, Button } from "@hgcle/ui-library";
 import CartList from "@/src/components/CartList";
 import { CartContext } from "@/src/context/CartContextProvider";
 import styles from "./page.module.css";
@@ -49,13 +49,13 @@ const CartPage = () => {
   };
 
   return (
-    <>
+    <Page title="Cart" hideTitle>
       {
         // 1. Empty cart
         cartItems.length <= 0 ? (
           <section className={styles.CartEmpty}>
             <p>Your cart is empty.</p>
-            <Button href="/" type="primary">
+            <Button href="/" variant="primary">
               Start browsing
             </Button>
           </section>
@@ -75,15 +75,16 @@ const CartPage = () => {
                 isSignedIn ? (
                   <Button
                     onClick={handleCheckout}
-                    disabled={isLoading}
-                    type="primary"
+                    isDisabled={isLoading}
+                    variant="primary"
+                    href="#"
                   >
                     {isLoading ? "Processing..." : "Proceed to checkout"}
                   </Button>
                 ) : (
                   // 2 Full cart and signed out
                   <SignInButton>
-                    <Button type="primary">Sign in to check out</Button>
+                    <Button variant="primary">Sign in to check out</Button>
                   </SignInButton>
                 )
               }
@@ -92,7 +93,7 @@ const CartPage = () => {
           </div>
         )
       }
-    </>
+    </Page>
   );
 };
 

@@ -1,6 +1,7 @@
 import { getMyOrders } from "@/sanity/lib/orders/getMyOrders";
 import OrderItem from "@/src/components/OrderItem";
 import { auth } from "@clerk/nextjs/server";
+import { Page } from "@hgcle/ui-library";
 import { redirect } from "next/navigation";
 
 const Orders = async () => {
@@ -8,20 +9,19 @@ const Orders = async () => {
 
   if (!userId) {
     console.log(">>> No Clerk user ID");
-    return redirect("/orders");
+    return redirect("/");
   }
 
   const orders = await getMyOrders(userId);
 
   return (
-    <>
-      <h1>My orders</h1>
+    <Page title="My orders">
       {orders.length === 0 ? (
         <p>You have not placed any order yet.</p>
       ) : (
         orders.map((order) => <OrderItem key={order._id} order={order} />)
       )}
-    </>
+    </Page>
   );
 };
 

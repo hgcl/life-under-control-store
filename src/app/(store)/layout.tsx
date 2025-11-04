@@ -1,12 +1,12 @@
 import { type Metadata } from "next";
 import "../styles/globals.css";
+import "@hgcle/ui-library/dist/globals.css";
+import { Banner, SkipToContent } from "@hgcle/ui-library";
 import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
 import CartContextProvider from "../../context/CartContextProvider";
 import Header from "../../components/Header";
-import Banner from "../../components/Banner";
-import SkipToContent from "@/src/components/SkipToContent";
 
 export const metadata: Metadata = {
   title: "Life Under Control",
@@ -28,11 +28,8 @@ export default function RootLayout({
     <ClerkProvider dynamic>
       <html lang="en" className={inter.className}>
         <body>
-          <SkipToContent />
-          <Banner
-            message={"This website is still under construction"}
-            disabled
-          />
+          <SkipToContent href="#main" />
+          <Banner isDisabled>This website is still under construction</Banner>
           <main id="main">
             <CartContextProvider>
               <Header />

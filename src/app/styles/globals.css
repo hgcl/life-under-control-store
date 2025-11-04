@@ -67,91 +67,12 @@ h6 {
   isolation: isolate;
 }
 
-/*
-  DESIGN TOKENS
-*/
-
-:root {
-  /* COLORS */
-  --bg-normal: white; /* ok */
-  --fg-normal: hsl(212, 22%, 12%); /* ok */
-  --bg-strong: hsl(212, 22%, 12%); /* ok */
-  --fg-strong: white; /* ok */
-  --bg-subtle: hsl(0deg, 0%, 86%);
-  --fg-subtle: hsl(0deg, 0%, 35%);
-  --bg-accent: hsl(208, 100%, 83%);
-  --bg-accent-hovered: hsl(208, 100%, 70%); /* ok */
-  --bg-accent-pressed: hsl(205, 69%, 53%);
-  --fg-accent: hsl(212, 22%, 12%);
-  --bg-success: hsl(141, 100%, 93%);
-  --fg-success: hsl(141, 100%, 13%);
-  --bg-danger: pink;
-  --fg-danger: darkred;
-  /* SPACINGS */
-  --spacing-xs: 4px;
-  --spacing-s: 8px;
-  --spacing-m: 16px;
-  --spacing-l: 24px;
-  --spacing-xl: 32px;
-  --section-gap: 48px;
-  /* PADDINGS */
-  --padding-s: 0.5rem;
-  --padding-m: 1rem;
-  --padding-l: 1.5rem;
-  --padding-xl: 2rem;
-  /* WIDTHS */
-  --limited-width: 640px;
-  /* BORDERS */
-  --border-radius: 16px;
-  --border-radius-s: 4px;
-  --border: 2px solid;
-  /* OUTLINES */
-  --boxshadow-as-outline: 0px 0px 5px 5px rgb(94, 158, 214);
-  --outline: 5px auto rgb(94, 158, 214);
-  --outline-offset: 2px;
-  /* TYPOGRAPHY */
-  --fontsize-display: 4rem;
-  --fontsize-headline-l: 2rem;
-  --fontsize-headline-m: 1.5rem;
-  --fontsize-headline-s: 1.125rem;
-  --lineheight-headline: 1.2;
-  --fontsize-body-m: 1rem;
-  --fontsize-body-s: 0.875rem;
-  --lineheight-body: 1.4;
-  --fontsize-compact: 0.8rem;
-  --lineheight-compact: 1.2;
-  --fontweight-bold: 700;
-  --fontweight-regular: 400;
-  --fontweight-light: 300;
-  /* FONT STACK */
-  --fontstack-default:
-    Inter, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, Roboto,
-    sans-serif;
-  --fontstack-code: "Courier New", Courier, monospace;
-  --fontvariation-headline: "wght" 700;
-  --fontvariation-body: "wght" 400;
-  --fontvariation-body-strong: "wght" 700;
-  /* ICONS */
-  --iconsize-m: 24px;
-  --iconsize-s: 16px;
-}
-
 /* 
   BASE STYLES
 */
 
-html {
-  font-size: 16px;
-  font-family: var(--fontstack-default);
-  font-variation-settings: var(--fontvariation-body);
-  font-stretch: normal;
-  color: var(--fg-normal);
-  background-color: var(--bg-normal);
-}
-
-body {
-  position: relative; /* so that skip to content button is correctly displayed */
-  line-height: var(--lineheight-body);
+:root {
+  --limited-width: 640px;
 }
 
 main > * {
@@ -164,22 +85,6 @@ main {
   padding: var(
     --padding-m
   ); /* adds a global padding "outlining" the entire page */
-}
-
-h1,
-h2,
-h3 {
-  font-variation-settings: var(--fontvariation-headline);
-  line-height: var(--lineheight-headline);
-}
-h1 {
-  font-size: var(--fontsize-headline-l);
-}
-h2 {
-  font-size: var(--fontsize-headline-m);
-}
-h3 {
-  font-size: var(--fontsize-headline-s);
 }
 
 /* 
@@ -198,20 +103,6 @@ a.link-no-underline {
   max-width: var(--limited-width);
 }
 
-/* ACCESSIBILITY */
-/* Util to visually hide an element, but read by screen reader. Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 /* 
   INTERACTIONS
 */
@@ -224,17 +115,6 @@ a.link-no-underline {
 /* 
   MEDIA QUERIES
 */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-normal: hsl(212, 22%, 12%); /* dark mode ok */
-    --fg-normal: white; /* dark mode ok */
-    --bg-strong: white; /* dark mode ok */
-    --fg-strong: hsl(212, 22%, 12%); /* dark mode ok */
-    --bg-subtle: hsl(0deg, 0%, 35%); /* dark mode ok */
-    --fg-subtle: hsl(0deg, 0%, 86%); /* dark mode ok */
-  }
-}
 
 @media only screen and (width > 480px) {
   main {

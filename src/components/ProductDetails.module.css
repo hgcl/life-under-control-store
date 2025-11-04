@@ -1,28 +1,28 @@
-#ProductCard {
+#ProductDetails {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-xl);
 }
 
 /* CARROUSEL */
-#ProductCard > *:first-child {
+#ProductDetails > *:first-child {
   width: 100%;
   flex: 1 1 65%;
   height: 400px;
 }
 
 /* PRODUCT DETAILS */
-#ProductCard > *:last-child {
+#ProductDetails > *:last-child {
   width: 100%;
   flex: 1 1 25%;
   min-width: 200px;
 }
-#ProductCard > *:last-child > * {
+#ProductDetails > *:last-child > * {
   margin-bottom: 1rem;
 }
 
 @media only screen and (width > 480px) {
-  #ProductCard > *:first-child {
+  #ProductDetails > *:first-child {
     height: 600px;
   }
 }

@@ -1,9 +1,10 @@
 "use client";
 
 import { ALL_PRODUCTS_QUERYResult, Category } from "@/sanity.types";
-import ProductGrid from "./ProductGrid";
+import { ProductGrid } from "@hgcle/ui-library";
 import CategorySelector from "./CategorySelector";
 import { useState } from "react";
+import { urlFor } from "@/sanity/lib/imageUrl";
 
 type ProductsViewProps = {
   products: ALL_PRODUCTS_QUERYResult;
@@ -41,8 +42,9 @@ const ProductsView = ({ products, categories }: ProductsViewProps) => {
     }
   };
 
-  // Filter `products` shown based on `selectedCategories`
-  const filteredProducts = products.filter((product) => {
+  // Filter `products` shown based on `selectedCategories` — we need an any[] type to adapt to the component
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  const filteredProducts: any[] = products.filter((product) => {
     if (!product.categories) {
       return false;
     }
@@ -52,6 +54,19 @@ const ProductsView = ({ products, categories }: ProductsViewProps) => {
       }
     }
   });
+
+  // Restructure filteredProducts data to work with `<ProductGrid>` component
+  for (const item of filteredProducts) {
+    item.id = item._id;
+    item.url = `/product/${item.slug?.current}`;
+    if (item.description[0].children) {
+      item.description = item.description[0].children[0].text.slice(0, 100);
+    }
+    if (item.imageGallery) {
+      item.image = urlFor(item.imageGallery[0]).url();
+      item.imageBlur = item.imageGallery[0].asset?.metadata?.lqip;
+    }
+  }
 
   return (
     <>

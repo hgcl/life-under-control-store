@@ -3,14 +3,14 @@
 import { CartContext } from "../context/CartContextProvider";
 import { useContext, useState } from "react";
 import { CartItem } from "../types";
-import Button from "./Button";
+import { Button } from "@hgcle/ui-library";
 
 const UpdateCartButton = ({
   cartItem,
-  type = "secondary",
+  variant = "secondary",
 }: {
   cartItem: CartItem;
-  type?: "primary" | "secondary" | "ternary";
+  variant?: "primary" | "secondary" | "ternary";
 }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
 
@@ -39,7 +39,7 @@ const UpdateCartButton = ({
     <Button
       aria-pressed={isActive ? "true" : "false"}
       onClick={toggle}
-      type={type}
+      variant={variant}
     >
       {isActive ? "Remove from cart" : "+ Add to cart"}
     </Button>

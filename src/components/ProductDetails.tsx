@@ -2,10 +2,14 @@ import UpdateCartButton from "@/src/components/UpdateCartButton";
 import Carrousel from "@/src/components/Carrousel";
 import { CartItem } from "@/src/types";
 import { urlFor } from "@/sanity/lib/imageUrl";
-import styles from "./ProductCard.module.css";
+import styles from "./ProductDetails.module.css";
 import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
 
-const ProductCard = ({ product }: { product: ALL_PRODUCTS_QUERYResult[0] }) => {
+const ProductDetails = ({
+  product,
+}: {
+  product: ALL_PRODUCTS_QUERYResult[0];
+}) => {
   // Save cartItem data
   const cartItem: CartItem = {
     _id: product._id,
@@ -25,15 +29,15 @@ const ProductCard = ({ product }: { product: ALL_PRODUCTS_QUERYResult[0] }) => {
   };
 
   return (
-    <section id={styles.ProductCard}>
+    <section id={styles.ProductDetails}>
       {product.imageGallery && <Carrousel imageArray={product.imageGallery} />}
       <div>
         <h1>{product.name}</h1>
         <p>€ {product.price?.toFixed(2)}</p>
-        <UpdateCartButton cartItem={cartItem} type="primary" />
+        <UpdateCartButton cartItem={cartItem} variant="primary" />
       </div>
     </section>
   );
 };
 
-export default ProductCard;
+export default ProductDetails;
