@@ -3,7 +3,7 @@
 import { CartContext } from "../context/CartContextProvider";
 import { useContext, useState } from "react";
 import { CartItem } from "../types";
-import { Button } from "@hgcl/ui-library";
+import { Button } from "@hgcle/ui-library";
 
 const UpdateCartButton = ({
   cartItem,

@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContextProvider";
 import Link from "next/link";
 import Logo from "./Logo";
-import { IconButton, Button } from "@hgcl/ui-library";
+import { IconButton, Button } from "@hgcle/ui-library";
 
 function Header() {
   const { user } = useUser();

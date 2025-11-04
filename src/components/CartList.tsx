@@ -1,6 +1,6 @@
 import { CartItem as CartItemType } from "../types";
 import styles from "./CartList.module.css";
-import { CartItem } from "@hgcl/ui-library";
+import { CartItem } from "@hgcle/ui-library";
 import UpdateCartButton from "./UpdateCartButton";
 
 const CartList = ({ cartItems }: { cartItems: CartItemType[] }) => (

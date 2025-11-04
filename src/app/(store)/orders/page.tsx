@@ -1,7 +1,7 @@
 import { getMyOrders } from "@/sanity/lib/orders/getMyOrders";
 import OrderItem from "@/src/components/OrderItem";
 import { auth } from "@clerk/nextjs/server";
-import { Page } from "@hgcl/ui-library";
+import { Page } from "@hgcle/ui-library";
 import { redirect } from "next/navigation";
 
 const Orders = async () => {

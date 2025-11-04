@@ -4,7 +4,7 @@ import { CartContext } from "@/src/context/CartContextProvider";
 import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import styles from "./page.module.css";
-import { Button, Hypertext, Page } from "@hgcl/ui-library";
+import { Button, Hypertext, Page } from "@hgcle/ui-library";
 
 const SuccessPage = () => {
   // In `createCheckoutSession.ts`, the order number was saved as a URL param on success

@@ -3,7 +3,7 @@ import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
 import ProductDetails from "@/src/components/ProductDetails";
-import { Page } from "@hgcl/ui-library";
+import { Page } from "@hgcle/ui-library";
 
 // NextJS caching params (by default, NextJS never caches)
 export const dynamic = "force-static";

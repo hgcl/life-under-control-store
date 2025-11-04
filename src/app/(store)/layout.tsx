@@ -1,7 +1,7 @@
 import { type Metadata } from "next";
 import "../styles/globals.css";
-import "@hgcl/ui-library/dist/globals.css";
-import { Banner, SkipToContent } from "@hgcl/ui-library";
+import "@hgcle/ui-library/dist/globals.css";
+import { Banner, SkipToContent } from "@hgcle/ui-library";
 import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";

@@ -5,7 +5,7 @@ import createCheckoutSession, {
   Metadata,
 } from "@/src/actions/createCheckoutSession";
 import { SignInButton, useUser } from "@clerk/nextjs";
-import { Page, Button } from "@hgcl/ui-library";
+import { Page, Button } from "@hgcle/ui-library";
 import CartList from "@/src/components/CartList";
 import { CartContext } from "@/src/context/CartContextProvider";
 import styles from "./page.module.css";

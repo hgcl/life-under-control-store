@@ -1,5 +1,5 @@
 import { Category } from "@/sanity.types";
-import { FilterTag } from "@hgcl/ui-library";
+import { FilterTag } from "@hgcle/ui-library";
 import styles from "./CategorySelector.module.css";
 
 type CategorySelectorProps = {
