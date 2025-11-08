@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.31.9",
-    "@hgcle/ui-library": "^0.0.21",
+    "@hgcle/ui-library": "^0.0.22",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^3.99.0",
     "next-sanity": "^10.0.16",
