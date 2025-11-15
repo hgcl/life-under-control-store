@@ -1,27 +1,29 @@
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import { beforeAll, describe, expect, test, vi } from "vitest";
 
-// Import mocks first
-jest.mock("@/sanity/lib/live", () => ({
-  sanityFetch: jest.fn(async () => []),
-}));
-jest.mock("@/sanity/lib/products/getAllProducts", () => ({
-  getAllProducts: jest.fn(async () => []),
-}));
-jest.mock("@/sanity/lib/products/getAllCategories", () => ({
-  getAllCategories: jest.fn(async () => []),
-}));
+beforeAll(() => {
+  vi.mock("@/sanity/lib/products/getAllProducts", () => ({
+    getAllProducts: vi.fn(async () => []),
+  }));
+  vi.mock("@/sanity/lib/products/getAllCategories", () => ({
+    getAllCategories: vi.fn(async () => []),
+  }));
+  vi.mock("@/sanity/lib/imageUrl", () => ({
+    urlFor: vi.fn(async () => {}),
+  }));
+});
 
-import Home from "@/src/app/(store)/page";
+import Home from "../src/app/(store)/page";
 
 describe("<Home />", () => {
-  test("title exists on page", async () => {
-    const data = await Home;
-    expect(data.title).toBeDefined;
-  });
-
   test("page renders", async () => {
     const component = await Home();
     render(component);
+  });
+
+  test("<h1> exists on page", async () => {
+    const component = await Home();
+    render(component);
+    expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
   });
 });

@@ -2,13 +2,14 @@
   "name": "life-under-control-store",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "typegen": "npx -y sanity@latest schema extract && npx -y sanity@latest typegen generate",
-    "test": "jest"
+    "test": "vitest"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.31.9",
@@ -34,13 +35,15 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5.1.1",
     "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
-    "ts-jest": "^29.4.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "jsdom": "^27.2.0",
+    "typescript": "^5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.0.9"
   }
 }
