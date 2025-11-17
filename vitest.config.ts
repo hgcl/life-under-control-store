@@ -11,11 +11,5 @@ export default defineConfig(({ mode }) => ({
     globals: true,
     include: ["__tests__/**/*.{test,spec}.{ts,tsx,js,jsx}"],
     setupFiles: ["./vitest.setup.ts"],
-    // env: loadEnv(mode, process.cwd(), ""),
-    // onConsoleLog(log) {
-    //   if (log.includes("new URL(")) {
-    //     console.log("URL DEBUG:", log);
-    //   }
-    // },
   },
 }));
