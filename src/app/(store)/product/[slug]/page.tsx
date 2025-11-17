@@ -30,14 +30,14 @@ const ProductPage = async ({
 
   return (
     product.name && (
-      <Page title={product.name} hideTitle>
+      <>
         <ProductDetails product={product} />
         <section className="typography center-content">
           {Array.isArray(product.description) && (
             <PortableText value={product.description} />
           )}
         </section>
-      </Page>
+      </>
     )
   );
 };
