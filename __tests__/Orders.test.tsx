@@ -21,6 +21,9 @@ beforeAll(() => {
   vi.mock("next/navigation", () => ({
     redirect: vi.fn(),
   }));
+  vi.mock("@/sanity/lib/orders/getMyOrders", () => ({
+    getMyOrders: vi.fn().mockResolvedValue([]),
+  }));
 });
 
 import Orders from "../src/app/(store)/orders/page";

@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import { beforeAll, describe, expect, test, vi } from "vitest";
 
 beforeAll(() => {
@@ -15,20 +15,10 @@ beforeAll(() => {
 });
 
 import CartPage from "../src/app/(store)/cart/page";
-import cartContextRender from "./cartContextRender";
 
 describe("<CartPage />", () => {
-  let providerProps: {};
-  beforeEach(
-    () =>
-      (providerProps = {
-        cartItems: vi.fn(),
-        clearCart: vi.fn(),
-      })
-  );
-
-  test("<h1> exists on page", async () => {
-    cartContextRender(<CartPage />, { providerProps });
+  test("<h1> exists on page", () => {
+    render(<CartPage />);
     expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
   });
 });
