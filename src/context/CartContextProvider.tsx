@@ -35,9 +35,20 @@ const initialCartContext = {
 
 export const CartContext = createContext(initialCartContext);
 
-const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
+const CartContextProvider = ({
+  children,
+  testState,
+}: {
+  children: React.ReactNode;
+  testState?: any;
+}) => {
   // Initial cart state is complex, so we will need to use useReduce instead of useState
-  const [state, dispatch] = useReducer(CartReducer, initialCartState);
+  let [state, dispatch] = useReducer(CartReducer, initialCartState);
+
+  // Replace `state` with `testState` when context data needs to be initialized to specific values in tests
+  if (testState) {
+    state = testState;
+  }
 
   // Function to handle when an item is added from the store into the cart
   // `dispatch()` works with useReducer: https://react.dev/reference/react/useReducer#dispatch
