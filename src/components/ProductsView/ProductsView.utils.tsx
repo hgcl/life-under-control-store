@@ -38,9 +38,8 @@ export function handleCheckboxChange(
 export function filterProducts(
   products: ALL_PRODUCTS_QUERYResult,
   selectedCategories: Set<string>
-): any[] {
-  // Filter `products` shown based on `selectedCategories` — we need an any[] type to adapt to the component
-  /* eslint-disable @typescript-eslint/no-explicit-any */
+): unknown[] {
+  // Filter `products` shown based on `selectedCategories` — we need an unknown[] type to adapt to the component
   const filteredProducts = products.filter((product) => {
     if (!product.categories) {
       return false;
@@ -57,6 +56,8 @@ export function filterProducts(
 /**
  * Restructure filteredProducts data to work with `<ProductGrid>` component
  */
+
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 export function restructureProducts(filteredProducts: any[]) {
   for (const item of filteredProducts) {
     item.id = item._id;

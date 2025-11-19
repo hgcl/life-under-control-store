@@ -25,7 +25,8 @@ export async function handleCheckout({
 }: {
   isSignedIn: boolean;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
-  user: any;
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+  user: any; // should theoretically be a `UserResource` type from @clerk
   cartItems: CartItem[];
 }) {
   if (!isSignedIn) {

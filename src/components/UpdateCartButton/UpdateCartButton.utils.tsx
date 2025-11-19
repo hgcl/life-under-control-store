@@ -3,7 +3,6 @@
  */
 
 import { CartItem } from "@/src/types";
-import { Dispatch, SetStateAction } from "react";
 
 export function isProductInCart({
   localStorageItems,

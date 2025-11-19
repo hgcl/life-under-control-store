@@ -25,6 +25,7 @@ const initialCartState: CartState = {
 };
 
 // `initialCartContext` is used by TypeScript to infer the context types. We need to create dummy functions, so that the context gets initialized with the intended types. These will be overridden with the real ones.
+/* eslint-disable  @typescript-eslint/no-unused-vars */
 const initialCartContext = {
   addToCart: (_product: CartItem) => {},
   removeFromCart: (_product: CartItem) => {},
