@@ -22,7 +22,10 @@ const CartPage = () => {
 
   // Checkout process activated on click
   const handleCheckout = async () => {
-    if (!isSignedIn) return;
+    if (!isSignedIn) {
+      console.error(">>> Not signed in");
+      return;
+    }
     setIsLoading(true);
 
     try {
@@ -77,7 +80,7 @@ const CartPage = () => {
                     onClick={handleCheckout}
                     isDisabled={isLoading}
                     variant="primary"
-                    href="#"
+                    href=""
                   >
                     {isLoading ? "Processing..." : "Proceed to checkout"}
                   </Button>
