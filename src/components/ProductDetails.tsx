@@ -1,5 +1,5 @@
 import UpdateCartButton from "@/src/components/UpdateCartButton";
-import Carrousel from "@/src/components/Carrousel";
+import Carousel from "@/src/components/Carousel";
 import { CartItem } from "@/src/types";
 import { urlFor } from "@/sanity/lib/imageUrl";
 import styles from "./ProductDetails.module.css";
@@ -30,7 +30,7 @@ const ProductDetails = ({
 
   return (
     <section id={styles.ProductDetails}>
-      {product.imageGallery && <Carrousel imageArray={product.imageGallery} />}
+      {product.imageGallery && <Carousel imageArray={product.imageGallery} />}
       <div>
         <h1>{product.name}</h1>
         <p>€ {product.price?.toFixed(2)}</p>

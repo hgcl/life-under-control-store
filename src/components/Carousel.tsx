@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import styles from "./Carrousel.module.css";
+import styles from "./Carousel.module.css";
 import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-// Accessible carrousel
+// Accessible Carousel
 // inspiration: https://www.a11y-collective.com/blog/accessible-carousel/
 // MDN: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role
-const Carrousel = ({
+const Carousel = ({
   imageArray,
 }: {
   imageArray: ALL_PRODUCTS_QUERYResult[0]["imageGallery"];
@@ -17,9 +17,9 @@ const Carrousel = ({
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className={styles.Carrousel}>
+    <div className={styles.Carousel}>
       {/* BUTTONS */}
-      <div className={styles.Carrousel_tabList} role="tablist">
+      <div className={styles.Carousel_tabList} role="tablist">
         {imageArray &&
           imageArray.map(
             (image, index) =>
@@ -54,7 +54,7 @@ const Carrousel = ({
           (image, index) =>
             image.asset && (
               <div
-                className={styles.Carrousel_panel}
+                className={styles.Carousel_panel}
                 key={image.asset._id}
                 role="tabpanel"
                 id={`tabpanel-${index}`} // `id` connects to button `aria-controls`
@@ -78,4 +78,4 @@ const Carrousel = ({
   );
 };
 
-export default Carrousel;
+export default Carousel;
