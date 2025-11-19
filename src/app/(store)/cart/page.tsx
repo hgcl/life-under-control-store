@@ -1,14 +1,14 @@
 "use client";
 
+import styles from "./page.module.css";
+import { calculateTotalPrice, handleCheckout } from "./utils";
+import CartList from "@/src/components/CartList/CartList";
+import { CartContext } from "@/src/context/CartContextProvider";
+
+// Imports: external libraries
 import { useContext, useState } from "react";
-import createCheckoutSession, {
-  Metadata,
-} from "@/src/actions/createCheckoutSession";
 import { SignInButton, useUser } from "@clerk/nextjs";
 import { Page, Button } from "@hgcle/ui-library";
-import CartList from "@/src/components/CartList";
-import { CartContext } from "@/src/context/CartContextProvider";
-import styles from "./page.module.css";
 
 const CartPage = () => {
   const { cartItems, clearCart } = useContext(CartContext);
@@ -16,40 +16,6 @@ const CartPage = () => {
 
   // Clerk authentification
   const { isSignedIn, user } = useUser();
-
-  // Calculate total price based on cart items
-  const totalPrice = cartItems.reduce((acc, curr) => acc + curr.price, 0);
-
-  // Checkout process activated on click
-  const handleCheckout = async () => {
-    if (!isSignedIn) {
-      console.error(">>> Not signed in");
-      return;
-    }
-    setIsLoading(true);
-
-    try {
-      const metadata: Metadata = {
-        // User data on Clerk: https://clerk.com/docs/references/javascript/user
-        orderNumber: crypto.randomUUID(),
-        customerName: user?.fullName ?? "Unknown",
-        customerEmail: user?.emailAddresses[0].emailAddress ?? "Unknown",
-        clerkUserId: user?.id,
-      };
-
-      const checkoutUrl = await createCheckoutSession(cartItems, metadata);
-
-      // Redirects to checkout session
-      if (checkoutUrl) {
-        window.location.href = checkoutUrl;
-      }
-    } catch (error) {
-      console.error("Error handling checkout", error);
-      throw error;
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <Page title="Cart" hideTitle>
@@ -71,13 +37,20 @@ const CartPage = () => {
               <p>{cartItems.length} item(s)</p>
               <p className={styles.CartOverview_totalPrice}>
                 <span>Total</span>
-                <span>€ {totalPrice.toFixed(2)}</span>
+                <span>€ {calculateTotalPrice(cartItems).toFixed(2)}</span>
               </p>
               {
                 // 1. Full cart and signed in
                 isSignedIn ? (
                   <Button
-                    onClick={handleCheckout}
+                    onClick={() =>
+                      handleCheckout({
+                        isSignedIn,
+                        setIsLoading,
+                        user,
+                        cartItems,
+                      })
+                    }
                     isDisabled={isLoading}
                     variant="primary"
                     href=""

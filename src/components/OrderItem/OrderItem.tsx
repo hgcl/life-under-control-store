@@ -1,9 +1,13 @@
-import { MY_ORDERS_QUERYResult } from "@/sanity.types";
+import styles from "./OrderItem.module.css";
+
+// Imports: internal libs and types
+import { formatCurrency } from "../../lib/formatCurrency";
 import { urlFor } from "@/sanity/lib/imageUrl";
-import { formatCurrency } from "../lib/formatCurrency";
+import { MY_ORDERS_QUERYResult } from "@/sanity.types";
+
+// Imports: external libraries
 import Image from "next/image";
 import { Hypertext, Button } from "@hgcle/ui-library";
-import styles from "./OrderItem.module.css";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
   <article className={styles.Order_card}>

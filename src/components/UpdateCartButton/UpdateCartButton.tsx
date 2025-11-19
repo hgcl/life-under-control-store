@@ -1,8 +1,13 @@
 "use client";
 
-import { CartContext } from "../context/CartContextProvider";
+import { CartContext } from "../../context/CartContextProvider";
+import { isProductInCart } from "./UpdateCartButton.utils";
+
+// Imports: internal libs and types
+import { CartItem } from "../../types";
+
+// Imports: external libraries
 import { useContext, useState } from "react";
-import { CartItem } from "../types";
 import { Button } from "@hgcle/ui-library";
 
 const UpdateCartButton = ({
@@ -12,28 +17,24 @@ const UpdateCartButton = ({
   cartItem: CartItem;
   variant?: "primary" | "secondary" | "ternary";
 }) => {
-  const { cartItems, addToCart, removeFromCart } = useContext(CartContext);
+  const {
+    cartItems: localStorageItems,
+    addToCart,
+    removeFromCart,
+  } = useContext(CartContext);
 
-  // 1. Is this product is in the cart or not? Display the toggle button accordingly.
-  // 1.1 Compare `cartItems` (from context) and current `cartItem` arrays
-  const isInCart = cartItems.find(
-    (storageItem) => storageItem._id === cartItem._id
-  );
-  // 1.2 Initialize useState value
-  let init = false;
-  if (isInCart) {
-    init = true;
-  }
+  const init = isProductInCart({ localStorageItems, cartItem });
+
   const [isActive, setIsActive] = useState(init);
 
-  const toggle = () => {
+  function toggle() {
     setIsActive((current) => !current);
     if (isActive) {
       removeFromCart(cartItem);
     } else {
       addToCart(cartItem);
     }
-  };
+  }
 
   return (
     <Button

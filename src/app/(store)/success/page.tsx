@@ -1,9 +1,11 @@
 "use client";
 
+import styles from "./page.module.css";
 import { CartContext } from "@/src/context/CartContextProvider";
+
+// Imports: external libraries
 import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
-import styles from "./page.module.css";
 import { Button, Hypertext, Page } from "@hgcle/ui-library";
 
 const SuccessPage = () => {
