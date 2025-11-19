@@ -1,10 +1,12 @@
 "use client";
 
+import styles from "./Carousel.module.css";
+
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
+
 import Image from "next/image";
 import { useState } from "react";
-import styles from "./Carousel.module.css";
-import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 // Accessible Carousel
 // inspiration: https://www.a11y-collective.com/blog/accessible-carousel/

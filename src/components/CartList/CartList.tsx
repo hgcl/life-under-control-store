@@ -1,7 +1,9 @@
-import { CartItem as CartItemType } from "../../types";
 import styles from "./CartList.module.css";
-import { CartItem } from "@hgcle/ui-library";
 import UpdateCartButton from "../UpdateCartButton/UpdateCartButton";
+
+import { CartItem as CartItemType } from "../../types";
+
+import { CartItem } from "@hgcle/ui-library";
 
 const CartList = ({ cartItems }: { cartItems: CartItemType[] }) => (
   <ul className={styles.CartList}>

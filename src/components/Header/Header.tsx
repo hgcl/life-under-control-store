@@ -1,20 +1,23 @@
 "use client";
 
 import styles from "./Header.module.css";
+import { getCurrentCart } from "./Header.utils";
+import Logo from "../Logo";
+import { CartContext } from "../../context/CartContextProvider";
+
+// Imports: external libraries
 import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { ShoppingCart, ShoppingBag } from "react-feather";
 import { useContext } from "react";
-import { CartContext } from "../../context/CartContextProvider";
 import Link from "next/link";
-import Logo from "../Logo";
 import { IconButton, Button } from "@hgcle/ui-library";
 
 function Header() {
   const { user } = useUser();
 
   const { cartItems } = useContext(CartContext);
-  const currentCart =
-    cartItems.length > 0 ? `Cart (${cartItems.length})` : `Cart`;
+
+  const currentCart = getCurrentCart(cartItems);
 
   return (
     <header id={styles.Header}>
