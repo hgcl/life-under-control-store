@@ -2,7 +2,7 @@
 
 import { ALL_PRODUCTS_QUERYResult, Category } from "@/sanity.types";
 import { ProductGrid } from "@hgcle/ui-library";
-import CategorySelector from "./CategorySelector";
+import CategorySelector from "../CategorySelector/CategorySelector";
 import { useState } from "react";
 import { urlFor } from "@/sanity/lib/imageUrl";
 

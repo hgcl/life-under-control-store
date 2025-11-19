@@ -6,7 +6,7 @@ import createCheckoutSession, {
 } from "@/src/actions/createCheckoutSession";
 import { SignInButton, useUser } from "@clerk/nextjs";
 import { Page, Button } from "@hgcle/ui-library";
-import CartList from "@/src/components/CartList";
+import CartList from "@/src/components/CartList/CartList";
 import { CartContext } from "@/src/context/CartContextProvider";
 import styles from "./page.module.css";
 

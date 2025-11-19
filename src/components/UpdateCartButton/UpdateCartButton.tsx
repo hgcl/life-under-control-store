@@ -1,8 +1,8 @@
 "use client";
 
-import { CartContext } from "../context/CartContextProvider";
+import { CartContext } from "../../context/CartContextProvider";
 import { useContext, useState } from "react";
-import { CartItem } from "../types";
+import { CartItem } from "../../types";
 import { Button } from "@hgcle/ui-library";
 
 const UpdateCartButton = ({

@@ -1,6 +1,6 @@
 import { MY_ORDERS_QUERYResult } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/imageUrl";
-import { formatCurrency } from "../lib/formatCurrency";
+import { formatCurrency } from "../../lib/formatCurrency";
 import Image from "next/image";
 import { Hypertext, Button } from "@hgcle/ui-library";
 import styles from "./OrderItem.module.css";

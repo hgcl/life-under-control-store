@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
 import CartContextProvider from "../../context/CartContextProvider";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Life Under Control",

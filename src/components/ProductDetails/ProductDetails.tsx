@@ -1,5 +1,5 @@
-import UpdateCartButton from "@/src/components/UpdateCartButton";
-import Carousel from "@/src/components/Carousel";
+import UpdateCartButton from "@/src/components/UpdateCartButton/UpdateCartButton";
+import Carousel from "@/src/components/Carousel/Carousel";
 import { CartItem } from "@/src/types";
 import { urlFor } from "@/sanity/lib/imageUrl";
 import styles from "./ProductDetails.module.css";

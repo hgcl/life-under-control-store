@@ -4,9 +4,9 @@ import styles from "./Header.module.css";
 import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { ShoppingCart, ShoppingBag } from "react-feather";
 import { useContext } from "react";
-import { CartContext } from "../context/CartContextProvider";
+import { CartContext } from "../../context/CartContextProvider";
 import Link from "next/link";
-import Logo from "./Logo";
+import Logo from "../Logo";
 import { IconButton, Button } from "@hgcle/ui-library";
 
 function Header() {
