@@ -2,7 +2,7 @@
 // NextJS docs: https://nextjs.org/docs/app/api-reference/file-conventions/route
 
 import { backendClient } from "@/sanity/lib/backendClient";
-import { Metadata } from "@/src/actions/createCheckoutSession";
+import { Metadata } from "@/src/lib/createCheckoutSession";
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import stripe from "@/src/lib/stripe";
