@@ -1,6 +1,8 @@
 import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
 import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
 import ProductsView from "../../components/ProductsView/ProductsView";
+
+// Imports: external libraries
 import { Page } from "@hgcle/ui-library";
 
 const Home = async () => {

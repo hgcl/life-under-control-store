@@ -1,12 +1,14 @@
-import { type Metadata } from "next";
 import "../styles/globals.css";
 import "@hgcle/ui-library/dist/globals.css";
-import { Banner, SkipToContent } from "@hgcle/ui-library";
+import CartContextProvider from "../../context/CartContextProvider";
+import Header from "../../components/Header/Header";
+
+// Imports: external libraries
+import { type Metadata } from "next";
 import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
-import CartContextProvider from "../../context/CartContextProvider";
-import Header from "../../components/Header/Header";
+import { Banner, SkipToContent } from "@hgcle/ui-library";
 
 export const metadata: Metadata = {
   title: "Life Under Control",
