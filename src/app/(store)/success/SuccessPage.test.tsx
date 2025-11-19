@@ -9,11 +9,11 @@ beforeAll(() => {
   }));
 });
 
-import SuccessPage from "../src/app/(store)/success/page";
+import SuccessPage from "./page";
 
 describe("<SuccessPage />", () => {
-  test("<h1> exists on page", () => {
+  test("exactly one <h1> exists on page", () => {
     render(<SuccessPage />);
-    expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
   });
 });

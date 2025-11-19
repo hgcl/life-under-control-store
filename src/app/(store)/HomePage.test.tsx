@@ -10,12 +10,12 @@ beforeAll(() => {
   }));
 });
 
-import Home from "../src/app/(store)/page";
+import Home from "./page";
 
 describe("<Home />", () => {
-  test("<h1> exists on page", async () => {
+  test("exactly one <h1> exists on page", async () => {
     const component = await Home();
     render(component);
-    expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
+    expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
   });
 });

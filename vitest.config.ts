@@ -9,7 +9,10 @@ export default defineConfig(({ mode }) => ({
   test: {
     environment: "jsdom",
     globals: true,
-    include: ["__tests__/**/*.{test,spec}.{ts,tsx,js,jsx}"],
+    include: [
+      "src/app/**/*.{test,spec}.{ts,tsx,js,jsx}",
+      "src/components/**/*.{test,spec}.{ts,tsx,js,jsx}",
+    ],
     setupFiles: ["./vitest.setup.ts"],
     env: loadEnv(mode, process.cwd(), ""),
   },
