@@ -33,7 +33,7 @@ const ProductPage = async ({
         <ProductDetails product={product} />
         <section className="typography center-content">
           {Array.isArray(product.description) && (
-            <PortableText value={product.description} />
+            <PortableText value={product.description.slice(1)} />
           )}
         </section>
       </>

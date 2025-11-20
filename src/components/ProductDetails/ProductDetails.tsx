@@ -5,6 +5,7 @@ import Carousel from "@/src/components/Carousel/Carousel";
 
 // Imports: internal libs and types
 import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
+import { PortableText } from "next-sanity";
 
 const ProductDetails = ({
   product,
@@ -20,6 +21,11 @@ const ProductDetails = ({
         <h1>{product.name}</h1>
         <p>€ {product.price?.toFixed(2)}</p>
         <UpdateCartButton cartItem={cartItem} variant="primary" />
+        {Array.isArray(product.description) && (
+          <div className={styles.ProductDetails_tagline}>
+            <PortableText value={product.description[0]} />
+          </div>
+        )}
       </div>
     </section>
   );

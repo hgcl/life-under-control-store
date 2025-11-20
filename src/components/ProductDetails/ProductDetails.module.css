@@ -4,21 +4,28 @@
   gap: var(--spacing-xl);
 }
 
-/* Carousel */
+/* CAROUSEL */
 #ProductDetails > *:first-child {
   width: 100%;
   flex: 1 1 65%;
   height: 400px;
 }
 
-/* PRODUCT DETAILS */
+/* PRODUCT INFO */
 #ProductDetails > *:last-child {
   width: 100%;
   flex: 1 1 25%;
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-#ProductDetails > *:last-child > * {
-  margin-bottom: 1rem;
+.ProductDetails_tagline {
+  margin-top: 2rem;
+  background: var(--bg-subtle);
+  padding: var(--padding-l);
+  font-size: var(--fontsize-headline-s);
+  text-align: center;
 }
 
 @media only screen and (width > 480px) {
