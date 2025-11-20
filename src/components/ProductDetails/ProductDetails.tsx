@@ -22,7 +22,7 @@ const ProductDetails = ({
         <p>€ {product.price?.toFixed(2)}</p>
         <UpdateCartButton cartItem={cartItem} variant="primary" />
         {Array.isArray(product.description) && (
-          <div className={styles.ProductDetails_tagline}>
+          <div className={styles.ProductDetails__tagline}>
             <PortableText value={product.description[0]} />
           </div>
         )}

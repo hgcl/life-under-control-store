@@ -1,4 +1,4 @@
-.Selector_fieldset {
+.CategorySelector__fieldset {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-m);

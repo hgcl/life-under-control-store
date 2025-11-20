@@ -32,10 +32,10 @@ const CartPage = () => {
           // 2. Full cart
           <div className={styles.CartOverview}>
             <CartList cartItems={cartItems} />
-            <section className={styles.CartOverview_summary}>
+            <section className={styles.CartOverview__summary}>
               <h2>Order summary</h2>
               <p>{cartItems.length} item(s)</p>
-              <p className={styles.CartOverview_totalPrice}>
+              <p className={styles.CartOverview__totalPrice}>
                 <span>Total</span>
                 <span>€ {calculateTotalPrice(cartItems).toFixed(2)}</span>
               </p>

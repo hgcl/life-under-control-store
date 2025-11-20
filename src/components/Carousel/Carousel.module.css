@@ -4,16 +4,16 @@
   gap: var(--spacing-m);
 }
 
-.Carousel_tabList {
+.Carousel__tabList {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-m);
-  /* setup, so that .Carousel_tablist can be scrolled */
+  /* setup, so that .Carousel__tablist can be scrolled */
   flex: 1 0 auto; /* flex-shrink needs to be 0 to avoid unwanted horizontal scroll */
   overflow-y: auto;
 }
 
-.Carousel_tabList button {
+.Carousel__tabList button {
   /* Reset <button> default styles */
   border: 0;
   background-color: transparent;
@@ -25,24 +25,24 @@
   border: var(--border) var(--fg-normal);
 }
 
-.Carousel_tabList button img {
+.Carousel__tabList button img {
   object-fit: cover;
 }
 
-.Carousel_panel {
+.Carousel__panel {
   position: relative;
   height: 100%;
   width: 100%;
   min-width: 300px;
 }
 
-.Carousel_panel img {
+.Carousel__panel img {
   object-fit: contain;
 }
 
 /* INTERACTIONS */
 
-.Carousel_tabList button[aria-selected="false"] {
+.Carousel__tabList button[aria-selected="false"] {
   opacity: 0.5;
   border: none;
 }
@@ -53,17 +53,17 @@
   .Carousel {
     flex-direction: row;
   }
-  .Carousel_tabList {
+  .Carousel__tabList {
     flex-direction: column;
     overflow-x: auto;
     width: 100px;
   }
-  .Carousel_tabList button {
+  .Carousel__tabList button {
     height: 72px;
     width: 72px;
   }
-  .Carousel_tabList > div {
-    /* setup, so that .Carousel_tablist can be scrolled */
+  .Carousel__tabList > div {
+    /* setup, so that .Carousel__tablist can be scrolled */
     min-height: min-content;
   }
 }

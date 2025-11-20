@@ -21,7 +21,7 @@ const CategorySelector = ({
   selectedCategories,
   handleCheckboxChange,
 }: CategorySelectorProps) => (
-  <fieldset className={styles.Selector_fieldset}>
+  <fieldset className={styles.CategorySelector__fieldset}>
     <legend className="visually-hidden">
       Choose your categories to filter the displayed listings
     </legend>

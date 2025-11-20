@@ -10,7 +10,7 @@ import Image from "next/image";
 import { Hypertext, Button } from "@hgcle/ui-library";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
-  <article className={styles.Order_card}>
+  <article className={styles.OrderItem__card}>
     <section>
       <h2>Order {order.orderNumber}</h2>
       <p>
@@ -24,14 +24,14 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
       </p>
       <p>Status: {order.status}</p>
     </section>
-    <section className={styles.Order_list}>
+    <section className={styles.OrderItem__list}>
       <h3>Item(s) purchased</h3>
       <ul>
         {order.products &&
           order.products.map((product) => (
-            <li key={product._id} className={styles.Order_item}>
+            <li key={product._id} className={styles.OrderItem__item}>
               {product.imageGallery && (
-                <div className={styles.Order_itemImage}>
+                <div className={styles.OrderItem__itemImage}>
                   <Image
                     src={`${urlFor(product.imageGallery[0]).url()}`}
                     width={100}
@@ -40,7 +40,7 @@ const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
                   />
                 </div>
               )}
-              <div className={styles.Order_itemDescription}>
+              <div className={styles.OrderItem__itemDescription}>
                 <p>
                   {product.archived ? (
                     product.name + ` (archived listing)`

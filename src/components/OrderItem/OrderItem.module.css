@@ -1,4 +1,4 @@
-.Order_card {
+.OrderItem__card {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-l);
@@ -6,25 +6,25 @@
   border-radius: var(--border-radius);
   max-width: 100%;
 }
-.Order_card h2 {
+.OrderItem__card h2 {
   /* Order number (used as <h2>) can be very long and without space */
   word-break: break-all;
 }
-.Order_card > * {
+.OrderItem__card > * {
   padding: var(--padding-m);
 }
-.Order_card > *:first-child {
+.OrderItem__card > *:first-child {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-m);
 }
 
-.Order_list {
+.OrderItem__list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-m);
 }
-.Order_list ul {
+.OrderItem__list ul {
   /* Reset default <ul> styles */
   padding: 0;
   list-style: none;
@@ -34,26 +34,26 @@
   gap: var(--spacing-m);
 }
 
-.Order_item {
+.OrderItem__item {
   display: flex;
   gap: var(--spacing-l);
 }
 
-.Order_itemImage {
+.OrderItem__itemImage {
   position: relative;
   height: fit-content;
 }
-.Order_itemImage img {
+.OrderItem__itemImage img {
   object-fit: contain;
   max-width: 100%;
   max-height: 100%;
   width: auto;
   height: auto;
 }
-.Order_itemDescription > * {
+.OrderItem__itemDescription > * {
   margin-bottom: var(--spacing-m);
 }
-.Order_itemLink {
+.OrderItem__itemLink {
   font-size: var(--fontsize-headline-s);
   line-height: var(--lineheight-headline);
 }

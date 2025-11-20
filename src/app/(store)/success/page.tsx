@@ -25,17 +25,17 @@ const SuccessPage = () => {
     <Page title="Successful order" hideTitle>
       <section className={styles.Success}>
         <h2>Thank you for your order!</h2>
-        <div className={styles.Success_content}>
+        <div className={styles.Success__content}>
           <p>
             You will find download links for all purchased items directly in
             your <Hypertext href="/orders">Orders</Hypertext> section.
           </p>
           <p>
             Order number:{" "}
-            <span className={styles.Success_code}>{orderNumber}</span>
+            <span className={styles.Success__code}>{orderNumber}</span>
           </p>
         </div>
-        <div className={styles.Success_buttons}>
+        <div className={styles.Success__buttons}>
           <Button href="/orders" variant="primary">
             View order details
           </Button>

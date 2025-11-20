@@ -21,7 +21,7 @@ const Carousel = ({
   return (
     <div className={styles.Carousel}>
       {/* BUTTONS */}
-      <div className={styles.Carousel_tabList} role="tablist">
+      <div className={styles.Carousel__tabList} role="tablist">
         {imageArray &&
           imageArray.map(
             (image, index) =>
@@ -56,7 +56,7 @@ const Carousel = ({
           (image, index) =>
             image.asset && (
               <div
-                className={styles.Carousel_panel}
+                className={styles.Carousel__panel}
                 key={image.asset._id}
                 role="tabpanel"
                 id={`tabpanel-${index}`} // `id` connects to button `aria-controls`
