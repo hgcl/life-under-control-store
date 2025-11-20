@@ -18,8 +18,9 @@ const SuccessPage = () => {
   useEffect(() => {
     if (orderNumber) {
       clearCart();
+      console.log(">>> Cart emptied");
     }
-  }, [orderNumber, clearCart]);
+  }, []);
 
   return (
     <Page title="Successful order" hideTitle>
