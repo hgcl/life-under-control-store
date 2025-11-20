@@ -1,9 +1,10 @@
 import { render } from "@testing-library/react";
 import CartContextProvider from "@/src/context/CartContextProvider";
+import { CartState } from "../types";
 
 // Custom render docs: https://testing-library.com/docs/react-testing-library/setup/
 
-export function createWrapper(contextValues: { cartItems?: {}[] }) {
+export function createWrapper(contextValues: CartState) {
   return function MockCartContextProvider({
     children,
   }: {
@@ -17,7 +18,7 @@ export function createWrapper(contextValues: { cartItems?: {}[] }) {
   };
 }
 
-type contextValuesProps = { contextValues: { cartItems?: {}[] } };
+type contextValuesProps = { contextValues: CartState };
 
 export const customRender = (
   ui: React.ReactNode,

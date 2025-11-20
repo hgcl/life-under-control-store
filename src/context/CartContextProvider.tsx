@@ -40,9 +40,10 @@ const CartContextProvider = ({
   testState,
 }: {
   children: React.ReactNode;
-  testState?: any;
+  testState?: CartState;
 }) => {
   // Initial cart state is complex, so we will need to use useReduce instead of useState
+  // eslint-disable-next-line  prefer-const
   let [state, dispatch] = useReducer(CartReducer, initialCartState);
 
   // Replace `state` with `testState` when context data needs to be initialized to specific values in tests

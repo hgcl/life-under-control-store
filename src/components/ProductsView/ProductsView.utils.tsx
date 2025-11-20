@@ -35,11 +35,11 @@ export function handleCheckboxChange(
  * Return filtered products based on selected categories
  */
 
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 export function filterProducts(
   products: ALL_PRODUCTS_QUERYResult,
   selectedCategories: Set<string>
-): any[] {
+): // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+any[] {
   // Filter `products` shown based on `selectedCategories` — we need an unknown[] type to adapt to the component
 
   const filteredProducts = products.filter((product) => {

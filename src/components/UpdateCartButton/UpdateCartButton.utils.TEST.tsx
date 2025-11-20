@@ -1,4 +1,4 @@
-import { describe, expect, test, vi } from "vitest";
+import { describe, expect, test } from "vitest";
 
 import { isProductInCart } from "./UpdateCartButton.utils";
 import { cartItemWithoutId } from "@/src/lib/test-fixtures";
