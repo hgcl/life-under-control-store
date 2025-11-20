@@ -1,6 +1,6 @@
 # Life Under Control Store
 
-The website is built with Next.js 15, Typescript, Sanity (CMS), Clerk (authentication), and Stripe (payment).
+The website is built with Next.js 15, Typescript, React Testing Library, Sanity (CMS), Clerk (authentication), and Stripe (payment).
 
 Take a look at the [UI Library](https://github.com/hgcl/ui-library) behind this project.
 

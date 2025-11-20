@@ -21,11 +21,11 @@ const inter = localFont({
   display: "swap",
 });
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <ClerkProvider dynamic>
       <html lang="en" className={inter.className}>
@@ -44,4 +44,6 @@ export default function RootLayout({
       </html>
     </ClerkProvider>
   );
-}
+};
+
+export default RootLayout;
