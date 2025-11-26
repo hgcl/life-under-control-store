@@ -1,16 +1,11 @@
 export const correctProductsStructure = [
   {
     _id: "1",
-    categories: [{ _ref: "printable-category" }],
+    categories: [
+      { _key: "9e340dd7a435", _ref: "printable-category", _type: "reference" },
+    ],
     _createdAt: "2025-10-06T11:47:26Z",
-    _originalId: "b054fbdd-802f-48da-a575-f9e8047e02c7",
     _rev: "1tNFA3JjDDxFpUt908ad9L",
-    _system: {
-      base: {
-        id: "b054fbdd-802f-48da-a575-f9e8047e02c7",
-        rev: "Grvt83VBWYs5sIFexNKptd",
-      },
-    },
     _type: "product",
     _updatedAt: "2025-10-29T11:35:35Z",
     archived: false,
@@ -244,16 +239,11 @@ export const correctProductsStructure = [
   },
   {
     _id: "2",
-    categories: [{ _ref: "printable-category" }],
+    categories: [
+      { _key: "ced5a0a6b95e", _ref: "printable-category", _type: "reference" },
+    ],
     _createdAt: "2025-10-06T11:47:26Z",
-    _originalId: "b054fbdd-802f-48da-a575-f9e8047e02c7",
     _rev: "1tNFA3JjDDxFpUt908ad9L",
-    _system: {
-      base: {
-        id: "b054fbdd-802f-48da-a575-f9e8047e02c7",
-        rev: "Grvt83VBWYs5sIFexNKptd",
-      },
-    },
     _type: "product",
     _updatedAt: "2025-10-29T11:35:35Z",
     archived: false,
@@ -487,16 +477,15 @@ export const correctProductsStructure = [
   },
   {
     _id: "3",
-    categories: [{ _ref: "spreadsheets-category" }],
-    _createdAt: "2025-10-06T11:47:26Z",
-    _originalId: "b054fbdd-802f-48da-a575-f9e8047e02c7",
-    _rev: "1tNFA3JjDDxFpUt908ad9L",
-    _system: {
-      base: {
-        id: "b054fbdd-802f-48da-a575-f9e8047e02c7",
-        rev: "Grvt83VBWYs5sIFexNKptd",
+    categories: [
+      {
+        _key: "bed38e52719a",
+        _ref: "spreadsheets-category",
+        _type: "reference",
       },
-    },
+    ],
+    _createdAt: "2025-10-06T11:47:26Z",
+    _rev: "1tNFA3JjDDxFpUt908ad9L",
     _type: "product",
     _updatedAt: "2025-10-29T11:35:35Z",
     archived: false,
