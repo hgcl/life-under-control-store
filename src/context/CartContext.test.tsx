@@ -17,6 +17,7 @@ const CustomContextTest = ({
   children: React.ReactNode;
   cartItems?: CartItem[];
 }) => {
+  // eslint-disable-next-line prefer-const
   let { cartItems, clearCart, addToCart, removeFromCart } =
     useContext(CartContext);
 

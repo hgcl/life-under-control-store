@@ -20,6 +20,7 @@ const SuccessPage = () => {
       clearCart();
       console.log(">>> Cart emptied");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
