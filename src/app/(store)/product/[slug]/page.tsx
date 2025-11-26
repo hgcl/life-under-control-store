@@ -1,5 +1,5 @@
 import "@/src/app/styles/typography.css";
-import { getProductBySlug } from "@/sanity/lib/products/getProductBySlug";
+import { getProductBySlug } from "@/src/lib/api/getProductBySlug";
 import ProductDetails from "@/src/components/ProductDetails/ProductDetails";
 
 // Imports: external libraries

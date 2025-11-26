@@ -1,5 +1,5 @@
 import { defineQuery } from "next-sanity"; // for GROQ query result type generation
-import { sanityFetch } from "../live"; // for Live Content API
+import { sanityFetch } from "@/sanity/lib/live"; // for Live Content API
 
 export async function getAllCategories() {
   const ALL_CATEGORIES_QUERY = defineQuery(

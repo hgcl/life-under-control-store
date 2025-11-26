@@ -2,10 +2,10 @@ import { render, screen } from "@testing-library/react";
 import { beforeAll, describe, expect, test, vi } from "vitest";
 
 beforeAll(() => {
-  vi.mock("@/sanity/lib/products/getAllProducts", () => ({
+  vi.mock("@/src/lib/api/getAllProducts", () => ({
     getAllProducts: vi.fn().mockResolvedValue([]),
   }));
-  vi.mock("@/sanity/lib/products/getAllCategories", () => ({
+  vi.mock("@/src/lib/api/getAllCategories", () => ({
     getAllCategories: vi.fn().mockResolvedValue([]),
   }));
 });

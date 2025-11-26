@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { beforeAll, describe, expect, test, vi } from "vitest";
 
 beforeAll(() => {
-  vi.mock("@/sanity/lib/live", () => ({
+  vi.mock("@/src/lib/api/sanity", () => ({
     SanityFetch: vi.fn(),
   }));
   vi.mock("@clerk/nextjs/server", () => ({
@@ -10,7 +10,7 @@ beforeAll(() => {
       userId: "mock-user", // pretends user is logged in
     })),
   }));
-  vi.mock("@/sanity/lib/orders/getMyOrders", () => ({
+  vi.mock("@/src/lib/api/getMyOrders", () => ({
     getMyOrders: vi.fn().mockResolvedValue([]),
   }));
 });

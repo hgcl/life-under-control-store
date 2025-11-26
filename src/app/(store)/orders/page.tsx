@@ -1,5 +1,5 @@
 import OrderItem from "@/src/components/OrderItem/OrderItem";
-import { getMyOrders } from "@/sanity/lib/orders/getMyOrders";
+import { getMyOrders } from "@/src/lib/api/getMyOrders";
 
 // Imports: external libraries
 import { auth } from "@clerk/nextjs/server";

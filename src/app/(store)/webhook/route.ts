@@ -2,10 +2,10 @@
 // NextJS docs: https://nextjs.org/docs/app/api-reference/file-conventions/route
 
 import { backendClient } from "@/sanity/lib/backendClient";
-import { Metadata } from "@/src/lib/createCheckoutSession";
+import { Metadata } from "@/src/lib/api/createCheckoutSession";
 import { headers } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
-import stripe from "@/src/lib/stripe";
+import stripe from "@/src/lib/api/stripe";
 import Stripe from "stripe";
 
 // Setting up Stripe webhooks

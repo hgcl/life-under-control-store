@@ -1,6 +1,6 @@
 import createCheckoutSession, {
   Metadata,
-} from "@/src/lib/createCheckoutSession";
+} from "@/src/lib/api/createCheckoutSession";
 
 /**
  * Calculate total price based on cart items

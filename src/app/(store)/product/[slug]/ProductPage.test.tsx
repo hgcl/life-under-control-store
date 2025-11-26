@@ -3,7 +3,7 @@ import { beforeAll, describe, expect, test, vi } from "vitest";
 
 beforeAll(() => {
   vi.mock("@/sanity/lib/live", () => ({}));
-  vi.mock("@/sanity/lib/products/getProductBySlug", () => ({
+  vi.mock("@/src/lib/api/getProductBySlug", () => ({
     getProductBySlug: vi
       .fn()
       .mockResolvedValue({ _id: "mock-id", name: "Mock product" }),

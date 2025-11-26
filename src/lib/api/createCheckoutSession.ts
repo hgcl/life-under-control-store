@@ -1,8 +1,8 @@
 "use server";
 
-import { getProductsArrayById } from "@/sanity/lib/products/getProductsArrayById";
-import { CartItem } from "../types";
-import stripe from "@/src/lib/stripe";
+import { getProductsArrayById } from "@/src/lib/api/getProductsArrayById";
+import { CartItem } from "../../types";
+import stripe from "@/src/lib/api/stripe";
 import Stripe from "stripe";
 import { Product } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/imageUrl";
