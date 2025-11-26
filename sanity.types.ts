@@ -91,6 +91,11 @@ export type Product = {
     _type: "image";
     _key: string;
   }>;
+  tags?: Array<{
+    description?: string;
+    icon?: string;
+    _key: string;
+  }>;
   price?: number;
   download?: string;
   categories?: Array<{
@@ -329,6 +334,11 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
     _type: "image";
     _key: string;
   }>;
+  tags?: Array<{
+    description?: string;
+    icon?: string;
+    _key: string;
+  }>;
   price?: number;
   download?: string;
   categories?: Array<{
@@ -409,6 +419,11 @@ export type MY_ORDERS_QUERYResult = Array<{
       _type: "image";
       _key: string;
     }>;
+    tags?: Array<{
+      description?: string;
+      icon?: string;
+      _key: string;
+    }>;
     price?: number;
     download?: string;
     categories?: Array<{
@@ -473,6 +488,11 @@ export type PRODUCT_BY_SLUG_QUERYResult = {
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
+    _key: string;
+  }>;
+  tags?: Array<{
+    description?: string;
+    icon?: string;
     _key: string;
   }>;
   price?: number;
@@ -540,6 +560,11 @@ export type PRODUCTS_BY_ID_QUERYResult = Array<{
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
+    _key: string;
+  }>;
+  tags?: Array<{
+    description?: string;
+    icon?: string;
     _key: string;
   }>;
   price?: number;

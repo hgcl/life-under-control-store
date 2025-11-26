@@ -36,6 +36,28 @@ export const productType = defineType({
       type: "blockContent",
     }),
     defineField({
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "description",
+              type: "string",
+              title: "Tag description",
+            },
+            {
+              name: "icon",
+              type: "string",
+              title: "Icon name (from feathericons.com)",
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: "price",
       title: "Price",
       type: "number",
