@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => ({
     include: [
       "src/app/**/*.{test,spec}.{ts,tsx,js,jsx}",
       "src/components/**/*.{test,spec}.{ts,tsx,js,jsx}",
+      "src/context/**/*.{test,spec}.{ts,tsx,js,jsx}",
     ],
     setupFiles: ["./vitest.setup.ts"],
     env: loadEnv(mode, process.cwd(), ""),

@@ -35,7 +35,7 @@ const initialCartContext = {
 
 export const CartContext = createContext(initialCartContext);
 
-const CartContextProvider = ({
+export const CartContextProvider = ({
   children,
   testState,
 }: {
