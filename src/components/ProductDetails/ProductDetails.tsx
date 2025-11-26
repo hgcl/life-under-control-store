@@ -2,6 +2,7 @@ import styles from "./ProductDetails.module.css";
 import { structureCartItem } from "./ProductDetails.utils";
 import UpdateCartButton from "@/src/components/UpdateCartButton/UpdateCartButton";
 import Carousel from "@/src/components/Carousel/Carousel";
+import FeatherIcon from "@/src/components/FeatherIcon/FeatherIcon";
 
 // Imports: internal libs and types
 import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
@@ -26,6 +27,20 @@ const ProductDetails = ({
             <PortableText value={product.description[0]} />
           </div>
         )}
+        <ul className={styles.ProductDetails__tagList}>
+          {product.tags
+            ? product.tags.map((el, i) => {
+                return (
+                  <>
+                    <li key={i}>
+                      <span>{el.description}</span>
+                      {el.icon ? <FeatherIcon name={el.icon} /> : ""}
+                    </li>
+                  </>
+                );
+              })
+            : ""}
+        </ul>
       </div>
     </section>
   );
