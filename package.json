@@ -16,7 +16,7 @@
     "@hgcle/ui-library": "^0.0.24",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^3.99.0",
-    "next": "15.5.2",
+    "next": "15.5.7",
     "next-sanity": "^10.0.16",
     "react": "19.2",
     "react-dom": "19.2",
