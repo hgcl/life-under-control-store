@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import "@hgcle/ui-library/dist/globals.css";
+import "@hgcle/ui-library/globals.css";
 import CartContextProvider from "../../context/CartContextProvider";
 import Header from "../../components/Header/Header";
 
@@ -8,7 +8,8 @@ import { type Metadata } from "next";
 import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
-import { Banner, SkipToContent } from "@hgcle/ui-library";
+import Banner from "@hgcle/ui-library/Banner";
+import SkipToContent from "@hgcle/ui-library/SkipToContent";
 
 export const metadata: Metadata = {
   title: "Life Under Control",

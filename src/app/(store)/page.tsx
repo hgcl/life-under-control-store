@@ -3,7 +3,7 @@ import { getAllCategories } from "@/src/lib/api/getAllCategories";
 import ProductsView from "../../components/ProductsView/ProductsView";
 
 // Imports: external libraries
-import { Page } from "@hgcle/ui-library";
+import Page from "@hgcle/ui-library/Page";
 
 const Home = async () => {
   const products = await getAllProducts();
