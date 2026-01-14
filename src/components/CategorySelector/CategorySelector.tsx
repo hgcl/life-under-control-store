@@ -4,16 +4,12 @@ import styles from "./CategorySelector.module.css";
 import { Category } from "@/sanity.types";
 
 // Imports: external libraries
-import { FilterTag } from "@hgcle/ui-library";
-import { Dispatch, SetStateAction } from "react";
+import FilterTag from "@hgcle/ui-library/FilterTag";
 
 type CategorySelectorProps = {
   categories: Category[];
   selectedCategories: Set<string>;
-  handleCheckboxChange: (
-    event: React.ChangeEvent<HTMLInputElement>,
-    setSelectedCategories: Dispatch<SetStateAction<Set<string>>>
-  ) => void;
+  handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const CategorySelector = ({

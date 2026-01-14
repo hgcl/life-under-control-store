@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
+    "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -13,7 +14,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.31.9",
-    "@hgcle/ui-library": "^0.0.24",
+    "@hgcle/ui-library": "^1.0.1",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^3.99.0",
     "next": "15.5.9",

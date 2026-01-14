@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import "@hgcle/ui-library/globals.css";
 
 export const metadata: Metadata = {
   title: "Life Under Control Studio",
