@@ -10,8 +10,7 @@ import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { ShoppingCart, ShoppingBag } from "react-feather";
 import { useContext } from "react";
 import Link from "next/link";
-import IconButton from "@hgcle/ui-library/IconButton";
-import Button from "@hgcle/ui-library/Button";
+import { IconButton, Button } from "@hgcle/ui-library";
 
 function Header() {
   const { user } = useUser();

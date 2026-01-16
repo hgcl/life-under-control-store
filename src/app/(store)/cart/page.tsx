@@ -8,8 +8,7 @@ import { CartContext } from "@/src/context/CartContextProvider";
 // Imports: external libraries
 import { useContext, useState } from "react";
 import { SignInButton, useUser } from "@clerk/nextjs";
-import Page from "@hgcle/ui-library/Page";
-import Button from "@hgcle/ui-library/Button";
+import { Page, Button } from "@hgcle/ui-library";
 
 const CartPage = () => {
   const { cartItems, clearCart } = useContext(CartContext);

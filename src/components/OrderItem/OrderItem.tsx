@@ -7,8 +7,7 @@ import { MY_ORDERS_QUERYResult } from "@/sanity.types";
 
 // Imports: external libraries
 import Image from "next/image";
-import Button from "@hgcle/ui-library/Button";
-import Hypertext from "@hgcle/ui-library/Hypertext";
+import { Button, Hypertext } from "@hgcle/ui-library";
 
 const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
   <article className={styles.OrderItem__card}>

@@ -12,7 +12,7 @@ import { ALL_PRODUCTS_QUERYResult, Category } from "@/sanity.types";
 
 // Imports: external libraries
 import { useState } from "react";
-import ProductGrid from "@hgcle/ui-library/ProductGrid";
+import { ProductGrid } from "@hgcle/ui-library";
 
 type ProductsViewProps = {
   products: ALL_PRODUCTS_QUERYResult;

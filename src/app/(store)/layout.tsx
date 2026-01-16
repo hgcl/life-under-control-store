@@ -8,8 +8,7 @@ import { type Metadata } from "next";
 import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
-import Banner from "@hgcle/ui-library/Banner";
-import SkipToContent from "@hgcle/ui-library/SkipToContent";
+import { Banner, SkipToContent } from "@hgcle/ui-library";
 
 export const metadata: Metadata = {
   title: "Life Under Control",
@@ -34,10 +33,10 @@ const RootLayout = ({
           <SkipToContent href="#main" />
           <Banner isDisabled>This website is still under construction</Banner>
           <main id="main">
-            <CartContextProvider>
-              <Header />
+          <CartContextProvider>
+            <Header />
               {children}
-            </CartContextProvider>
+          </CartContextProvider>
           </main>
 
           <SanityLive />

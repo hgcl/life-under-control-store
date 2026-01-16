@@ -4,7 +4,7 @@ import { getMyOrders } from "@/src/lib/api/getMyOrders";
 // Imports: external libraries
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import Page from "@hgcle/ui-library/Page";
+import { Page } from "@hgcle/ui-library";
 
 const Orders = async () => {
   const { userId } = await auth();

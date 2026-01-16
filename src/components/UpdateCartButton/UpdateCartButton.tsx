@@ -8,7 +8,7 @@ import { CartItem } from "../../types";
 
 // Imports: external libraries
 import { useContext, useState } from "react";
-import Button from "@hgcle/ui-library/Button";
+import { Button } from "@hgcle/ui-library";
 
 const UpdateCartButton = ({
   cartItem,

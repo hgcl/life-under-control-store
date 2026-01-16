@@ -4,7 +4,7 @@ import styles from "./CategorySelector.module.css";
 import { Category } from "@/sanity.types";
 
 // Imports: external libraries
-import FilterTag from "@hgcle/ui-library/FilterTag";
+import { FilterTag } from "@hgcle/ui-library";
 
 type CategorySelectorProps = {
   categories: Category[];
@@ -31,7 +31,7 @@ const CategorySelector = ({
             isChecked={selectedCategories.has(category._id)}
             handleFilterChange={handleCheckboxChange}
           />
-        )
+        ),
     )}
   </fieldset>
 );
