@@ -38,6 +38,7 @@
 
 .Carousel__panel img {
   object-fit: contain;
+  object-position: 50% 0%;
 }
 
 /* INTERACTIONS */
@@ -49,7 +50,7 @@
 
 /* MEDIA QUERIES */
 
-@media only screen and (width > 480px) {
+@media only screen and (width > 960px) {
   .Carousel {
     flex-direction: row;
   }

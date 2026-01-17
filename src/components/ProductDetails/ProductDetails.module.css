@@ -1,27 +1,36 @@
-#ProductDetails {
+.ProductDetails {
   display: flex;
-  flex-wrap: wrap;
   gap: var(--spacing-xl);
+  flex-wrap: wrap;
+  /* Center layout when zooming out */
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 /* CAROUSEL */
-#ProductDetails > *:first-child {
+.ProductDetails > *:first-child {
   width: 100%;
-  flex: 1 1 65%;
+  flex: 1 0 50%;
   height: 400px;
+  position: relative;
 }
 
 /* PRODUCT INFO */
-#ProductDetails > *:last-child {
+.ProductDetails > *:last-child {
   width: 100%;
-  flex: 1 1 25%;
   min-width: 200px;
+  flex: 1 0 45%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  position: relative;
+}
+.ProductDetails__nameAndPrice {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 .ProductDetails__tagline {
-  margin-block: 2rem;
   font-size: var(--fontsize-headline-s);
 }
 
@@ -48,8 +57,58 @@
   flex: 0 0 var(--iconsize-m);
 }
 
+/* Product details */
+/* TODO: move to UI library as a generic component */
+.ProductDetails__details {
+  border: var(--border) var(--fg-subtle);
+}
+.ProductDetails__detailsBody {
+  padding: var(--padding-l) var(--padding-m);
+}
+.ProductDetails__details summary {
+  /* Reset <summary> styles */
+  margin: 0;
+  /* Custom styles */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding-m);
+  font-variation-settings: var(--fontvariation-body-strong);
+}
+.ProductDetails__details[open] summary {
+  border-bottom: var(--border) var(--fg-subtle);
+}
+.ProductDetails__details summary::marker {
+  content: "";
+}
+summary::after {
+  content: "";
+  border: solid var(--fg-normal);
+  border-width: 0 3px 3px 0; /* creates chevron */
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+}
+details[open] > summary::after {
+  transform: rotate(-135deg);
+}
+
+/* MEDIA QUERIES */
+
 @media only screen and (width > 480px) {
-  #ProductDetails > *:first-child {
+  .ProductDetails > *:first-child {
     height: 600px;
+  }
+}
+
+@media only screen and (width > 704px) {
+  /* Make product info vertically scrollable */
+  .ProductDetails > *:first-child {
+    position: sticky;
+    top: var(--padding-l); /* Necessary for product info section to scroll */
+  }
+  .ProductDetails > *:last-child {
+    position: sticky;
   }
 }
