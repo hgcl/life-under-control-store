@@ -82,7 +82,7 @@
 .ProductDetails__details summary::marker {
   content: "";
 }
-summary::after {
+.ProductDetails__details summary::after {
   content: "";
   border: solid var(--fg-normal);
   border-width: 0 3px 3px 0; /* creates chevron */
@@ -90,7 +90,7 @@ summary::after {
   padding: 4px;
   transform: rotate(45deg);
 }
-details[open] > summary::after {
+.ProductDetails__details[open] > summary::after {
   transform: rotate(-135deg);
 }
 
