@@ -16,5 +16,10 @@ export default defineConfig(({ mode }) => ({
     ],
     setupFiles: ["./vitest.setup.ts"],
     env: loadEnv(mode, process.cwd(), ""),
+    server: {
+      deps: {
+        inline: ["@hgcle"],
+      },
+    },
   },
 }));
