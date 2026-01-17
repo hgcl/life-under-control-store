@@ -32,13 +32,10 @@ const RootLayout = ({
         <body>
           <SkipToContent href="#main" />
           <Banner isDisabled>This website is still under construction</Banner>
-          <main id="main">
           <CartContextProvider>
             <Header />
-              {children}
+            <main id="main">{children}</main>
           </CartContextProvider>
-          </main>
-
           <SanityLive />
         </body>
       </html>

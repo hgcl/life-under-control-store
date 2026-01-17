@@ -1,3 +1,8 @@
+#Header {
+  padding: var(--padding-m);
+  box-shadow: var(--box-shadow);
+}
+
 /* NAV */
 #NavList {
   /* Reset default <ul> styles */
@@ -19,6 +24,9 @@
 }
 
 @media only screen and (width > 480px) {
+  #Header {
+    padding: var(--padding-m) var(--padding-xl);
+  }
   #Logo {
     height: 72px;
     width: 72px;
