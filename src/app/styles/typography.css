@@ -7,6 +7,9 @@
   margin-bottom: 1rem; /* Default text flow: margin after each child element */
   line-height: var(--lineheight-body);
 }
+.typography > *:last-child {
+  margin-bottom: 0;
+}
 
 /* HEADLINES */
 .typography h1,
