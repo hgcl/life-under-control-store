@@ -31,7 +31,7 @@
 
 .Carousel__panel {
   position: relative;
-  height: 100%;
+  height: inherit;
   width: 100%;
   min-width: 300px;
 }

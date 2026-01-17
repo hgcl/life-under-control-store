@@ -1,7 +1,7 @@
 .ProductDetails {
   display: flex;
   gap: var(--spacing-xl);
-  flex-wrap: wrap;
+  flex-direction: column;
   /* Center layout when zooming out */
   max-width: var(--max-width);
   margin: 0 auto;
@@ -102,9 +102,13 @@
   }
 }
 
-@media only screen and (width > 704px) {
+@media only screen and (width > 720px) {
   /* Make product info vertically scrollable */
+  .ProductDetails {
+    flex-direction: row;
+  }
   .ProductDetails > *:first-child {
+    max-width: 50%;
     position: sticky;
     top: var(--padding-l); /* Necessary for product info section to scroll */
   }
