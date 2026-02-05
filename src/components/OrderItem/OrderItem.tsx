@@ -3,13 +3,13 @@ import styles from "./OrderItem.module.css";
 // Imports: internal libs and types
 import { formatCurrency } from "../../lib/formatCurrency";
 import { urlFor } from "@/sanity/lib/imageUrl";
-import { MY_ORDERS_QUERYResult } from "@/sanity.types";
+import { MY_ORDERS_QUERY_RESULT } from "@/sanity.types";
 
 // Imports: external libraries
 import Image from "next/image";
 import { Button, Hypertext } from "@hgcle/ui-library";
 
-const OrderItem = ({ order }: { order: MY_ORDERS_QUERYResult[0] }) => (
+const OrderItem = ({ order }: { order: MY_ORDERS_QUERY_RESULT[0] }) => (
   <article className={styles.OrderItem__card}>
     <section>
       <h2>Order {order.orderNumber}</h2>

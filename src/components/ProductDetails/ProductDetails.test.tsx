@@ -3,7 +3,7 @@ import { describe, assert, test } from "vitest";
 import { structureCartItem } from "./ProductDetails.utils";
 import { productWithoutId } from "@/src/lib/test-fixtures";
 import { CartItem } from "@/src/types";
-import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
+import { ALL_PRODUCTS_QUERY_RESULT } from "@/sanity.types";
 
 describe("<ProductDetails /> -- utils", () => {
   test("product is correctly structured to be added to cart", () => {
@@ -11,7 +11,7 @@ describe("<ProductDetails /> -- utils", () => {
     const product = {
       _id: "1",
       ...productWithoutId,
-    } as ALL_PRODUCTS_QUERYResult[0]; // Force type, as it is difficult to create mocks that are completely compatible with Sanity custom types
+    } as ALL_PRODUCTS_QUERY_RESULT[0]; // Force type, as it is difficult to create mocks that are completely compatible with Sanity custom types
 
     const restructuredItem = structureCartItem(product);
 

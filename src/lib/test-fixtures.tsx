@@ -1,6 +1,6 @@
 import {
-  ALL_CATEGORIES_QUERYResult,
-  ALL_PRODUCTS_QUERYResult,
+  ALL_CATEGORIES_QUERY_RESULT,
+  ALL_PRODUCTS_QUERY_RESULT,
 } from "@/sanity.types";
 
 export const cartItemWithoutId = {
@@ -13,7 +13,7 @@ export const cartItemWithoutId = {
     "Movies & TV Shows Tracker | Ultimate Bundle for A4, A5, Letter | Binder Printables, To Watch, Favori",
 };
 
-export const categories: ALL_CATEGORIES_QUERYResult = [
+export const categories: ALL_CATEGORIES_QUERY_RESULT = [
   {
     _createdAt: "2025-09-17T09:44:41Z",
     _id: "printable-category",
@@ -639,4 +639,4 @@ export const products = [
     ],
     ...productWithoutIdAndCategories,
   },
-] as ALL_PRODUCTS_QUERYResult; // Force type, as it is difficult to create mocks that are completely compatible with Sanity custom types
+] as ALL_PRODUCTS_QUERY_RESULT; // Force type, as it is difficult to create mocks that are completely compatible with Sanity custom types

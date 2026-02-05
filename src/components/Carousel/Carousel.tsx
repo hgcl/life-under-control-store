@@ -3,7 +3,7 @@
 import styles from "./Carousel.module.css";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
+import { ALL_PRODUCTS_QUERY_RESULT } from "@/sanity.types";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -14,7 +14,7 @@ import { useState } from "react";
 const Carousel = ({
   imageArray,
 }: {
-  imageArray: ALL_PRODUCTS_QUERYResult[0]["imageGallery"];
+  imageArray: ALL_PRODUCTS_QUERY_RESULT[0]["imageGallery"];
 }) => {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -46,7 +46,7 @@ const Carousel = ({
                     />
                   </button>
                 </div>
-              )
+              ),
           )}
       </div>
 
@@ -74,7 +74,7 @@ const Carousel = ({
                   blurDataURL={`${image.asset.metadata && image.asset.metadata.lqip}`}
                 />
               </div>
-            )
+            ),
         )}
     </div>
   );

@@ -6,13 +6,13 @@ import Carousel from "@/src/components/Carousel/Carousel";
 import FeatherIcon from "@/src/components/FeatherIcon/FeatherIcon";
 
 // Imports: internal libs and types
-import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
+import { ALL_PRODUCTS_QUERY_RESULT } from "@/sanity.types";
 import { PortableText, PortableTextReactComponents } from "next-sanity";
 
 const ProductDetails = ({
   product,
 }: {
-  product: ALL_PRODUCTS_QUERYResult[0];
+  product: ALL_PRODUCTS_QUERY_RESULT[0];
 }) => {
   const cartItem = structureCartItem(product);
 

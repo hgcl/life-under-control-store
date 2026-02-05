@@ -1,4 +1,4 @@
-import { ALL_PRODUCTS_QUERYResult } from "@/sanity.types";
+import { ALL_PRODUCTS_QUERY_RESULT } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/imageUrl";
 import { Dispatch, SetStateAction } from "react";
 
@@ -36,7 +36,7 @@ export function handleCheckboxChange(
  */
 
 export function filterProducts(
-  products: ALL_PRODUCTS_QUERYResult,
+  products: ALL_PRODUCTS_QUERY_RESULT,
   selectedCategories: Set<string>,
 ): // eslint-disable-next-line  @typescript-eslint/no-explicit-any
 any[] {
