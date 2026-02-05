@@ -14,7 +14,7 @@ import ProductPage from "./page";
 
 describe("<ProductPage />", () => {
   test("exactly one <h1> exists on page", async () => {
-    const params = { slug: "mock-product" };
+    const params = Promise.resolve({ slug: "mock-product" });
     const component = await ProductPage({ params });
     render(component);
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
