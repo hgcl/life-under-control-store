@@ -7,6 +7,7 @@
 .Carousel__tabList {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: var(--spacing-m);
   /* setup, so that .Carousel__tablist can be scrolled */
   flex: 1 0 auto; /* flex-shrink needs to be 0 to avoid unwanted horizontal scroll */
