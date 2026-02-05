@@ -8,7 +8,7 @@ import { Dispatch, SetStateAction } from "react";
 
 export function handleCheckboxChange(
   event: React.ChangeEvent<HTMLInputElement>,
-  setSelectedCategories: Dispatch<SetStateAction<Set<string>>>
+  setSelectedCategories: Dispatch<SetStateAction<Set<string>>>,
 ) {
   const checkboxId = event.target.id;
   const isChecked = event.target.checked;
@@ -37,11 +37,10 @@ export function handleCheckboxChange(
 
 export function filterProducts(
   products: ALL_PRODUCTS_QUERYResult,
-  selectedCategories: Set<string>
+  selectedCategories: Set<string>,
 ): // eslint-disable-next-line  @typescript-eslint/no-explicit-any
 any[] {
   // Filter `products` shown based on `selectedCategories` — we need an unknown[] type to adapt to the component
-
   const filteredProducts = products.filter((product) => {
     if (!product.categories) {
       return false;
@@ -61,16 +60,12 @@ any[] {
 
 // eslint-disable-next-line  @typescript-eslint/no-explicit-any
 export function restructureProducts(filteredProducts: any[]) {
-  for (const item of filteredProducts) {
-    item.id = item._id;
-    item.url = `/product/${item.slug?.current}`;
-    if (item.description[0].children) {
-      item.description = item.description[0].children[0].text.slice(0, 100);
-    }
-    if (item.imageGallery) {
-      item.image = urlFor(item.imageGallery[0]).url();
-      item.imageBlur = item.imageGallery[0].asset?.metadata?.lqip;
-    }
-  }
-  return filteredProducts;
+  return filteredProducts.map((item) => ({
+    ...item,
+    id: item._id,
+    url: `/product/${item.slug.current}`,
+    description: item.description[0].children[0]?.text.slice(0, 100),
+    image: item.imageGallery ? urlFor(item.imageGallery[0]).url() : undefined,
+    imageBlur: item.imageGallery?.[0].asset.metadata.lqip,
+  }));
 }

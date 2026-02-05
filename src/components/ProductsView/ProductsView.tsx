@@ -29,8 +29,7 @@ const ProductsView = ({ products, categories }: ProductsViewProps) => {
   const [selectedCategories, setSelectedCategories] = useState(allCategories);
 
   const filteredProducts = filterProducts(products, selectedCategories);
-
-  restructureProducts(filteredProducts);
+  const structuredProducts = restructureProducts(filteredProducts);
 
   return (
     <>
@@ -41,7 +40,7 @@ const ProductsView = ({ products, categories }: ProductsViewProps) => {
           handleCheckboxChange(event, setSelectedCategories)
         }
       />
-      <ProductGrid products={filteredProducts} />
+      <ProductGrid products={structuredProducts} />
     </>
   );
 };
