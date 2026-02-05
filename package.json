@@ -8,8 +8,9 @@
     "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
     "typegen": "npx -y sanity@latest schema extract && npx -y sanity@latest typegen generate",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint",
     "test": "vitest"
   },
   "dependencies": {
